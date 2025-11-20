@@ -1,0 +1,57 @@
+{
+    "domains": {
+      "finance_transformation": [
+        "Finance Transformation",
+        "Global Shared Services",
+        "Cost Optimization",
+        "Enterprise Operations",
+        "Process Standardization",
+        "SOX Compliance",
+        "US GAAP"
+      ],
+      "analytics_automation": [
+        "Process Mining (Celonis)",
+        "Automation COEs",
+        "Data Platforms",
+        "KPI & Performance Reporting",
+        "Self-Service Analytics",
+        "ETL Automation (Alteryx)",
+        "Python Data Engineering",
+        "Power BI / Tableau",
+        "Operational Dashboards"
+      ],
+      "leadership_management": [
+        "Global Team Leadership",
+        "Change Management",
+        "Executive Stakeholder Engagement",
+        "Cross-Functional Alignment",
+        "Offshore/Onshore Delivery Models",
+        "M&A Integration"
+      ],
+      "strategic_reporting": [
+        "Forecasting & Reporting",
+        "Cash Flow Visibility",
+        "Variance Analysis",
+        "Management Reporting",
+        "Board-Level Communication"
+      ],
+      "technology_systems": [
+        "ERP: SAP, NetSuite, PeopleSoft, Dynamics GP",
+        "Automation: AssistEdge, AppZen, Automation Anywhere",
+        "Visualization: Tableau, Power BI",
+        "Analytics: Python, Celonis, Alteryx",
+        "Data Platforms",
+        "Process Automation"
+      ],
+      "industry_experience": [
+        "Private Equity",
+        "CRO / Life Sciences",
+        "Financial Services",
+        "Global Operations",
+        "Shared Services",
+        "Regulated Environments"
+      ]
+    }
+  }
+  
+

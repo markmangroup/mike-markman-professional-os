@@ -1,0 +1,39 @@
+{
+    "rules": [
+      {
+        "id": "rule-1",
+        "pattern": ".*amazon.*",
+        "category": "Supplies",
+        "subcategory": "Office",
+        "description": "Matches Amazon-related purchases."
+      },
+      {
+        "id": "rule-2",
+        "pattern": ".*uber.*",
+        "category": "Travel",
+        "subcategory": "Transportation",
+        "description": "Classifies Uber/Lyft trips."
+      },
+      {
+        "id": "rule-3",
+        "pattern": ".*office.*depot.*",
+        "category": "Supplies",
+        "subcategory": "Equipment",
+        "description": "Office Depot or related purchases."
+      },
+      {
+        "id": "rule-4",
+        "pattern": ".*delta.*",
+        "category": "Travel",
+        "subcategory": "Airfare",
+        "description": "Airline purchases including Delta."
+      }
+    ],
+    "sampleTransactions": [
+      { "id": "txn-1", "description": "Amazon Business purchase - cables", "amount": 129.99 },
+      { "id": "txn-2", "description": "Uber trip downtown", "amount": 24.70 },
+      { "id": "txn-3", "description": "Delta Airlines flight RDU → LGA", "amount": 412.00 },
+      { "id": "txn-4", "description": "Office Depot office chair", "amount": 199.00 }
+    ]
+  }
+  

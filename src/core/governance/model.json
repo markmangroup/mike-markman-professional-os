@@ -1,0 +1,35 @@
+{
+    "owners": [
+      { "name": "Finance", "responsibilities": ["Financial reporting", "Controls", "Close process"] },
+      { "name": "Operations", "responsibilities": ["Service delivery data", "Process metrics", "Capacity planning"] },
+      { "name": "Commercial", "responsibilities": ["Customer data", "Pipeline", "Revenue reporting"] },
+      { "name": "IT / Data Platform", "responsibilities": ["ETL integrity", "Data quality", "Metadata management"] }
+    ],
+    "systems": [
+      { "system": "CRM", "type": "Source System", "notes": "Customer & pipeline" },
+      { "system": "ERP", "type": "Source System", "notes": "Financials & GL" },
+      { "system": "Data Platform", "type": "Transformation", "notes": "Cleansing, modeling, lineage" },
+      { "system": "Ops Platform", "type": "Operational System", "notes": "Operations KPIs" },
+      { "system": "Reporting Layer", "type": "Consumption", "notes": "Dashboards, reports, KPIs" }
+    ],
+    "lineage": [
+      { "from": "CRM", "to": "Data Platform" },
+      { "from": "ERP", "to": "Data Platform" },
+      { "from": "Data Platform", "to": "Reporting Layer" },
+      { "from": "Ops Platform", "to": "Reporting Layer" }
+    ],
+    "controls": [
+      "Data validation rules",
+      "Reconciliation checks",
+      "Owner sign-off",
+      "Certification workflow",
+      "Exception reporting"
+    ],
+    "standards": [
+      "Single source of truth",
+      "Documented data definitions",
+      "Report catalog & ownership",
+      "Change management for metrics"
+    ]
+  }
+  

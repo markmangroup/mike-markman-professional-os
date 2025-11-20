@@ -1,0 +1,35 @@
+{
+    "steps": [
+      {
+        "id": "1",
+        "title": "Request Intake",
+        "description": "Field team submits request for equipment or services.",
+        "outputs": ["jobId", "location", "equipmentType"]
+      },
+      {
+        "id": "2",
+        "title": "Validation & Enrichment",
+        "description": "System validates completeness, enriches with customer data, pricing, and availability.",
+        "outputs": ["validatedJobId", "costEstimate", "recommendedAssignment"]
+      },
+      {
+        "id": "3",
+        "title": "Assignment",
+        "description": "Platform assigns job to appropriate technician or crew based on availability and routing.",
+        "outputs": ["assignedTechnician", "scheduledDate"]
+      },
+      {
+        "id": "4",
+        "title": "Execution",
+        "description": "Technician completes the job and updates system with results, photos, or measurements.",
+        "outputs": ["completedStatus", "fieldData"]
+      },
+      {
+        "id": "5",
+        "title": "Reporting & Billing",
+        "description": "System generates report or invoice based on job results and rules.",
+        "outputs": ["invoice", "updatedAnalytics"]
+      }
+    ]
+  }
+  

@@ -1,0 +1,28 @@
+{
+  "prototypes": [
+    {
+      "id": "ui-1",
+      "title": "Clean Metrics Card",
+      "description": "A minimal, high-clarity metric card for executive dashboards.",
+      "elements": ["large number", "subtext", "trend badge"]
+    },
+    {
+      "id": "ui-2",
+      "title": "Dark Mode Tile",
+      "description": "A tile inspired by the BrainDead vibe—dark background with glowing accents.",
+      "elements": ["neon border", "hover glow", "subtle shadow"]
+    },
+    {
+      "id": "ui-3",
+      "title": "Split Panel Layout",
+      "description": "Two-panel layout for comparing datasets or modes.",
+      "elements": ["side-by-side panels", "thin dividers", "title bars"]
+    },
+    {
+      "id": "ui-4",
+      "title": "Interactive Toggle Header",
+      "description": "Header with mode toggles (e.g., Overview / Details) with animated underline.",
+      "elements": ["toggle buttons", "animated underline", "active state highlight"]
+    }
+  ]
+}
