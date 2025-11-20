@@ -15,6 +15,23 @@ export default function Home() {
         </p>
       </div>
 
+      {/* About Me */}
+      <div className="max-w-3xl mx-auto space-y-6 py-8">
+        <h2 className="text-2xl font-bold">About Me</h2>
+        <p className="text-gray-700 dark:text-gray-300">
+          I fix complex things with clarity, data, and structure.
+        </p>
+        <p className="text-gray-700 dark:text-gray-300">
+          For 20 years across finance, analytics, operations, and product, I've been the person companies rely on when systems get complicated — financial systems, reporting systems, operational workflows, data platforms, or organizational structures. I build order, visibility, and momentum where it didn't exist.
+        </p>
+        <p className="text-gray-700 dark:text-gray-300">
+          I've led global teams, built platforms, modernized reporting ecosystems, architected data flows, automated processes, implemented governance, and delivered real systems used by real people. My work spans enterprise-scale environments (IQVIA Shared Services and ED&A), private credit reporting and governance (Metropolitan Partners), joint-venture controller operations (Q² Solutions), and full operational transformation for SMBs (Laurel AG).
+        </p>
+        <p className="text-gray-700 dark:text-gray-300">
+          This site is a curated portfolio of that work — the systems I've built, the problems I've solved, and the way I think. It's part resume, part case library, part professional operating system.
+        </p>
+      </div>
+
       {/* Intro Paragraph */}
       <div className="space-y-6">
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
