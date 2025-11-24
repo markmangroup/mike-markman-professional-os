@@ -1,92 +1,163 @@
 "use client";
 
 import Link from "next/link";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
 
 export default function Home() {
+  const [showAllSections, setShowAllSections] = useState(false);
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12 space-y-12">
+    <div className="max-w-5xl mx-auto px-6 py-16 space-y-20">
       {/* Hero Section */}
-      <div className="text-center space-y-4">
-        <h1 className="text-5xl font-bold">Mike Markman</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Finance, analytics, and transformation leader. 20+ years building systems, teams, and intelligence for global organizations.
-        </p>
-      </div>
+      <section className="text-center space-y-6">
+        <h1 className="text-5xl font-bold tracking-tight">Mike Markman</h1>
 
-      {/* About Me */}
-      <div className="max-w-3xl mx-auto space-y-6 py-8">
-        <h2 className="text-2xl font-bold">About Me</h2>
-        <p className="text-gray-700 dark:text-gray-300">
-          I fix complex things with clarity, data, and structure.
+        <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Finance, data, and transformation leader. This is a living encyclopedia of my work —
+          systems, frameworks, case studies, and the real artifacts behind them.
         </p>
-        <p className="text-gray-700 dark:text-gray-300">
-          For 20 years across finance, analytics, operations, and product, I've been the person companies rely on when systems get complicated — financial systems, reporting systems, operational workflows, data platforms, or organizational structures. I build order, visibility, and momentum where it didn't exist.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300">
-          I've led global teams, built platforms, modernized reporting ecosystems, architected data flows, automated processes, implemented governance, and delivered real systems used by real people. My work spans enterprise-scale environments (IQVIA Shared Services and ED&A), private credit reporting and governance (Metropolitan Partners), joint-venture controller operations (Q² Solutions), and full operational transformation for SMBs (Laurel AG).
-        </p>
-        <p className="text-gray-700 dark:text-gray-300">
-          This site is a curated portfolio of that work — the systems I've built, the problems I've solved, and the way I think. It's part resume, part case library, part professional operating system.
-        </p>
-      </div>
 
-      {/* Intro Paragraph */}
-      <div className="space-y-6">
-        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          This site is a curated portfolio of the real systems, deliverables, and transformation work I've led across IQVIA, Q² Solutions, private equity clients, and Markman Group engagements. It blends structured case studies, real artifacts, and interactive demos into a single professional operating system.
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Built so anyone can quickly understand what I've done, how I operate, and the outcomes behind the work.
         </p>
-      </div>
+      </section>
 
-      {/* Navigation Buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="card cursor-pointer hover:shadow-lg transition-shadow">
+      {/* Audience Entry Paths */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Recruiters & Executives */}
+        <Card className="cursor-pointer hover:shadow-lg transition-shadow">
           <Link href="/career" className="block h-full">
             <CardHeader>
-              <CardTitle className="text-xl">Career Overview</CardTitle>
+              <CardTitle className="text-xl">The Quick Story</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Explore my professional journey and experience
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Career overview, resume, and the high-signal summary of how I drive clarity and transformation.
               </p>
             </CardContent>
           </Link>
         </Card>
 
-        <Card className="card cursor-pointer hover:shadow-lg transition-shadow">
-          <Link href="/cases" className="block h-full">
-            <CardHeader>
-              <CardTitle className="text-xl">Case Studies</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Deep dives into real transformation work
-              </p>
-            </CardContent>
-          </Link>
-        </Card>
-
-        <Card className="card cursor-pointer hover:shadow-lg transition-shadow">
-          <Link href="/home" className="block h-full">
+        {/* Operators & Technical Leaders */}
+        <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+          <Link href="/systems" className="block h-full">
             <CardHeader>
               <CardTitle className="text-xl">Systems I've Built</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Interactive OS dashboard and demos
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Reporting engines, governance models, automation flows, and data platforms — with visuals and demos.
               </p>
             </CardContent>
           </Link>
         </Card>
-      </div>
 
-      {/* Optional Personal Note */}
-      <div className="text-center pt-4">
-        <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-          I've spent my career building clarity in complex environments — this site reflects that work.
-        </p>
-      </div>
+        {/* People Evaluating Fit */}
+        <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+          <Link href="/cases" className="block h-full">
+            <CardHeader>
+              <CardTitle className="text-xl">Cases & Evidence</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Structured case studies and real artifacts — the actual deliverables and models behind outcomes.
+              </p>
+            </CardContent>
+          </Link>
+        </Card>
+      </section>
+
+      {/* Encyclopedia Section Grid */}
+      <section className="space-y-8">
+        <div className="flex items-center justify-between">
+          <h2 className="text-3xl font-bold">Explore the Encyclopedia</h2>
+        </div>
+
+        {/* Core 4 sections - always visible */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <HomeTile title="Career" href="/career" description="Timeline of leadership roles and impact across finance, analytics, and operations." />
+
+          <HomeTile title="Resume" href="/resume" description="High-signal resume backed by structured metadata and real artifacts." />
+
+          <HomeTile title="Systems" href="/systems" description="The systems, platforms, and operational models I've built and deployed." />
+
+          <HomeTile title="Cases" href="/cases" description="Compact breakdowns of real transformations and key outcomes." />
+        </div>
+
+        {/* Expandable additional sections */}
+        {showAllSections && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+            <HomeTile title="Skills" href="/skills" description="Mapped capabilities across finance, analytics, reporting, governance, and automation." />
+
+            <HomeTile title="Evidence" href="/evidence" description="Real deliverables, documents, diagrams, reporting samples, and specifications." />
+
+            <HomeTile title="Scenarios" href="/scenarios" description="How I navigate real-world situations: scaling, fixing, structuring, revealing hidden patterns." />
+
+            <HomeTile title="Demos" href="/demos/reporting-engine" description="Interactive prototypes of reporting engines, governance explorers, rule engines, and more." />
+
+            <HomeTile title="Adapters" href="/adapters/fortrea" description="Company-specific pages translating my background into context for different orgs." />
+
+            <HomeTile title="Search" href="/search" description="Semantic search across career history, systems, evidence, cases, and skills." />
+          </div>
+        )}
+
+        {/* Toggle button */}
+        <div className="flex justify-center pt-4">
+          <Button
+            variant="outline"
+            onClick={() => setShowAllSections(!showAllSections)}
+            className="min-w-[200px]"
+          >
+            {showAllSections ? "Show Less" : "View All Sections"}
+          </Button>
+        </div>
+      </section>
+
+      {/* Featured Systems */}
+      <section className="space-y-8">
+        <h2 className="text-3xl font-bold">Featured Systems</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <HomeTile title="Reporting Engine" href="/demos/reporting-engine" description="Unified financial, operational, and commercial reporting systems." />
+
+          <HomeTile title="Governance Model" href="/demos/governance-explorer" description="Data governance structures that reduce chaos and create clarity." />
+
+          <HomeTile title="Automation Flow" href="/demos/automation" description="End-to-end automation replacing manual workflows with intelligent structure." />
+
+        </div>
+      </section>
+
+      {/* Footer Note */}
+      <section className="text-center text-sm text-gray-500 pt-6">
+        This encyclopedia evolves as I refine my work, frameworks, and published artifacts.
+      </section>
+
     </div>
+  );
+}
+
+function HomeTile({
+  title,
+  href,
+  description,
+}: {
+  title: string;
+  href: string;
+  description: string;
+}) {
+  return (
+    <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+      <Link href={href} className="block h-full">
+        <CardHeader>
+          <CardTitle className="text-lg font-semibold">{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            {description}
+          </p>
+        </CardContent>
+      </Link>
+    </Card>
   );
 }
