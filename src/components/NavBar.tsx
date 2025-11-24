@@ -73,26 +73,35 @@ export default function NavBar() {
                 <Link href="/resume">Resume</Link>
               </Button>
               <Button asChild variant="ghost" size="sm">
-                <Link href="/skills">Skills</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/evidence">Evidence</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
                 <Link href="/search">Search</Link>
               </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/scenarios">Scenarios</Link>
-              </Button>
 
-              {/* Demos Dropdown */}
+              {/* Unified Explore Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm">
-                    Demos
+                    Explore
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="w-56">
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
+                    Content
+                  </div>
+                  <DropdownMenuItem asChild>
+                    <Link href="/skills">Skills</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/evidence">Evidence</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/scenarios">Scenarios</Link>
+                  </DropdownMenuItem>
+
+                  <div className="my-1 h-px bg-border" />
+
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
+                    Demos
+                  </div>
                   <DropdownMenuItem asChild>
                     <Link href="/demos/reporting-engine">Reporting Engine</Link>
                   </DropdownMenuItem>
@@ -100,28 +109,17 @@ export default function NavBar() {
                     <Link href="/demos/governance-explorer">Governance Explorer</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/demos/rule-engine">Rule Engine</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <Link href="/demos/automation">Automation Flow</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/demos/ui-prototypes">UI Prototypes</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/demos/kpi-dashboard">KPI Dashboard</Link>
                   </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
 
-              {/* Adapters Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm">
+                  <div className="my-1 h-px bg-border" />
+
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
                     Adapters
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                  </div>
                   <DropdownMenuItem asChild>
                     <Link href="/adapters/fortrea">Fortrea</Link>
                   </DropdownMenuItem>
@@ -145,10 +143,19 @@ export default function NavBar() {
                     Menu
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuItem asChild>
                     <Link href="/resume">Resume</Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/search">Search</Link>
+                  </DropdownMenuItem>
+
+                  <div className="my-1 h-px bg-border" />
+
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
+                    Content
+                  </div>
                   <DropdownMenuItem asChild>
                     <Link href="/skills">Skills</Link>
                   </DropdownMenuItem>
@@ -156,11 +163,14 @@ export default function NavBar() {
                     <Link href="/evidence">Evidence</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/search">Search</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <Link href="/scenarios">Scenarios</Link>
                   </DropdownMenuItem>
+
+                  <div className="my-1 h-px bg-border" />
+
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
+                    Demos
+                  </div>
                   <DropdownMenuItem asChild>
                     <Link href="/demos/reporting-engine">Reporting Engine</Link>
                   </DropdownMenuItem>
@@ -168,17 +178,17 @@ export default function NavBar() {
                     <Link href="/demos/governance-explorer">Governance Explorer</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/demos/rule-engine">Rule Engine</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <Link href="/demos/automation">Automation Flow</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/demos/ui-prototypes">UI Prototypes</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/demos/kpi-dashboard">KPI Dashboard</Link>
                   </DropdownMenuItem>
+
+                  <div className="my-1 h-px bg-border" />
+
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground">
+                    Adapters
+                  </div>
                   <DropdownMenuItem asChild>
                     <Link href="/adapters/fortrea">Fortrea</Link>
                   </DropdownMenuItem>
