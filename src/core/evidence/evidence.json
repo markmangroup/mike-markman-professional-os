@@ -1,419 +1,555 @@
 {
-    "evidence": [
-      {
-        "id": "mg-proposal-automation",
-        "title": "Proposal Automation Platform (Agritech Company)",
-        "source": "Markman Group",
-        "resumeRefs": [
-          "Designed and implemented proposal automation platform for an agritech company"
-        ],
-        "skills": [
-          "Automation COEs",
-          "ETL Automation",
-          "Process Standardization",
-          "KPI Reporting",
-          "Python Data Engineering"
-        ],
-        "links": {
-          "demo": "/demos/automation",
-          "data": "/data/laurel-ag"
-        }
+  "evidence": [
+    {
+      "id": "mg-proposal-automation",
+      "title": "Proposal Automation Platform (Agritech Company)",
+      "source": "Markman Group",
+      "resumeRefs": [
+        "Designed and implemented proposal automation platform for an agritech company"
+      ],
+      "skills": [
+        "Automation COEs",
+        "ETL Automation",
+        "Process Standardization",
+        "KPI Reporting",
+        "Python Data Engineering"
+      ],
+      "links": {
+        "demo": "/demos/automation",
+        "data": "/data/laurel-ag"
       },
-      {
-        "id": "mg-cloud-ops-dashboard",
-        "title": "Cloud-Based Operations Dashboards",
-        "source": "Markman Group",
-        "resumeRefs": [
-          "Built cloud-based operations dashboards enabling real-time KPI monitoring, cash flow analysis, and variance reporting"
-        ],
-        "skills": [
-          "Operational Dashboards",
-          "Power BI",
-          "Reporting Systems",
-          "Performance Visibility"
-        ],
-        "links": {
-          "demo": "/demos/reporting-engine",
-          "data": "/data/mg-reporting"
-        }
+      "tags": [
+        "Automation",
+        "Workflow Automation",
+        "Process Design",
+        "Agriculture",
+        "Systems Design"
+      ]
+    },
+    {
+      "id": "mg-cloud-ops-dashboard",
+      "title": "Cloud-Based Operations Dashboards",
+      "source": "Markman Group",
+      "resumeRefs": [
+        "Built cloud-based operations dashboards enabling real-time KPI monitoring, cash flow analysis, and variance reporting"
+      ],
+      "skills": [
+        "Operational Dashboards",
+        "Power BI",
+        "Reporting Systems",
+        "Performance Visibility"
+      ],
+      "links": {
+        "demo": "/demos/reporting-engine",
+        "data": "/data/mg-reporting"
       },
-      {
-        "id": "mg-pe-reporting-modernization",
-        "title": "PE Portfolio Reporting Modernization",
-        "source": "Markman Group",
-        "resumeRefs": [
-          "Led operational reporting modernization for middle-market PE portfolio company, reducing reporting cycles by 80%"
-        ],
-        "skills": [
-          "Finance Transformation",
-          "KPI Reporting",
-          "Automation COEs",
-          "Process Optimization"
-        ],
-        "links": {
-          "demo": "/demos/reporting-engine"
-        }
+      "tags": [
+        "Reporting",
+        "Dashboarding",
+        "KPI Design",
+        "Analytics",
+        "Cloud",
+        "Variance Analysis"
+      ]
+    },
+    {
+      "id": "mg-pe-reporting-modernization",
+      "title": "PE Portfolio Reporting Modernization",
+      "source": "Markman Group",
+      "resumeRefs": [
+        "Led operational reporting modernization for middle-market PE portfolio company, reducing reporting cycles by 80%"
+      ],
+      "skills": [
+        "Finance Transformation",
+        "KPI Reporting",
+        "Automation COEs",
+        "Process Optimization"
+      ],
+      "links": {
+        "demo": "/demos/reporting-engine"
       },
-      {
-        "id": "metro-governance",
-        "title": "Enterprise Data Governance Framework",
-        "source": "IQVIA / Metropolitan-style work",
-        "resumeRefs": [
-          "Delivered governance framework for enterprise data quality and reporting standards"
-        ],
-        "skills": [
-          "Data Governance",
-          "Metadata Management",
-          "SOX Compliance",
-          "Reporting Standards"
-        ],
-        "links": {
-          "demo": "/demos/governance-explorer",
-          "data": "/data/metropolitan"
-        }
+      "tags": [
+        "Reporting",
+        "Transformation",
+        "Private Equity",
+        "Finance Operations",
+        "Process Design"
+      ]
+    },
+    {
+      "id": "metro-governance",
+      "title": "Enterprise Data Governance Framework",
+      "source": "IQVIA / Metropolitan-style work",
+      "resumeRefs": [
+        "Delivered governance framework for enterprise data quality and reporting standards"
+      ],
+      "skills": [
+        "Data Governance",
+        "Metadata Management",
+        "SOX Compliance",
+        "Reporting Standards"
+      ],
+      "links": {
+        "demo": "/demos/governance-explorer",
+        "data": "/data/metropolitan"
       },
-      {
-        "id": "iqvia-process-mining",
-        "title": "Enterprise Process Mining Capability",
-        "source": "IQVIA",
-        "resumeRefs": [
-          "Built enterprise operations data platform and process mining capabilities"
-        ],
-        "skills": [
-          "Process Mining (Celonis)",
-          "Operational Optimization",
-          "Analytics Engineering"
-        ],
-        "links": {
-          "demo": "/demos/automation"
-        }
+      "tags": [
+        "Governance",
+        "Data Architecture",
+        "Controls",
+        "Reporting"
+      ]
+    },
+    {
+      "id": "iqvia-process-mining",
+      "title": "Enterprise Process Mining Capability",
+      "source": "IQVIA",
+      "resumeRefs": [
+        "Built enterprise operations data platform and process mining capabilities"
+      ],
+      "skills": [
+        "Process Mining (Celonis)",
+        "Operational Optimization",
+        "Analytics Engineering"
+      ],
+      "links": {
+        "demo": "/demos/automation"
       },
-      {
-        "id": "iqvia-shared-services",
-        "title": "Global Shared Services Transformation",
-        "source": "IQVIA",
-        "resumeRefs": [
-          "Achieved $10M (40%) annualized cost savings and 30% headcount reduction"
-        ],
-        "skills": [
-          "Global Shared Services",
-          "Cost Optimization",
-          "Operating Model Design",
-          "Global Delivery Leadership"
-        ],
-        "links": {
-          "demo": "/demos/governance-explorer"
-        }
+      "tags": [
+        "Analytics",
+        "Process Design",
+        "Automation",
+        "Data Architecture"
+      ]
+    },
+    {
+      "id": "iqvia-shared-services",
+      "title": "Global Shared Services Transformation",
+      "source": "IQVIA",
+      "resumeRefs": [
+        "Achieved $10M (40%) annualized cost savings and 30% headcount reduction"
+      ],
+      "skills": [
+        "Global Shared Services",
+        "Cost Optimization",
+        "Operating Model Design",
+        "Global Delivery Leadership"
+      ],
+      "links": {
+        "demo": "/demos/governance-explorer"
       },
-      {
-        "id": "kkr-sap-platform",
-        "title": "SAP Global Financial Platform",
-        "source": "KKR",
-        "resumeRefs": [
-          "Co-designed and implemented SAP financial platform serving as new system of record"
-        ],
-        "skills": [
-          "ERP Systems",
-          "Financial Planning",
-          "Process Standardization"
-        ],
-        "links": {
-          "demo": "/demos/reporting-engine"
-        }
+      "tags": [
+        "Shared Services",
+        "Operating Model",
+        "Transformation",
+        "Leadership"
+      ]
+    },
+    {
+      "id": "kkr-sap-platform",
+      "title": "SAP Global Financial Platform",
+      "source": "KKR",
+      "resumeRefs": [
+        "Co-designed and implemented SAP financial platform serving as new system of record"
+      ],
+      "skills": [
+        "ERP Systems",
+        "Financial Planning",
+        "Process Standardization"
+      ],
+      "links": {
+        "demo": "/demos/reporting-engine"
       },
-      {
-        "id": "braindead-ui",
-        "title": "BrainDead UI Prototype",
-        "source": "BrainDead Project",
-        "resumeRefs": [],
-        "skills": [
-          "UI/UX Prototyping",
-          "Product Thinking",
-          "Frontend Architecture"
-        ],
-        "links": {
-          "demo": "/demos/ui-prototypes",
-          "data": "/data/braindead"
-        }
+      "tags": [
+        "Systems Design",
+        "Integration",
+        "Finance Operations",
+        "Data Architecture"
+      ]
+    },
+    {
+      "id": "braindead-ui",
+      "title": "BrainDead UI Prototype",
+      "source": "BrainDead Project",
+      "resumeRefs": [],
+      "skills": [
+        "UI/UX Prototyping",
+        "Product Thinking",
+        "Frontend Architecture"
+      ],
+      "links": {
+        "demo": "/demos/ui-prototypes",
+        "data": "/data/braindead"
       },
-      {
-        "id": "metro-status-jan-2025",
-        "title": "Metropolitan Status Deck – January 2025",
-        "source": "Metropolitan / Private Credit Assessment",
-        "resumeRefs": [
-          "Delivered current state assessment for private credit firm, documenting organizational structure, reporting workflows, cross-functional dependencies, and data infrastructure to inform transformation roadmap."
-        ],
-        "skills": [
-          "Data Governance",
-          "Reporting Workflows",
-          "Org Design",
-          "Private Credit",
-          "Transformation Roadmap"
-        ],
-        "links": {
-          "deck": "/assets/metropolitan-status-jan-2025.pdf"
-        }
+      "tags": [
+        "Systems Design",
+        "Process Design"
+      ]
+    },
+    {
+      "id": "metro-status-jan-2025",
+      "title": "Metropolitan Status Deck – January 2025",
+      "source": "Metropolitan / Private Credit Assessment",
+      "resumeRefs": [
+        "Delivered current state assessment for private credit firm, documenting organizational structure, reporting workflows, cross-functional dependencies, and data infrastructure to inform transformation roadmap."
+      ],
+      "skills": [
+        "Data Governance",
+        "Reporting Workflows",
+        "Org Design",
+        "Private Credit",
+        "Transformation Roadmap"
+      ],
+      "links": {
+        "deck": "/assets/metropolitan-status-jan-2025.pdf"
       },
-      {
-        "id": "metropolitan-current-state",
-        "title": "Metropolitan Current State Assessment – Final Deliverable",
-        "source": "Markman Group (Private Credit)",
-        "resumeRefs": [
-          "Delivered current state assessment for private credit firm, documenting organizational structure, reporting workflows, cross-functional dependencies, and data infrastructure to inform transformation roadmap."
-        ],
-        "skills": [
-          "Org Design",
-          "Process Mapping",
-          "Reporting Workflows",
-          "Cross-functional Analysis",
-          "Data Infrastructure",
-          "Governance",
-          "Transformation Roadmap"
-        ],
-        "links": {
-          "deck": "/assets/metropolitan-current-state.pdf"
-        }
+      "tags": [
+        "Reporting",
+        "Governance",
+        "Private Equity",
+        "Transformation",
+        "Data Architecture"
+      ]
+    },
+    {
+      "id": "metropolitan-current-state",
+      "title": "Metropolitan Current State Assessment – Final Deliverable",
+      "source": "Markman Group (Private Credit)",
+      "resumeRefs": [
+        "Delivered current state assessment for private credit firm, documenting organizational structure, reporting workflows, cross-functional dependencies, and data infrastructure to inform transformation roadmap."
+      ],
+      "skills": [
+        "Org Design",
+        "Process Mapping",
+        "Reporting Workflows",
+        "Cross-functional Analysis",
+        "Data Infrastructure",
+        "Governance",
+        "Transformation Roadmap"
+      ],
+      "links": {
+        "deck": "/assets/metropolitan-current-state.pdf"
       },
-      {
-        "id": "metropolitan-quick-wins",
-        "title": "Metropolitan Quick Wins Proposal",
-        "source": "Markman Group (Private Credit)",
-        "resumeRefs": [
-          "Designed and proposed a Quick Wins roadmap for a private credit firm to accelerate reporting modernization, governance improvements, and analytics visibility."
-        ],
-        "skills": [
-          "Reporting Modernization",
-          "KPI Visibility",
-          "Data Governance",
-          "Process Transformation",
-          "PE-Style Quick Wins"
-        ],
-        "links": {
-          "deck": "/assets/metropolitan-quick-wins.pptx"
-        }
+      "tags": [
+        "Governance",
+        "Reporting",
+        "Private Equity",
+        "Transformation",
+        "Data Architecture",
+        "Process Design"
+      ]
+    },
+    {
+      "id": "metropolitan-quick-wins",
+      "title": "Metropolitan Quick Wins Proposal",
+      "source": "Markman Group (Private Credit)",
+      "resumeRefs": [
+        "Designed and proposed a Quick Wins roadmap for a private credit firm to accelerate reporting modernization, governance improvements, and analytics visibility."
+      ],
+      "skills": [
+        "Reporting Modernization",
+        "KPI Visibility",
+        "Data Governance",
+        "Process Transformation",
+        "PE-Style Quick Wins"
+      ],
+      "links": {
+        "deck": "/assets/metropolitan-quick-wins.pptx"
       },
-      {
-        "id": "metropolitan-diagram",
-        "title": "Metropolitan System & Workflow Diagram",
-        "source": "Metropolitan / Current State Documentation",
-        "resumeRefs": [
-          "Mapped enterprise reporting workflows, data sources, and cross-functional dependencies during current state assessment."
-        ],
-        "skills": [
-          "Process Mapping",
-          "Data Flow Design",
-          "System Architecture",
-          "Cross-functional Analysis",
-          "Governance"
-        ],
-        "links": {
-          "deck": "/assets/metropolitan-diagram.pdf"
-        }
+      "tags": [
+        "Reporting",
+        "Governance",
+        "Transformation",
+        "Private Equity",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "metropolitan-diagram",
+      "title": "Metropolitan System & Workflow Diagram",
+      "source": "Metropolitan / Current State Documentation",
+      "resumeRefs": [
+        "Mapped enterprise reporting workflows, data sources, and cross-functional dependencies during current state assessment."
+      ],
+      "skills": [
+        "Process Mapping",
+        "Data Flow Design",
+        "System Architecture",
+        "Cross-functional Analysis",
+        "Governance"
+      ],
+      "links": {
+        "deck": "/assets/metropolitan-diagram.pdf"
       },
-      {
-        "id": "iqvia-automation-analytics",
-        "title": "IQVIA GFSS Automation & Analytics Expansion (A&A) – V25",
-        "source": "IQVIA Global Shared Services",
-        "resumeRefs": [
-          "Led automation and analytics expansion across GFSS, insourcing 200 TCS employees, building automation COE, and deploying 400+ Alteryx workflows.",
-          "Delivered enterprise process mining, advanced analytics, and standardized reporting with measurable savings across Finance."
-        ],
-        "skills": [
-          "Automation COE",
-          "Process Mining (Celonis)",
-          "Reporting Modernization",
-          "Data Quality & Governance",
-          "Shared Services Transformation",
-          "Python Automation",
-          "Power Platform",
-          "Analytics Architecture"
-        ],
-        "links": {
-          "deck": "/assets/iqvia-automation-analytics.pdf"
-        }
+      "tags": [
+        "Process Design",
+        "Data Architecture",
+        "Governance",
+        "Reporting"
+      ]
+    },
+    {
+      "id": "iqvia-automation-analytics",
+      "title": "IQVIA GFSS Automation & Analytics Expansion (A&A) – V25",
+      "source": "IQVIA Global Shared Services",
+      "resumeRefs": [
+        "Led automation and analytics expansion across GFSS, insourcing 200 TCS employees, building automation COE, and deploying 400+ Alteryx workflows.",
+        "Delivered enterprise process mining, advanced analytics, and standardized reporting with measurable savings across Finance."
+      ],
+      "skills": [
+        "Automation COE",
+        "Process Mining (Celonis)",
+        "Reporting Modernization",
+        "Data Quality & Governance",
+        "Shared Services Transformation",
+        "Python Automation",
+        "Power Platform",
+        "Analytics Architecture"
+      ],
+      "links": {
+        "deck": "/assets/iqvia-automation-analytics.pdf"
       },
-      {
-        "id": "iqvia-eda-program-review",
-        "title": "IQVIA Enterprise Data & Analytics Program Review – Business Operations",
-        "source": "IQVIA Enterprise Data & Analytics",
-        "resumeRefs": [
-          "Built enterprise reporting platforms across Financials/OPEX, Go-To-Market, and Productivity KPIs using Alteryx, Azure SQL, and Power BI.",
-          "Developed dashboards for EBITDA, revenue, sales pipeline, OPEX variance, and business unit performance across global data sources."
-        ],
-        "skills": [
-          "Data Architecture",
-          "Financial Reporting",
-          "OPEX Variance Analytics",
-          "Sales & Pipeline Analytics",
-          "Enterprise Data Modeling",
-          "Transformation Leadership",
-          "Value Creation"
-        ],
-        "links": {
-          "deck": "/assets/iqvia-eda-program-review.pdf"
-        }
+      "tags": [
+        "Automation",
+        "Analytics",
+        "Shared Services",
+        "Process Design",
+        "Reporting",
+        "Data Architecture"
+      ]
+    },
+    {
+      "id": "iqvia-eda-program-review",
+      "title": "IQVIA Enterprise Data & Analytics Program Review – Business Operations",
+      "source": "IQVIA Enterprise Data & Analytics",
+      "resumeRefs": [
+        "Built enterprise reporting platforms across Financials/OPEX, Go-To-Market, and Productivity KPIs using Alteryx, Azure SQL, and Power BI.",
+        "Developed dashboards for EBITDA, revenue, sales pipeline, OPEX variance, and business unit performance across global data sources."
+      ],
+      "skills": [
+        "Data Architecture",
+        "Financial Reporting",
+        "OPEX Variance Analytics",
+        "Sales & Pipeline Analytics",
+        "Enterprise Data Modeling",
+        "Transformation Leadership",
+        "Value Creation"
+      ],
+      "links": {
+        "deck": "/assets/iqvia-eda-program-review.pdf"
       },
-      {
-        "id": "iqvia-q2-controller",
-        "title": "Q2 Solutions – Global Controller (IQVIA/Quest JV)",
-        "source": "IQVIA / Q² Solutions Joint Venture",
-        "resumeRefs": [
-          "Oversaw all accounting operations and reporting for the Q² Solutions joint venture between IQVIA and Quest Diagnostics.",
-          "Designed and implemented SOX/GAAP controls supporting rapid business expansion and JV compliance.",
-          "Led global monthly close processes, intercompany eliminations, and JV financial consolidation.",
-          "Partnered with finance, operations, and technology teams to strengthen reporting accuracy and operational performance during rapid growth."
-        ],
-        "skills": [
-          "Global Accounting Operations",
-          "SOX Compliance",
-          "US GAAP",
-          "Controls Framework Design",
-          "Financial Close Acceleration",
-          "JV Consolidation",
-          "Financial Reporting",
-          "Operational Excellence"
-        ],
-        "links": {}
+      "tags": [
+        "Reporting",
+        "Analytics",
+        "Data Architecture",
+        "KPI Design",
+        "Dashboarding",
+        "Finance Operations"
+      ]
+    },
+    {
+      "id": "iqvia-q2-controller",
+      "title": "Q2 Solutions – Global Controller (IQVIA/Quest JV)",
+      "source": "IQVIA / Q² Solutions Joint Venture",
+      "resumeRefs": [
+        "Oversaw all accounting operations and reporting for the Q² Solutions joint venture between IQVIA and Quest Diagnostics.",
+        "Designed and implemented SOX/GAAP controls supporting rapid business expansion and JV compliance.",
+        "Led global monthly close processes, intercompany eliminations, and JV financial consolidation.",
+        "Partnered with finance, operations, and technology teams to strengthen reporting accuracy and operational performance during rapid growth."
+      ],
+      "skills": [
+        "Global Accounting Operations",
+        "SOX Compliance",
+        "US GAAP",
+        "Controls Framework Design",
+        "Financial Close Acceleration",
+        "JV Consolidation",
+        "Financial Reporting",
+        "Operational Excellence"
+      ],
+      "links": {},
+      "tags": [
+        "Finance Operations",
+        "Controls",
+        "Reporting",
+        "Healthcare / CRO"
+      ]
+    },
+    {
+      "id": "laurel-ag-project-closure",
+      "title": "Laurel AG – Proposal, Rental & Warehousing Platform (Project Closure)",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Designed and delivered a complete proposal, rental, and warehousing platform for Laurel AG, spanning design, development, testing, UAT, and hypercare.",
+        "Led automation of estimation, rental coordination, and field operations workflows used across the irrigation business.",
+        "Established long-term licensing, support, and improvement framework covering product lifecycle, maintenance, and new feature development.",
+        "Delivered a functional V1 application supporting core operational processes such as equipment rental, inventory visibility, and proposal generation."
+      ],
+      "skills": [
+        "Process Automation",
+        "Operational Workflows",
+        "Custom App Development",
+        "Customer Estimation Tools",
+        "Field Operations",
+        "Product Lifecycle Management",
+        "Support & Maintenance Design",
+        "Client Delivery"
+      ],
+      "links": {
+        "deck": "/assets/laurel-ag-project-closure.pptx"
       },
-      {
-        "id": "laurel-ag-project-closure",
-        "title": "Laurel AG – Proposal, Rental & Warehousing Platform (Project Closure)",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Designed and delivered a complete proposal, rental, and warehousing platform for Laurel AG, spanning design, development, testing, UAT, and hypercare.",
-          "Led automation of estimation, rental coordination, and field operations workflows used across the irrigation business.",
-          "Established long-term licensing, support, and improvement framework covering product lifecycle, maintenance, and new feature development.",
-          "Delivered a functional V1 application supporting core operational processes such as equipment rental, inventory visibility, and proposal generation."
-        ],
-        "skills": [
-          "Process Automation",
-          "Operational Workflows",
-          "Custom App Development",
-          "Customer Estimation Tools",
-          "Field Operations",
-          "Product Lifecycle Management",
-          "Support & Maintenance Design",
-          "Client Delivery"
-        ],
-        "links": {
-          "deck": "/assets/laurel-ag-project-closure.pptx"
-        }
+      "tags": [
+        "Automation",
+        "Workflow Automation",
+        "Systems Design",
+        "Agriculture",
+        "Process Design"
+      ]
+    },
+    {
+      "id": "laurel-proposal-platform-features",
+      "title": "Laurel AG – Proposal Web Platform Features",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Designed and delivered the full Proposal Web Platform for Laurel AG, including opportunity management, multi-stage estimation workflow, CAD extraction, material list automation, task mapping, and proposal generation.",
+        "Built complex workflow logic supporting 8-stage operational process from task selection to final document output including NetSuite formatted extracts.",
+        "Implemented CSV-based data import validation, labor/product cost management, vendor cost auditing, and automated KPI calculation (GP%, cost variance)."
+      ],
+      "skills": [
+        "Workflow Automation",
+        "Product Design",
+        "Estimation Engine Architecture",
+        "Field Operations",
+        "Document Generation",
+        "UI/UX Structure",
+        "Data Extraction",
+        "Operational Transformation"
+      ],
+      "links": {
+        "deck": "/assets/laurel-proposal-features.pdf"
       },
-      {
-        "id": "laurel-proposal-platform-features",
-        "title": "Laurel AG – Proposal Web Platform Features",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Designed and delivered the full Proposal Web Platform for Laurel AG, including opportunity management, multi-stage estimation workflow, CAD extraction, material list automation, task mapping, and proposal generation.",
-          "Built complex workflow logic supporting 8-stage operational process from task selection to final document output including NetSuite formatted extracts.",
-          "Implemented CSV-based data import validation, labor/product cost management, vendor cost auditing, and automated KPI calculation (GP%, cost variance)."
-        ],
-        "skills": [
-          "Workflow Automation",
-          "Product Design",
-          "Estimation Engine Architecture",
-          "Field Operations",
-          "Document Generation",
-          "UI/UX Structure",
-          "Data Extraction",
-          "Operational Transformation"
-        ],
-        "links": {
-          "deck": "/assets/laurel-proposal-features.pdf"
-        }
+      "tags": [
+        "Workflow Automation",
+        "Systems Design",
+        "Process Design",
+        "Agriculture"
+      ]
+    },
+    {
+      "id": "laurel-licensing-sow",
+      "title": "Laurel AG – Licensing, Maintenance & Support SOW",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Defined the licensing, maintenance, and support model for the Laurel AG Web Application Platform, establishing an operational framework for long-term application sustainability.",
+        "Created the SLA-driven support structure with incident prioritization, remediation timelines, platform updates, and security patch workflows.",
+        "Established platform licensing terms, monthly retainers, and annual prepayment discount structures for enterprise-grade support."
+      ],
+      "skills": [
+        "Product Lifecycle Management",
+        "SLA Design",
+        "Licensing Models",
+        "Client Support Architecture",
+        "Platform Maintenance",
+        "Operational Contracts",
+        "Cloud Application Support"
+      ],
+      "links": {
+        "deck": "/assets/laurel-licensing-sow.pdf"
       },
-      {
-        "id": "laurel-licensing-sow",
-        "title": "Laurel AG – Licensing, Maintenance & Support SOW",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Defined the licensing, maintenance, and support model for the Laurel AG Web Application Platform, establishing an operational framework for long-term application sustainability.",
-          "Created the SLA-driven support structure with incident prioritization, remediation timelines, platform updates, and security patch workflows.",
-          "Established platform licensing terms, monthly retainers, and annual prepayment discount structures for enterprise-grade support."
-        ],
-        "skills": [
-          "Product Lifecycle Management",
-          "SLA Design",
-          "Licensing Models",
-          "Client Support Architecture",
-          "Platform Maintenance",
-          "Operational Contracts",
-          "Cloud Application Support"
-        ],
-        "links": {
-          "deck": "/assets/laurel-licensing-sow.pdf"
-        }
+      "tags": [
+        "Systems Design",
+        "Process Design"
+      ]
+    },
+    {
+      "id": "laurel-rental-application-handover",
+      "title": "Laurel AG – Rental Application User Manual & Operational Workflow",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Designed and delivered the Rental Application for Laurel AG, supporting real-time equipment rental, delivery, return, inspection, and stock adjustment workflows.",
+        "Digitized an 8-stage operational process, replacing manual coordination with a structured system covering order management, delivery routing, customer handover, return logistics, inspection, and warehouse reconciliation.",
+        "Implemented master data management for products, warehouses, customers, account managers, and integrated it with a map-based operational interface.",
+        "Built validations, routing logic, status tracking, stock adjustments, workflow automation, document attachments, and CSV import/export capabilities."
+      ],
+      "skills": [
+        "Operational Workflow Automation",
+        "Logistics & Field Operations",
+        "Rental Lifecycle Management",
+        "Master Data Systems",
+        "UI/UX for Operations",
+        "Inventory & Stock Management",
+        "Document Workflow",
+        "Business Rules & Validation Logic"
+      ],
+      "links": {
+        "deck": "/assets/laurel-rental-application-handover.pdf"
       },
-      {
-        "id": "laurel-rental-application-handover",
-        "title": "Laurel AG – Rental Application User Manual & Operational Workflow",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Designed and delivered the Rental Application for Laurel AG, supporting real-time equipment rental, delivery, return, inspection, and stock adjustment workflows.",
-          "Digitized an 8-stage operational process, replacing manual coordination with a structured system covering order management, delivery routing, customer handover, return logistics, inspection, and warehouse reconciliation.",
-          "Implemented master data management for products, warehouses, customers, account managers, and integrated it with a map-based operational interface.",
-          "Built validations, routing logic, status tracking, stock adjustments, workflow automation, document attachments, and CSV import/export capabilities."
-        ],
-        "skills": [
-          "Operational Workflow Automation",
-          "Logistics & Field Operations",
-          "Rental Lifecycle Management",
-          "Master Data Systems",
-          "UI/UX for Operations",
-          "Inventory & Stock Management",
-          "Document Workflow",
-          "Business Rules & Validation Logic"
-        ],
-        "links": {
-          "deck": "/assets/laurel-rental-application-handover.pdf"
-        }
+      "tags": [
+        "Workflow Automation",
+        "Systems Design",
+        "Process Design",
+        "Agriculture",
+        "Supply Chain"
+      ]
+    },
+    {
+      "id": "laurel-rental-business-doc",
+      "title": "Laurel AG – Business Documentation for Rental Process Application",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Authored comprehensive business documentation outlining end-to-end rental workflows, customer interactions, data validation patterns, reporting models, and operational controls.",
+        "Defined user stories, business rules, and multi-stage rental lifecycle processes across delivery, return, check-out, inspection, and stock adjustment stages.",
+        "Captured real operational complexity by modeling customer locations, warehouse structures, recurring orders, master data rules, and order-to-cash logic."
+      ],
+      "skills": [
+        "Business Analysis",
+        "Workflow Design",
+        "Operational Transformation",
+        "Requirements Gathering",
+        "Functional Specification",
+        "Process Mapping",
+        "Data Governance",
+        "Cross-functional Delivery"
+      ],
+      "links": {
+        "deck": "/assets/laurel-rental-business-doc.pdf"
       },
-      {
-        "id": "laurel-rental-business-doc",
-        "title": "Laurel AG – Business Documentation for Rental Process Application",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Authored comprehensive business documentation outlining end-to-end rental workflows, customer interactions, data validation patterns, reporting models, and operational controls.",
-          "Defined user stories, business rules, and multi-stage rental lifecycle processes across delivery, return, check-out, inspection, and stock adjustment stages.",
-          "Captured real operational complexity by modeling customer locations, warehouse structures, recurring orders, master data rules, and order-to-cash logic."
-        ],
-        "skills": [
-          "Business Analysis",
-          "Workflow Design",
-          "Operational Transformation",
-          "Requirements Gathering",
-          "Functional Specification",
-          "Process Mapping",
-          "Data Governance",
-          "Cross-functional Delivery"
-        ],
-        "links": {
-          "deck": "/assets/laurel-rental-business-doc.pdf"
-        }
+      "tags": [
+        "Process Design",
+        "Workflow Automation",
+        "Governance",
+        "Agriculture"
+      ]
+    },
+    {
+      "id": "laurel-rental-tech-spec",
+      "title": "Laurel AG – Technical Specification for Rental Process Application",
+      "source": "Markman Group (Laurel AG Engagement)",
+      "resumeRefs": [
+        "Designed full technical architecture for the Rental Process Application, including database schema, backend logic, API layers, validation rules, and master data systems.",
+        "Authored a 120-page technical specification covering data models, UI/UX behavior, workflow logic, role-based permissions, map interface integration, and analytics/report generation.",
+        "Defined real-time operations algorithms for delivery, check-out, check-in, inspection, recurring orders, stock adjustments, and multi-location inventory tracking."
+      ],
+      "skills": [
+        "Systems Architecture",
+        "Database Design",
+        "Enterprise Application Development",
+        "API Integration",
+        "Workflow Automation",
+        "Data Modeling",
+        "Inventory & Logistics Systems",
+        "Technical Specification Writing"
+      ],
+      "links": {
+        "deck": "/assets/laurel-rental-tech-spec.pdf"
       },
-      {
-        "id": "laurel-rental-tech-spec",
-        "title": "Laurel AG – Technical Specification for Rental Process Application",
-        "source": "Markman Group (Laurel AG Engagement)",
-        "resumeRefs": [
-          "Designed full technical architecture for the Rental Process Application, including database schema, backend logic, API layers, validation rules, and master data systems.",
-          "Authored a 120-page technical specification covering data models, UI/UX behavior, workflow logic, role-based permissions, map interface integration, and analytics/report generation.",
-          "Defined real-time operations algorithms for delivery, check-out, check-in, inspection, recurring orders, stock adjustments, and multi-location inventory tracking."
-        ],
-        "skills": [
-          "Systems Architecture",
-          "Database Design",
-          "Enterprise Application Development",
-          "API Integration",
-          "Workflow Automation",
-          "Data Modeling",
-          "Inventory & Logistics Systems",
-          "Technical Specification Writing"
-        ],
-        "links": {
-          "deck": "/assets/laurel-rental-tech-spec.pdf"
-        }
-      }
-    ]
-  }
-  
+      "tags": [
+        "Systems Design",
+        "Data Architecture",
+        "Data Modeling",
+        "Workflow Automation",
+        "Agriculture"
+      ]
+    }
+  ]
+}

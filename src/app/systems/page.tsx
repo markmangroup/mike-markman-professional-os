@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
+import { systemsMeta } from "@/core/metadata/systems";
 
 type SystemCluster = {
   id: string;
@@ -210,36 +211,24 @@ export default function SystemsPage() {
         label,
         description: sidebarSummary,
       }))}
-      meta={{
-        what:
-          "A structured view of the major reporting, automation, governance, and operational systems I've built across my career.",
-        why: "These systems represent the core of how I create clarity, structure, scale, and decision-making strength inside organizations.",
-        relatedSkills: [
-          "Reporting",
-          "Governance",
-          "Automation",
-          "Data Modeling",
-          "Rule Design",
-        ],
-        relatedSystems: [],
-        relatedEvidence: [],
-      }}
+      meta={systemsMeta}
+      tags={systemsMeta.tags}
     >
-      <div className="space-y-16">
+      <div className="space-y-6">
         {systemClusters.map((cluster) => (
-          <section
+          <div
             key={cluster.id}
             id={cluster.id}
-            className="space-y-6 scroll-mt-32 border-b border-border/40 pb-12 last:border-none last:pb-0"
+            className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs dark:border-neutral-800 dark:bg-neutral-900 space-y-3 scroll-mt-32"
           >
             <header className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
                 {cluster.tagline}
               </p>
-              <h2 className="text-2xl font-semibold tracking-tight">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
                 {cluster.title}
               </h2>
-              <p className="text-base text-muted-foreground">
+              <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 max-w-prose">
                 {cluster.description}
               </p>
             </header>
@@ -254,18 +243,18 @@ export default function SystemsPage() {
                 <Link
                   key={link.href + link.label}
                   href={link.href}
-                  className="group flex w-full flex-col rounded-2xl border border-border/60 bg-muted/40 px-4 py-3 transition hover:border-primary/60 hover:bg-background/70 sm:w-auto"
+                  className="group flex w-full flex-col rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 transition hover:border-blue-500/60 hover:bg-blue-50/50 dark:border-neutral-800 dark:bg-neutral-900/60 dark:hover:border-blue-500/60 dark:hover:bg-blue-950/20 sm:w-auto"
                 >
-                  <span className="text-sm font-semibold tracking-tight group-hover:text-primary">
+                  <span className="text-sm font-semibold tracking-tight text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                     {link.label}
                   </span>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-xs text-gray-600 dark:text-gray-400">
                     {link.description}
                   </span>
                 </Link>
               ))}
             </div>
-          </section>
+          </div>
         ))}
       </div>
     </PageLayout>
@@ -274,18 +263,18 @@ export default function SystemsPage() {
 
 function DetailCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-2xl border border-border/60 bg-background/60 p-5">
-      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+    <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 dark:border-neutral-800 dark:bg-neutral-900/60">
+      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
         {title}
       </p>
-      <ul className="mt-3 space-y-2 text-sm text-foreground">
+      <ul className="mt-3 space-y-2">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-2">
             <span
               aria-hidden="true"
-              className="mt-2 inline-block size-1.5 rounded-full bg-primary"
+              className="mt-2 inline-block size-1.5 rounded-full bg-blue-500"
             />
-            <span className="text-base leading-relaxed text-muted-foreground">
+            <span className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
               {item}
             </span>
           </li>
@@ -294,4 +283,3 @@ function DetailCard({ title, items }: { title: string; items: string[] }) {
     </div>
   );
 }
-
