@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import AccentLine from "@/components/AccentLine";
 
 export default function Home() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 space-y-20">
       {/* Hero Section */}
       <section className="text-center space-y-6">
+        <div className="flex justify-center mb-4">
+          <AccentLine orientation="horizontal" length="60px" thickness="3px" />
+        </div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           Mike Markman
         </h1>
@@ -72,7 +76,10 @@ export default function Home() {
 
       {/* Encyclopedia Section Grid */}
       <section className="space-y-8">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Explore the Encyclopedia</h2>
+        <div className="flex items-center gap-3 mb-2">
+          <AccentLine orientation="vertical" length="30px" />
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Explore the Encyclopedia</h2>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <HomeTile title="Career" href="/career" description="Timeline of leadership roles and impact across finance, analytics, and operations." />
@@ -90,7 +97,10 @@ export default function Home() {
 
       {/* Featured Systems */}
       <section className="space-y-8">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Featured Systems</h2>
+        <div className="flex items-center gap-3 mb-2">
+          <AccentLine orientation="vertical" length="30px" />
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Featured Systems</h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HomeTile title="Reporting Engine" href="/demos/reporting-engine" description="Unified financial, operational, and commercial reporting systems." />

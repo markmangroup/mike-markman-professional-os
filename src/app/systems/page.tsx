@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import { systemsMeta } from "@/core/metadata/systems";
+import AccentLine from "@/components/AccentLine";
 
 type SystemCluster = {
   id: string;
@@ -225,9 +226,12 @@ export default function SystemsPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
                 {cluster.tagline}
               </p>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                {cluster.title}
-              </h2>
+              <div className="flex items-center gap-3">
+                <AccentLine orientation="vertical" length="32px" />
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {cluster.title}
+                </h2>
+              </div>
               <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 max-w-prose">
                 {cluster.description}
               </p>
