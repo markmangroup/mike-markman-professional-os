@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/TopBar";
+import NavBar from "@/components/NavBar";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import { InterviewModeProvider } from "@/context/InterviewModeContext";
 import { InterviewModeBody } from "@/components/InterviewModeBody";
@@ -36,10 +37,11 @@ export default function RootLayout({
           <InterviewModeProvider>
             <InterviewModeBody>
               <div className="min-h-screen flex flex-col bg-background text-foreground">
-                <TopBar />
-                <div className="flex-1">
+                <NavBar />
+                <Breadcrumbs />
+                <main className="flex-1">
                   {children}
-                </div>
+                </main>
                 <Footer />
               </div>
             </InterviewModeBody>
