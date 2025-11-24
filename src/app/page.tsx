@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 export default function Home() {
-  const [showAllSections, setShowAllSections] = useState(false);
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 space-y-20">
       {/* Hero Section */}
@@ -70,47 +67,29 @@ export default function Home() {
 
       {/* Encyclopedia Section Grid */}
       <section className="space-y-8">
-        <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold">Explore the Encyclopedia</h2>
-        </div>
+        <h2 className="text-3xl font-bold">Explore the Encyclopedia</h2>
 
-        {/* Core 4 sections - always visible */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <HomeTile title="Career" href="/career" description="Timeline of leadership roles and impact across finance, analytics, and operations." />
 
           <HomeTile title="Resume" href="/resume" description="High-signal resume backed by structured metadata and real artifacts." />
 
+          <HomeTile title="Skills" href="/skills" description="Mapped capabilities across finance, analytics, reporting, governance, and automation." />
+
           <HomeTile title="Systems" href="/systems" description="The systems, platforms, and operational models I've built and deployed." />
 
+          <HomeTile title="Evidence" href="/evidence" description="Real deliverables, documents, diagrams, reporting samples, and specifications." />
+
           <HomeTile title="Cases" href="/cases" description="Compact breakdowns of real transformations and key outcomes." />
-        </div>
 
-        {/* Expandable additional sections */}
-        {showAllSections && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-            <HomeTile title="Skills" href="/skills" description="Mapped capabilities across finance, analytics, reporting, governance, and automation." />
+          <HomeTile title="Scenarios" href="/scenarios" description="How I navigate real-world situations: scaling, fixing, structuring, revealing hidden patterns." />
 
-            <HomeTile title="Evidence" href="/evidence" description="Real deliverables, documents, diagrams, reporting samples, and specifications." />
+          <HomeTile title="Demos" href="/demos/reporting-engine" description="Interactive prototypes of reporting engines, governance explorers, rule engines, and more." />
 
-            <HomeTile title="Scenarios" href="/scenarios" description="How I navigate real-world situations: scaling, fixing, structuring, revealing hidden patterns." />
+          <HomeTile title="Adapters" href="/adapters/fortrea" description="Company-specific pages translating my background into context for different orgs." />
 
-            <HomeTile title="Demos" href="/demos/reporting-engine" description="Interactive prototypes of reporting engines, governance explorers, rule engines, and more." />
+          <HomeTile title="Search" href="/search" description="Semantic search across career history, systems, evidence, cases, and skills." />
 
-            <HomeTile title="Adapters" href="/adapters/fortrea" description="Company-specific pages translating my background into context for different orgs." />
-
-            <HomeTile title="Search" href="/search" description="Semantic search across career history, systems, evidence, cases, and skills." />
-          </div>
-        )}
-
-        {/* Toggle button */}
-        <div className="flex justify-center pt-4">
-          <Button
-            variant="outline"
-            onClick={() => setShowAllSections(!showAllSections)}
-            className="min-w-[200px]"
-          >
-            {showAllSections ? "Show Less" : "View All Sections"}
-          </Button>
         </div>
       </section>
 
