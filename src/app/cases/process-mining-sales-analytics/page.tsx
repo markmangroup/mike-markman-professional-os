@@ -42,7 +42,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const slides: Slide[] = [
+  const getSlides = (isDarkMode: boolean): Slide[] => [
     {
       id: 1,
       title: "Process Mining & Sales Analytics",
@@ -105,9 +105,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl">
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
           {/* Background Pattern - Subtle */}
-          <div className="pointer-events-none absolute inset-0 opacity-40">
+          <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "opacity-10" : "opacity-20"}`}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
@@ -115,16 +115,16 @@ export default function ProcessMiningSalesAnalyticsPage() {
             {/* Split Layout: Before | Arrow | Impact */}
             <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr]">
               {/* Before Card - Better Contrast */}
-              <Card className="relative overflow-hidden border-2 border-red-300/80 bg-white shadow-lg">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent" />
+              <Card className={`relative overflow-hidden border-2 shadow-lg ${isDarkMode ? "border-red-700/70 bg-red-950/40" : "border-red-300/80 bg-white"}`}>
+                <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "" : "bg-gradient-to-br from-red-50/50 via-transparent to-transparent"}`} />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-red-100 px-3 py-2 text-red-700 shadow-sm">
-                      <AlertTriangle className="h-5 w-5" />
+                    <div className={`rounded-xl px-3 py-2 shadow-sm ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
+                      <AlertTriangle className={`h-5 w-5 ${isDarkMode ? "text-red-400" : "text-red-700"}`} />
                     </div>
                     <div>
-                      <CardTitle className="text-lg font-semibold text-slate-900">Before: Manual & Fragmented</CardTitle>
-                      <p className="mt-1 text-sm text-slate-600">Low frequency reporting and disconnected handoffs slow decisions.</p>
+                      <CardTitle className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-slate-900"}`}>Before: Manual & Fragmented</CardTitle>
+                      <p className={`mt-1 text-sm ${isDarkMode ? "text-gray-300" : "text-slate-600"}`}>Low frequency reporting and disconnected handoffs slow decisions.</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -138,13 +138,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                      className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-300/90 bg-white"}`}
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900">
-                        <span className="h-2 w-2 rounded-full bg-red-600" aria-hidden />
+                      <div className={`flex items-center gap-2 text-sm font-semibold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>
+                        <span className={`h-2 w-2 rounded-full ${isDarkMode ? "bg-red-400" : "bg-red-600"}`} aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border-2 border-red-400/90 bg-red-100 px-3 py-1 text-xs font-bold text-red-800 shadow-sm">
+                      <span className={`rounded-full border-2 px-3 py-1 text-xs font-bold shadow-sm ${isDarkMode ? "border-red-600/70 bg-red-900/50 text-red-200" : "border-red-400/90 bg-red-100 text-red-800"}`}>
                         {item.chip}
                       </span>
                     </div>
@@ -154,20 +154,20 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
               {/* Center Arrow - Centered Vertically with Self Alignment */}
               <div className="flex items-center justify-center self-center">
-                <ArrowRight className="h-12 w-12 text-slate-500" strokeWidth={2.5} />
+                <ArrowRight className={`h-12 w-12 ${isDarkMode ? "text-gray-400" : "text-slate-500"}`} strokeWidth={2.5} />
               </div>
 
               {/* Impact Needed Card - Better Contrast */}
-              <Card className="relative overflow-hidden border-2 border-blue-300/80 bg-white shadow-lg">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent" />
+              <Card className={`relative overflow-hidden border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/40" : "border-blue-300/80 bg-white"}`}>
+                <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "" : "bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent"}`} />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-700 shadow-sm">
-                      <Target className="h-5 w-5" />
+                    <div className={`rounded-xl px-3 py-2 shadow-sm ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                      <Target className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-700"}`} />
                     </div>
                     <div>
-                      <CardTitle className="text-lg font-semibold text-slate-900">Impact Needed</CardTitle>
-                      <p className="mt-1 text-sm text-slate-600">Continuous visibility, faster motions, and confident decision-making.</p>
+                      <CardTitle className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-slate-900"}`}>Impact Needed</CardTitle>
+                      <p className={`mt-1 text-sm ${isDarkMode ? "text-gray-300" : "text-slate-600"}`}>Continuous visibility, faster motions, and confident decision-making.</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -181,13 +181,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border-2 border-blue-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                      className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-300/90 bg-white"}`}
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900">
-                        <span className="h-2 w-2 rounded-full bg-blue-600" aria-hidden />
+                      <div className={`flex items-center gap-2 text-sm font-semibold ${isDarkMode ? "text-blue-200" : "text-blue-900"}`}>
+                        <span className={`h-2 w-2 rounded-full ${isDarkMode ? "bg-blue-400" : "bg-blue-600"}`} aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border-2 border-blue-400/90 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800 shadow-sm">
+                      <span className={`rounded-full border-2 px-3 py-1 text-xs font-bold shadow-sm ${isDarkMode ? "border-blue-600/70 bg-blue-900/50 text-blue-200" : "border-blue-400/90 bg-blue-100 text-blue-800"}`}>
                         {item.chip}
                       </span>
                     </div>
@@ -204,106 +204,106 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "Process Mining: Revealing Hidden Patterns",
       type: "visual",
       content: (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl">
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
           {/* Background Pattern - Subtle */}
-          <div className="pointer-events-none absolute inset-0 opacity-40">
+          <div className="pointer-events-none absolute inset-0 opacity-20">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
           <div className="relative mx-auto max-w-6xl space-y-6">
-            <Card className="border-2 border-gray-200 shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100/50">
-                <CardTitle className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-100 rounded-lg">
-                    <Workflow className="h-5 w-5 text-blue-600" />
+            <Card className={`border-2 shadow-lg ${isDarkMode ? "border-neutral-700 bg-neutral-800" : "border-gray-200 bg-white"}`}>
+              <CardHeader className={isDarkMode ? "bg-neutral-800/50 border-b border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}>
+                <CardTitle className={`flex items-center gap-3 ${isDarkMode ? "text-white" : ""}`}>
+                  <div className={`p-2 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                    <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   </div>
                   <span>Key Process Deviations Discovered</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-300/90 bg-white"}`}>
                     <div className="flex items-center gap-3 flex-1">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600">245</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>245</div>
+                        <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>opps</div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-red-900">Skip "Qualifying" stage</p>
-                        <p className="text-xs text-muted-foreground mt-1">Move directly to "Proposal Development"</p>
+                        <p className={`text-sm font-semibold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>Skip "Qualifying" stage</p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Move directly to "Proposal Development"</p>
                       </div>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-red-400 flex-shrink-0" />
+                    <ArrowRight className={`h-5 w-5 flex-shrink-0 ${isDarkMode ? "text-red-400" : "text-red-500"}`} />
                   </div>
                   
-                  <div className="flex items-center justify-between rounded-xl border-2 border-orange-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-300/90 bg-white"}`}>
                     <div className="flex items-center gap-3 flex-1">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-orange-600">79</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>79</div>
+                        <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>opps</div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-orange-900">Direct to "Proposal Delivery"</p>
-                        <p className="text-xs text-muted-foreground mt-1">Without proper qualification</p>
+                        <p className={`text-sm font-semibold ${isDarkMode ? "text-orange-200" : "text-orange-900"}`}>Direct to "Proposal Delivery"</p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Without proper qualification</p>
                       </div>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-orange-400 flex-shrink-0" />
+                    <ArrowRight className={`h-5 w-5 flex-shrink-0 ${isDarkMode ? "text-orange-400" : "text-orange-500"}`} />
                   </div>
                   
-                  <div className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-300/90 bg-white"}`}>
                     <div className="flex items-center gap-3 flex-1">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600">92</div>
-                        <div className="text-xs text-muted-foreground mt-1">lost</div>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>92</div>
+                        <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>lost</div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-red-900">Lost before proposal</p>
-                        <p className="text-xs text-muted-foreground mt-1">Prior to development/delivery</p>
+                        <p className={`text-sm font-semibold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>Lost before proposal</p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Prior to development/delivery</p>
                       </div>
                     </div>
-                    <TrendingDown className="h-5 w-5 text-red-400 flex-shrink-0" />
+                    <TrendingDown className={`h-5 w-5 flex-shrink-0 ${isDarkMode ? "text-red-400" : "text-red-500"}`} />
                   </div>
                   
-                  <div className="flex items-center justify-between rounded-xl border-2 border-yellow-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-yellow-700/70 bg-yellow-950/30" : "border-yellow-300/90 bg-white"}`}>
                     <div className="flex items-center gap-3 flex-1">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-yellow-600">59</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-yellow-400" : "text-yellow-600"}`}>59</div>
+                        <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>opps</div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-yellow-900">Skip "Proposal Delivery"</p>
-                        <p className="text-xs text-muted-foreground mt-1">After reaching "Proposal Development"</p>
+                        <p className={`text-sm font-semibold ${isDarkMode ? "text-yellow-200" : "text-yellow-900"}`}>Skip "Proposal Delivery"</p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>After reaching "Proposal Development"</p>
                       </div>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-yellow-400 flex-shrink-0" />
+                    <ArrowRight className={`h-5 w-5 flex-shrink-0 ${isDarkMode ? "text-yellow-400" : "text-yellow-500"}`} />
                   </div>
                   
-                  <div className="flex items-center justify-between rounded-xl border-2 border-purple-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-300/90 bg-white"}`}>
                     <div className="flex items-center gap-3 flex-1">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-purple-600">264</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>264</div>
+                        <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>opps</div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-purple-900">Skip final negotiation</p>
-                        <p className="text-xs text-muted-foreground mt-1">Stage 6 bypassed entirely</p>
+                        <p className={`text-sm font-semibold ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>Skip final negotiation</p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Stage 6 bypassed entirely</p>
                       </div>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                    <ArrowRight className={`h-5 w-5 flex-shrink-0 ${isDarkMode ? "text-purple-400" : "text-purple-500"}`} />
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg">
+            <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50"}`}>
               <CardContent className="pt-6">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-blue-100 rounded-lg">
-                    <Sparkles className="h-6 w-6 text-blue-600" />
+                  <div className={`p-2 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                    <Sparkles className={`h-6 w-6 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   </div>
                   <div>
-                    <p className="font-semibold text-blue-900 mb-1">Key Insight</p>
-                    <p className="text-sm text-blue-800">Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
+                    <p className={`font-semibold mb-1 ${isDarkMode ? "text-blue-200" : "text-blue-900"}`}>Key Insight</p>
+                    <p className={`text-sm ${isDarkMode ? "text-blue-100" : "text-blue-800"}`}>Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
                   </div>
                 </div>
               </CardContent>
@@ -904,6 +904,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
     },
   ];
 
+  const slides = getSlides(isDarkMode);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
   };
@@ -1022,7 +1024,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className={`${currentSlide === 0 || currentSlide === 1 ? "p-0 overflow-hidden" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
+            <CardContent className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "p-0 overflow-hidden" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
               <div className={isDarkMode ? "dark-mode-content" : ""}>
                 {slides[currentSlide].content}
               </div>
