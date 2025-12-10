@@ -7,6 +7,8 @@ import ReactFlow, {
   Background,
   Controls,
   MarkerType,
+  Handle,
+  Position,
 } from "reactflow";
 import dagre from "dagre";
 import "reactflow/dist/style.css";
@@ -16,10 +18,22 @@ interface ProcessFlowDiagramProps {
 }
 
 // Custom node component to show numbered step, label and count
+// Handles are required for edges to connect - they define connection points
 const ProcessNode = ({ data }: { data: { step: number; label: string; count: number } }) => (
-  <div style={{ textAlign: "center", padding: "8px" }}>
+  <div style={{ textAlign: "center", padding: "8px", position: "relative" }}>
+    {/* Top handle for incoming edges */}
+    <Handle 
+      type="target" 
+      position={Position.Top} 
+      style={{ 
+        width: "8px", 
+        height: "8px", 
+        background: "#3b82f6",
+        border: "2px solid white"
+      }} 
+    />
     <div style={{ fontSize: "10px", fontWeight: 700, marginBottom: "4px", opacity: 0.7 }}>
-      Step {data.step}
+      {data.step ? `Step ${data.step}` : ""}
     </div>
     <div style={{ fontSize: "12px", fontWeight: 600, marginBottom: "4px" }}>
       {data.label}
@@ -27,6 +41,17 @@ const ProcessNode = ({ data }: { data: { step: number; label: string; count: num
     <div style={{ fontSize: "18px", fontWeight: 700 }}>
       {data.count}
     </div>
+    {/* Bottom handle for outgoing edges */}
+    <Handle 
+      type="source" 
+      position={Position.Bottom} 
+      style={{ 
+        width: "8px", 
+        height: "8px", 
+        background: "#3b82f6",
+        border: "2px solid white"
+      }} 
+    />
   </div>
 );
 
