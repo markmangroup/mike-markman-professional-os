@@ -213,14 +213,6 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
           <div className="relative mx-auto max-w-6xl space-y-6">
             <Card className={`border-2 shadow-lg ${isDarkMode ? "border-neutral-700 bg-neutral-800" : "border-gray-200 bg-white"}`}>
-              <CardHeader className={`pb-3 ${isDarkMode ? "bg-neutral-800/50 border-b border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
-                <CardTitle className={`flex items-center gap-3 ${isDarkMode ? "text-white" : ""}`}>
-                  <div className={`p-2 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                    <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
-                  </div>
-                  <span>Key Process Deviations Discovered</span>
-                </CardTitle>
-              </CardHeader>
               <CardContent className="pt-4 pb-4">
                 {/* Vertical Stack: Process Flow Diagram (full width) | KPI Callouts (horizontal row) */}
                 <div className="grid grid-cols-1 gap-4">
