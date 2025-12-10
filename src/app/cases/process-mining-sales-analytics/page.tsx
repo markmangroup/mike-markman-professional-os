@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, BarChart3, TrendingUp, Target, Zap, AlertTri
 import Link from "next/link";
 import { PageMeta } from "@/core/metadata/types";
 import DataArchitectureDiagram from "@/components/DataArchitectureDiagram";
+import Image from "next/image";
 
 const meta: PageMeta = {
   what: "Process mining and predictive analytics solution for sales operations optimization",
@@ -46,36 +47,54 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "Process Mining & Sales Analytics",
       type: "title",
       content: (
-        <div className="flex flex-col items-center justify-center min-h-[500px] space-y-8 py-16">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl rounded-full"></div>
-            <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-full">
-              <div className="bg-background rounded-full p-6">
-                <Workflow className="h-16 w-16 text-blue-600" />
-              </div>
+        <div className="relative flex flex-col items-center justify-center min-h-[500px] overflow-hidden">
+          {/* Hero Background Image - Full Card */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/assets/images/process_mining_hero_1.png"
+              alt="Sales Pipeline Process Mining"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Lighter overlay - less dark for better image visibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55"></div>
+            {/* Subtle blue/purple gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/15 via-purple-600/10 to-blue-600/15"></div>
+          </div>
+          
+          {/* Content - positioned above background */}
+          <div className="relative z-10 flex flex-col items-center justify-center space-y-10 text-center px-8 py-20">
+            <div className="text-center space-y-7 max-w-4xl">
+              {/* Main Title - Balanced color distribution, single line */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight whitespace-nowrap drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+                <span className="text-blue-300 drop-shadow-[0_2px_8px_rgba(59,130,246,0.5)]">Process Mining</span>
+                <span className="text-white mx-2">&</span>
+                <span className="text-purple-300 drop-shadow-[0_2px_8px_rgba(168,85,247,0.5)]">Sales Analytics</span>
+              </h1>
+              {/* Subtitle - Strong white text with better spacing */}
+              <p className="text-lg md:text-xl lg:text-2xl font-light text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] leading-relaxed">
+                Transforming Sales Operations Through{" "}
+                <span className="font-semibold text-blue-200 drop-shadow-[0_2px_6px_rgba(59,130,246,0.4)]">
+                  Data-Driven Insights
+                </span>
+              </p>
             </div>
-          </div>
-          <div className="text-center space-y-4 max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Process Mining & Sales Analytics
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light">
-              Transforming Sales Operations Through Data-Driven Insights
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            <Badge variant="outline" className="text-base px-5 py-2 border-blue-200 text-blue-700 dark:text-blue-400">
-              <BarChart3 className="h-4 w-4 mr-2" />
-              Process Mining
-            </Badge>
-            <Badge variant="outline" className="text-base px-5 py-2 border-purple-200 text-purple-700 dark:text-purple-400">
-              <TrendingUp className="h-4 w-4 mr-2" />
-              Predictive Analytics
-            </Badge>
-            <Badge variant="outline" className="text-base px-5 py-2 border-green-200 text-green-700 dark:text-green-400">
-              <Target className="h-4 w-4 mr-2" />
-              Sales Optimization
-            </Badge>
+            {/* Enhanced Badges - Zander UI principles: visual anchoring, better contrast, interactivity */}
+            <div className="flex flex-wrap justify-center gap-6 mt-10">
+              <Badge className="group text-base px-8 py-3.5 border-2 border-blue-400/80 bg-blue-500/50 backdrop-blur-lg text-white hover:bg-blue-500/70 hover:border-blue-300 hover:scale-110 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-blue-500/50 font-semibold cursor-pointer">
+                <BarChart3 className="h-5 w-5 mr-2.5 text-blue-100 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300" />
+                Process Mining
+              </Badge>
+              <Badge className="group text-base px-8 py-3.5 border-2 border-purple-400/80 bg-purple-500/50 backdrop-blur-lg text-white hover:bg-purple-500/70 hover:border-purple-300 hover:scale-110 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-purple-500/50 font-semibold cursor-pointer">
+                <TrendingUp className="h-5 w-5 mr-2.5 text-purple-100 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300" />
+                Predictive Analytics
+              </Badge>
+              <Badge className="group text-base px-8 py-3.5 border-2 border-blue-400/80 bg-blue-500/50 backdrop-blur-lg text-white hover:bg-blue-500/70 hover:border-blue-300 hover:scale-110 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-blue-500/50 font-semibold cursor-pointer">
+                <Target className="h-5 w-5 mr-2.5 text-blue-100 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300" />
+                Sales Optimization
+              </Badge>
+            </div>
           </div>
         </div>
       ),
@@ -85,76 +104,205 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <div className="space-y-8 py-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">Understanding the Current State</h2>
-            <p className="text-muted-foreground">Identifying gaps and opportunities for transformation</p>
+        <div className="relative flex flex-col min-h-[500px] overflow-hidden -m-6">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/assets/images/tangled_sales_map.png"
+              alt="Tangled Sales Process Map"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+            {/* Color gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-blue-600/20"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="border-2 border-red-200 dark:border-red-900/50 bg-gradient-to-br from-red-50 to-red-100/50 dark:from-red-950/30 dark:to-red-900/20 shadow-lg">
+          
+          {/* Content - Split Layout Over Background */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+            {/* Left Side: Before */}
+            <Card className="border-2 border-red-300 dark:border-red-700 bg-red-100/95 dark:bg-red-900/80 backdrop-blur-md shadow-2xl">
               <CardHeader className="pb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-red-100 dark:bg-red-900/50 rounded-lg">
-                    <AlertTriangle className="h-6 w-6 text-red-600 dark:text-red-400" />
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-red-200 dark:bg-red-800/80 rounded-xl shadow-md">
+                    <AlertTriangle className="h-7 w-7 text-red-700 dark:text-red-300" />
                   </div>
-                  <CardTitle className="text-xl">Before: Manual & Fragmented</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Before: Manual & Fragmented
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Ad-hoc reporting only 2X per year</p>
+                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Ad-hoc reporting</span>
+                  <Badge variant="outline" className="border-red-400 bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 font-semibold">
+                    2×/year
+                  </Badge>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">No real-time visibility into sales performance</p>
+                
+                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">No real-time visibility</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Manual opportunity tracking</p>
+                
+                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Manual tracking</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">No predictive insights</p>
+                
+                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">No predictive insights</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Process inefficiencies hidden</p>
+                
+                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Hidden inefficiencies</span>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20 shadow-lg">
+            
+            {/* Right Side: Impact Needed */}
+            <Card className="border-2 border-blue-300 dark:border-blue-700 bg-blue-100/95 dark:bg-blue-900/80 backdrop-blur-md shadow-2xl">
               <CardHeader className="pb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
-                    <Target className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-blue-200 dark:bg-blue-800/80 rounded-xl shadow-md">
+                    <Target className="h-7 w-7 text-blue-700 dark:text-blue-300" />
                   </div>
-                  <CardTitle className="text-xl">Business Impact Needed</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Impact Needed
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Improve sales win rates</p>
+                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Improve win rates</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Optimize go-to-market strategy</p>
+                
+                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Optimize strategy</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Support incentive calculations</p>
+                
+                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Data-driven decisions</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Identify revenue opportunities</p>
+                
+                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Revenue opportunities</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 flex-shrink-0"></div>
-                  <p className="text-sm leading-relaxed">Enable data-driven decisions</p>
+                
+                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
+                  <span className="font-bold text-gray-900 dark:text-white">Incentive support</span>
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Gradient Progress Bar - Integrated at Bottom */}
+          <div className="relative z-10 px-8 pb-6 mt-auto">
+            <div className="h-2 rounded-full bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-blue-500 to-blue-600 shadow-lg"></div>
+            <div className="flex justify-between items-center mt-2 text-xs font-semibold text-white drop-shadow-md">
+              <span>Problem</span>
+              <span>Solution</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: 13,
+      title: "The Challenge (Alternative)",
+      type: "content",
+      content: (
+        <div className="relative grid gap-6 rounded-3xl bg-slate-900/80 p-8 text-white shadow-2xl md:grid-cols-[1fr_auto_1fr] min-h-[500px] overflow-hidden">
+          {/* Background Image - Full Card */}
+          <div className="absolute inset-0 z-0 -m-8">
+            <Image
+              src="/assets/images/dashboard_hero.png"
+              alt="Dashboard Hero"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Lighter overlay so image shows through better */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/60 to-slate-900/70"></div>
+            {/* Subtle color gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/15 via-transparent to-blue-600/15"></div>
+          </div>
+
+          {/* Before Section */}
+          <div className="relative z-10 space-y-4 rounded-2xl bg-slate-800/80 p-6 ring-1 ring-white/5 backdrop-blur">
+            <div className="flex items-center gap-2 text-amber-300">
+              <AlertTriangle className="h-5 w-5" />
+              <p className="text-sm font-semibold uppercase tracking-wide">Before</p>
+            </div>
+            <ul className="space-y-3">
+              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
+                <span className="text-base font-medium">Ad-hoc reporting</span>
+                <Badge className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-100 border-0">
+                  2×/year
+                </Badge>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
+                <span className="text-base font-medium">No real-time visibility</span>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
+                <span className="text-base font-medium">Manual tracking</span>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
+                <span className="text-base font-medium">No predictive insights</span>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
+                <span className="text-base font-medium">Hidden inefficiencies</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Center: Arrow + Gradient Bar with Enhanced Design */}
+          <div className="relative z-10 flex flex-col items-center justify-center gap-3 px-2">
+            <div className="flex items-center gap-2 rounded-full bg-white/5 px-3 py-2 ring-1 ring-white/10">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-100">Shift focus</p>
+              <ArrowRight className="h-4 w-4 text-blue-200" />
+            </div>
+            <div className="h-24 w-1 rounded-full bg-gradient-to-b from-slate-500/40 via-slate-300/50 to-blue-400/60" aria-hidden />
+            <p className="text-xs text-slate-200/80 text-center">From pain points<br />to target state</p>
+          </div>
+
+          {/* Impact Needed Section */}
+          <div className="relative z-10 overflow-hidden rounded-2xl bg-blue-900/75 p-6 ring-1 ring-white/5 backdrop-blur">
+            <div className="flex items-center gap-2 text-blue-200">
+              <Target className="h-5 w-5" />
+              <p className="text-sm font-semibold uppercase tracking-wide">Impact Needed</p>
+            </div>
+            {/* Blurred background blobs */}
+            <div className="pointer-events-none absolute inset-0 opacity-40">
+              <div className="absolute right-[-10%] top-[-20%] h-40 w-40 rounded-full bg-blue-500 blur-3xl" />
+              <div className="absolute bottom-[-20%] left-[-10%] h-32 w-32 rounded-full bg-rose-400 blur-3xl" />
+            </div>
+            <ul className="relative space-y-3">
+              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
+                <span className="text-base font-medium">Improve win rates</span>
+                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
+                  +3pp
+                </Badge>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
+                <span className="text-base font-medium">Optimize strategy</span>
+                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
+                  -20% time
+                </Badge>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
+                <span className="text-base font-medium">Data-driven decisions</span>
+                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
+                  Real-time
+                </Badge>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
+                <span className="text-base font-medium">Revenue opportunities</span>
+              </li>
+              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
+                <span className="text-base font-medium">Incentive support</span>
+              </li>
+            </ul>
           </div>
         </div>
       ),
@@ -950,6 +1098,11 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <Workflow className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                   </div>
                 )}
+                {currentSlide === 1 && (
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/50 flex-shrink-0">
+                    <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                  </div>
+                )}
                 <div className="flex-1">
                   <CardTitle className="text-2xl mb-1">{slides[currentSlide].title}</CardTitle>
                   {currentSlide === 8 && (
@@ -958,10 +1111,16 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <p className="text-sm text-muted-foreground">End-to-end data pipeline from source systems to analytics dashboards</p>
                     </>
                   )}
+                  {currentSlide === 1 && (
+                    <>
+                      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1 mb-0.5">Understanding the Current State</h3>
+                      <p className="text-sm text-muted-foreground">Identifying gaps and opportunities for transformation</p>
+                    </>
+                  )}
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="p-6">{slides[currentSlide].content}</CardContent>
+            <CardContent className={currentSlide === 0 || currentSlide === 1 || currentSlide === 12 ? "p-0" : "p-6"}>{slides[currentSlide].content}</CardContent>
           </Card>
 
           {/* Slide Thumbnails */}
