@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, BarChart3, TrendingUp, Target, Zap, AlertTriangle, CheckCircle2, DollarSign, Users, Percent, FileText, ArrowRight, Clock, TrendingDown, Database, Workflow, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, BarChart3, TrendingUp, Target, Zap, AlertTriangle, CheckCircle2, DollarSign, Users, Percent, FileText, ArrowRight, Clock, TrendingDown, Database, Workflow, Sparkles, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import { PageMeta } from "@/core/metadata/types";
 import DataArchitectureDiagram from "@/components/DataArchitectureDiagram";
@@ -40,6 +40,7 @@ interface Slide {
 
 export default function ProcessMiningSalesAnalyticsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const slides: Slide[] = [
     {
@@ -911,7 +912,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className={`min-h-screen transition-colors ${isDarkMode ? "bg-neutral-950" : "bg-white"}`}>
       <div className="mx-auto flex w-full max-w-[1800px] gap-6 px-4 py-6">
         {/* Left sidebar - minimal spacer */}
         <div className="hidden lg:block w-32" />
@@ -922,17 +923,17 @@ export default function ProcessMiningSalesAnalyticsPage() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+              <h1 className={`text-4xl font-bold tracking-tight ${isDarkMode ? "text-white" : "text-gray-900"}`}>
                 Process Mining & Sales Analytics
               </h1>
-              <p className="mt-2 text-base leading-relaxed text-gray-600">
+              <p className={`mt-2 text-base leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                 Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
               </p>
             </div>
           </div>
 
           {/* Slide Navigation */}
-          <div className="flex items-center justify-between bg-muted p-4 rounded-lg sticky top-0 z-10">
+          <div className={`flex items-center justify-between p-4 rounded-lg sticky top-0 z-10 transition-colors ${isDarkMode ? "bg-neutral-900" : "bg-muted"}`}>
             <Button
               variant="outline"
               size="sm"
@@ -942,24 +943,39 @@ export default function ProcessMiningSalesAnalyticsPage() {
               <ChevronLeft className="h-4 w-4 mr-2" />
               Previous
             </Button>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">
-                Slide {currentSlide + 1} of {slides.length}
-              </span>
-              <div className="flex gap-1">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`h-2 w-2 rounded-full transition-colors ${
-                      index === currentSlide
-                        ? "bg-primary"
-                        : "bg-muted-foreground/30"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className={`text-sm ${isDarkMode ? "text-gray-300" : "text-muted-foreground"}`}>
+                  Slide {currentSlide + 1} of {slides.length}
+                </span>
+                <div className="flex gap-1">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      className={`h-2 w-2 rounded-full transition-colors ${
+                        index === currentSlide
+                          ? "bg-primary"
+                          : isDarkMode ? "bg-gray-600" : "bg-muted-foreground/30"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className="ml-2"
+                aria-label="Toggle dark mode"
+              >
+                {isDarkMode ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </Button>
             </div>
             <Button
               variant="outline"
@@ -973,25 +989,29 @@ export default function ProcessMiningSalesAnalyticsPage() {
           </div>
 
           {/* Current Slide - Much wider and left-aligned */}
-          <Card className="min-h-[500px] shadow-xl border-2 w-full max-w-[1400px]">
-            <CardHeader className="border-b py-4 bg-gradient-to-r from-gray-50 to-gray-100/50">
+          <Card className={`min-h-[500px] shadow-xl border-2 w-full max-w-[1400px] ${isDarkMode ? "bg-neutral-900 border-neutral-700" : ""}`}>
+            <CardHeader className={`border-b py-4 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
               <div className="flex items-start gap-4">
                 {currentSlide === 8 && (
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 flex-shrink-0">
-                    <Workflow className="h-5 w-5 text-blue-600" />
+                  <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                    <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   </div>
                 )}
                 {currentSlide === 1 && (
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-100 flex-shrink-0">
-                    <AlertTriangle className="h-5 w-5 text-red-600" />
+                  <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
+                    <AlertTriangle className={`h-5 w-5 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
                   </div>
                 )}
                 <div className="flex-1">
-                  <CardTitle className="text-2xl">{slides[currentSlide].title}</CardTitle>
+                  <CardTitle className={`text-2xl ${isDarkMode ? "text-white" : ""}`}>{slides[currentSlide].title}</CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className={currentSlide === 0 || currentSlide === 1 ? "p-0 overflow-hidden" : "p-6"}>{slides[currentSlide].content}</CardContent>
+            <CardContent className={`${currentSlide === 0 || currentSlide === 1 ? "p-0 overflow-hidden" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
+              <div className={isDarkMode ? "dark-mode-content" : ""}>
+                {slides[currentSlide].content}
+              </div>
+            </CardContent>
           </Card>
 
           {/* Slide Thumbnails */}
@@ -1002,12 +1022,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 onClick={() => goToSlide(index)}
                 className={`p-2 rounded-lg border-2 transition-all text-left ${
                   index === currentSlide
-                    ? "border-primary bg-primary/5"
-                    : "border-muted hover:border-primary/50"
+                    ? isDarkMode ? "border-primary bg-primary/10" : "border-primary bg-primary/5"
+                    : isDarkMode ? "border-neutral-700 bg-neutral-800 hover:border-primary/50" : "border-muted hover:border-primary/50"
                 }`}
               >
-                <div className="text-xs font-semibold mb-1 truncate">{slide.title}</div>
-                <div className="text-xs text-muted-foreground capitalize">{slide.type}</div>
+                <div className={`text-xs font-semibold mb-1 truncate ${isDarkMode ? "text-gray-200" : ""}`}>{slide.title}</div>
+                <div className={`text-xs capitalize ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>{slide.type}</div>
               </button>
             ))}
           </div>
@@ -1021,7 +1041,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    <p className={`text-[11px] font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
                       What this is
                     </p>
                   </div>
@@ -1034,7 +1054,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    <p className={`text-[11px] font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
                       Why it matters
                     </p>
                   </div>
@@ -1047,7 +1067,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    <p className={`text-[11px] font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
                       Related Skills
                     </p>
                   </div>
@@ -1055,7 +1075,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     {meta.relatedSkills.slice(0, 6).map((skill) => (
                       <span
                         key={skill}
-                        className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-800"
+                        className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${isDarkMode ? "bg-neutral-800 text-gray-100" : "bg-gray-200 text-gray-800"}`}
                       >
                         {skill}
                       </span>
@@ -1072,7 +1092,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    <p className={`text-[11px] font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
                       Related Systems
                     </p>
                   </div>
