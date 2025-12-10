@@ -104,107 +104,107 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <div className="relative flex flex-col min-h-[500px] overflow-hidden -m-6">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/assets/images/tangled_sales_map.png"
-              alt="Tangled Sales Process Map"
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
-            {/* Color gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-blue-600/20"></div>
-          </div>
-          
-          {/* Content - Split Layout Over Background */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
-            {/* Left Side: Before */}
-            <Card className="border-2 border-red-300 dark:border-red-700 bg-red-100/95 dark:bg-red-900/80 backdrop-blur-md shadow-2xl">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-red-200 dark:bg-red-800/80 rounded-xl shadow-md">
-                    <AlertTriangle className="h-7 w-7 text-red-700 dark:text-red-300" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
-                    Before: Manual & Fragmented
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Ad-hoc reporting</span>
-                  <Badge variant="outline" className="border-red-400 bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 font-semibold">
-                    2×/year
-                  </Badge>
-                </div>
-                
-                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">No real-time visibility</span>
-                </div>
-                
-                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Manual tracking</span>
-                </div>
-                
-                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">No predictive insights</span>
-                </div>
-                
-                <div className="flex flex-wrap items-center gap-3 p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-red-500 dark:border-red-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Hidden inefficiencies</span>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Right Side: Impact Needed */}
-            <Card className="border-2 border-blue-300 dark:border-blue-700 bg-blue-100/95 dark:bg-blue-900/80 backdrop-blur-md shadow-2xl">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-blue-200 dark:bg-blue-800/80 rounded-xl shadow-md">
-                    <Target className="h-7 w-7 text-blue-700 dark:text-blue-300" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
-                    Impact Needed
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Improve win rates</span>
-                </div>
-                
-                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Optimize strategy</span>
-                </div>
-                
-                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Data-driven decisions</span>
-                </div>
-                
-                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Revenue opportunities</span>
-                </div>
-                
-                <div className="p-3 bg-white/90 dark:bg-gray-800/90 rounded-lg border-l-4 border-blue-500 dark:border-blue-600 backdrop-blur-sm">
-                  <span className="font-bold text-gray-900 dark:text-white">Incentive support</span>
-                </div>
-              </CardContent>
-            </Card>
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-8 text-slate-900 shadow-2xl dark:border-slate-800/70 dark:from-slate-900/60 dark:via-slate-900/50 dark:to-indigo-950/60 dark:text-slate-50">
+          {/* Background Pattern */}
+          <div className="pointer-events-none absolute inset-0 opacity-60">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.16),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.14),transparent_32%),radial-gradient(circle_at_30%_80%,rgba(236,72,153,0.12),transparent_38%)]" />
           </div>
 
-          {/* Gradient Progress Bar - Integrated at Bottom */}
-          <div className="relative z-10 px-8 pb-6 mt-auto">
-            <div className="h-2 rounded-full bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-blue-500 to-blue-600 shadow-lg"></div>
-            <div className="flex justify-between items-center mt-2 text-xs font-semibold text-white drop-shadow-md">
-              <span>Problem</span>
-              <span>Solution</span>
+          <div className="relative mx-auto max-w-6xl space-y-6">
+            {/* Header */}
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-semibold tracking-tight">The Challenge</h2>
+              <p className="text-base text-slate-600 dark:text-slate-300">From scattered reporting to an always-on, high-confidence sales engine.</p>
+            </div>
+
+            {/* Split Layout: Before | Connector | Impact */}
+            <div className="grid items-start gap-6 md:grid-cols-[1.05fr_auto_1.05fr]">
+              {/* Before Card */}
+              <Card className="relative overflow-hidden border border-amber-200/70 bg-white/80 backdrop-blur dark:border-amber-500/20 dark:bg-amber-950/40">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-100/60 via-transparent to-transparent dark:from-amber-500/10" />
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-xl bg-amber-100 px-3 py-2 text-amber-800 shadow-sm dark:bg-amber-500/15 dark:text-amber-50">
+                      <AlertTriangle className="h-5 w-5" />
+                    </div>
+                    <CardTitle className="text-lg font-semibold">Before: Manual & Fragmented</CardTitle>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Low frequency reporting and disconnected handoffs slow decisions.</p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {[
+                    { label: "Ad-hoc reporting", chip: "2x/year" },
+                    { label: "No real-time visibility", chip: "Lagging" },
+                    { label: "Manual tracking", chip: "High effort" },
+                    { label: "No predictive signals", chip: "Reactive" },
+                    { label: "Hidden leakage", chip: "Unseen" },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-center justify-between rounded-2xl border border-amber-200/70 bg-amber-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-amber-500/20 dark:bg-amber-500/10"
+                    >
+                      <div className="flex items-center gap-2 text-sm font-semibold text-amber-900 dark:text-amber-50">
+                        <span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden />
+                        {item.label}
+                      </div>
+                      <span className="rounded-full border border-amber-200/80 bg-white/80 px-3 py-1 text-xs font-semibold text-amber-800 shadow-sm dark:border-amber-500/40 dark:bg-slate-900/60 dark:text-amber-50">
+                        {item.chip}
+                      </span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {/* Center Connector */}
+              <div className="flex flex-col items-center gap-4 text-slate-600 dark:text-slate-200">
+                <div className="rounded-full border border-slate-200/70 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] shadow-sm dark:border-slate-700 dark:bg-slate-900/80">
+                  Shift Focus
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-20 w-1 rounded-full bg-gradient-to-b from-slate-200 via-indigo-200 to-blue-300 dark:from-slate-600 dark:via-indigo-500 dark:to-blue-400" />
+                  <ArrowRight className="h-5 w-5 text-indigo-500 dark:text-indigo-300" />
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-300 text-center">Elevate from pain points to measurable impact.</p>
+              </div>
+
+              {/* Impact Needed Card */}
+              <Card className="relative overflow-hidden border border-blue-200/80 bg-white/90 backdrop-blur dark:border-blue-500/25 dark:bg-blue-950/40">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-100/70 via-transparent to-transparent dark:from-blue-500/10" />
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-800 shadow-sm dark:bg-blue-500/15 dark:text-blue-50">
+                      <Target className="h-5 w-5" />
+                    </div>
+                    <CardTitle className="text-lg font-semibold">Impact Needed</CardTitle>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Continuous visibility, faster motions, and confident decision-making.</p>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {[
+                    { label: "Always-on visibility", chip: "Live dashboards" },
+                    { label: "Faster approvals", chip: "-20% cycle" },
+                    { label: "Optimized GTM", chip: "+Win rate" },
+                    { label: "Data-driven incentives", chip: "Trustable" },
+                    { label: "Leakage detection", chip: "Recovered" },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-center justify-between rounded-2xl border border-blue-200/80 bg-blue-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-500/30 dark:bg-blue-500/10"
+                    >
+                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-50">
+                        <span className="h-2 w-2 rounded-full bg-blue-500" aria-hidden />
+                        {item.label}
+                      </div>
+                      <span className="rounded-full border border-blue-200/80 bg-white/90 px-3 py-1 text-xs font-semibold text-blue-800 shadow-sm dark:border-blue-500/40 dark:bg-slate-900/60 dark:text-blue-50">
+                        {item.chip}
+                      </span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
             </div>
           </div>
-        </div>
+        </section>
       ),
     },
     {
