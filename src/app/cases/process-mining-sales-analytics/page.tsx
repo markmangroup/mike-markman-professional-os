@@ -110,9 +110,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-6xl space-y-6">
+          <div className="relative mx-auto max-w-6xl">
             {/* Split Layout: Before | Arrow | Impact */}
-            <div className="grid items-start gap-8 md:grid-cols-[1fr_auto_1fr]">
+            <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr]">
               {/* Before Card - Better Contrast */}
               <Card className="relative overflow-hidden border-2 border-red-300/80 bg-white shadow-lg dark:border-red-700/60 dark:bg-red-950/90">
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent dark:from-red-900/20" />
@@ -137,13 +137,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border border-red-200/80 bg-red-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-red-800/50 dark:bg-red-900/40"
+                      className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-red-700/70 dark:bg-red-900/60"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900 dark:text-red-100">
-                        <span className="h-2 w-2 rounded-full bg-red-500" aria-hidden />
+                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900 dark:text-red-50">
+                        <span className="h-2 w-2 rounded-full bg-red-600" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border border-red-300/80 bg-white px-3 py-1 text-xs font-semibold text-red-700 shadow-sm dark:border-red-700/60 dark:bg-red-950/80 dark:text-red-200">
+                      <span className="rounded-full border-2 border-red-400/90 bg-red-100 px-3 py-1 text-xs font-bold text-red-800 shadow-sm dark:border-red-600/80 dark:bg-red-800/80 dark:text-red-100">
                         {item.chip}
                       </span>
                     </div>
@@ -151,9 +151,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </CardContent>
               </Card>
 
-              {/* Center Arrow - Larger and More Prominent */}
-              <div className="flex items-center justify-center py-8">
-                <ArrowRight className="h-12 w-12 text-slate-400 dark:text-slate-500" strokeWidth={2.5} />
+              {/* Center Arrow - Centered Vertically */}
+              <div className="flex items-center justify-center">
+                <ArrowRight className="h-12 w-12 text-slate-500 dark:text-slate-400" strokeWidth={2.5} />
               </div>
 
               {/* Impact Needed Card - Better Contrast */}
@@ -180,13 +180,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border border-blue-200/80 bg-blue-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-800/50 dark:bg-blue-900/40"
+                      className="flex items-center justify-between rounded-xl border-2 border-blue-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-700/70 dark:bg-blue-900/60"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-100">
-                        <span className="h-2 w-2 rounded-full bg-blue-500" aria-hidden />
+                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-50">
+                        <span className="h-2 w-2 rounded-full bg-blue-600" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border border-blue-300/80 bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-sm dark:border-blue-700/60 dark:bg-blue-950/80 dark:text-blue-200">
+                      <span className="rounded-full border-2 border-blue-400/90 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800 shadow-sm dark:border-blue-600/80 dark:bg-blue-800/80 dark:text-blue-100">
                         {item.chip}
                       </span>
                     </div>
@@ -1082,7 +1082,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
           {/* Current Slide - Much wider and left-aligned */}
           <Card className="min-h-[500px] shadow-xl border-2 w-full max-w-[1400px]">
-            <CardHeader className="border-b bg-gradient-to-r from-gray-50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-800/50 py-4">
+            <CardHeader className={`border-b py-4 ${currentSlide === 1 ? "bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-800/50"}`}>
               <div className="flex items-start gap-4">
                 {currentSlide === 8 && (
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex-shrink-0">
@@ -1104,8 +1104,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   )}
                   {currentSlide === 1 && (
                     <>
-                      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1 mb-0.5">The Challenge</h3>
-                      <p className="text-sm text-muted-foreground">From scattered reporting to an always-on, high-confidence sales engine</p>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1 mb-0.5">Current State Analysis</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Identifying gaps and opportunities for transformation</p>
                     </>
                   )}
                 </div>
