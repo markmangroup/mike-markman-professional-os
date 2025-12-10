@@ -997,13 +997,18 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   </div>
                 )}
-                {currentSlide === 1 && (
-                  <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
-                    <AlertTriangle className={`h-5 w-5 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
-                  </div>
-                )}
                 <div className="flex-1">
-                  <CardTitle className={`text-2xl ${isDarkMode ? "text-white" : ""}`}>{slides[currentSlide].title}</CardTitle>
+                  <CardTitle className={`text-2xl mb-2 ${isDarkMode ? "text-white" : ""}`}>{slides[currentSlide].title}</CardTitle>
+                  {currentSlide === 1 && (
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Understanding the current state: identifying gaps between manual, fragmented processes and the need for data-driven, always-on visibility
+                    </p>
+                  )}
+                  {currentSlide === 8 && (
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      End-to-end data pipeline from source systems to analytics dashboards
+                    </p>
+                  )}
                 </div>
               </div>
             </CardHeader>
