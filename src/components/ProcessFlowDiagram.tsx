@@ -487,7 +487,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
   const getLayoutedElements = useCallback(() => {
     const dagreGraph = new dagre.graphlib.Graph();
     dagreGraph.setDefaultEdgeLabel(() => ({}));
-    dagreGraph.setGraph({ rankdir: "TB", nodesep: 120, ranksep: 180 }); // Top to bottom, increased spacing for larger nodes
+    dagreGraph.setGraph({ rankdir: "LR", nodesep: 120, ranksep: 200 }); // Left to right, increased spacing for larger nodes
 
     nodes.forEach((node) => {
       dagreGraph.setNode(node.id, { width: 160, height: 100 }); // Larger nodes for better readability
@@ -530,7 +530,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
     <div
       style={{
         width: "100%",
-        height: "900px",
+        height: "500px",
         background: isDarkMode ? "#1f2937" : "#f9fafb",
         borderRadius: "8px",
       }}
