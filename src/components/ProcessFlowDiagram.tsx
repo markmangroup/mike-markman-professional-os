@@ -20,11 +20,11 @@ interface ProcessFlowDiagramProps {
 // Custom node component to show numbered step, label and count
 // Handles are required for edges to connect - they define connection points
 const ProcessNode = ({ data }: { data: { step: number; label: string; count: number } }) => (
-  <div style={{ textAlign: "center", padding: "12px", position: "relative" }}>
+  <div style={{ textAlign: "center", padding: "14px 10px", position: "relative" }}>
     {/* Top handle for incoming edges */}
     <Handle 
       type="target" 
-      position={Position.Top} 
+      position={Position.Left} 
       style={{ 
         width: "8px", 
         height: "8px", 
@@ -32,19 +32,19 @@ const ProcessNode = ({ data }: { data: { step: number; label: string; count: num
         border: "2px solid white"
       }} 
     />
-    <div style={{ fontSize: "12px", fontWeight: 700, marginBottom: "6px", opacity: 0.7 }}>
+    <div style={{ fontSize: "13px", fontWeight: 700, marginBottom: "6px", opacity: 0.7 }}>
       {data.step ? `Step ${data.step}` : ""}
     </div>
-    <div style={{ fontSize: "14px", fontWeight: 600, marginBottom: "6px" }}>
+    <div style={{ fontSize: "15px", fontWeight: 600, marginBottom: "8px" }}>
       {data.label}
     </div>
-    <div style={{ fontSize: "24px", fontWeight: 700 }}>
+    <div style={{ fontSize: "28px", fontWeight: 700 }}>
       {data.count}
     </div>
     {/* Bottom handle for outgoing edges */}
     <Handle 
       type="source" 
-      position={Position.Bottom} 
+      position={Position.Right} 
       style={{ 
         width: "8px", 
         height: "8px", 
@@ -165,7 +165,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
           }`,
           borderRadius: "8px",
           padding: "0",
-          minWidth: "160px",
+          minWidth: "140px",
           textAlign: "center",
           fontWeight: "600",
         },
@@ -190,7 +190,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -210,7 +210,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -230,7 +230,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -250,7 +250,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -270,7 +270,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -290,7 +290,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -311,7 +311,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#f87171" : "#dc2626",
           fontWeight: 700,
-          fontSize: "15px",
+          fontSize: "16px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -331,7 +331,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#fb923c" : "#ea580c",
           fontWeight: 700,
-          fontSize: "15px",
+          fontSize: "16px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -351,7 +351,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#facc15" : "#ca8a04",
           fontWeight: 700,
-          fontSize: "15px",
+          fontSize: "16px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -371,7 +371,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#c084fc" : "#9333ea",
           fontWeight: 700,
-          fontSize: "15px",
+          fontSize: "16px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -392,7 +392,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -412,7 +412,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -432,7 +432,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -452,7 +452,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -472,7 +472,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         labelStyle: {
           fill: isDarkMode ? "#9ca3af" : "#6b7280",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "15px",
         },
         markerEnd: {
           type: MarkerType.ArrowClosed,
@@ -487,10 +487,10 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
   const getLayoutedElements = useCallback(() => {
     const dagreGraph = new dagre.graphlib.Graph();
     dagreGraph.setDefaultEdgeLabel(() => ({}));
-    dagreGraph.setGraph({ rankdir: "LR", nodesep: 120, ranksep: 200 }); // Left to right, increased spacing for larger nodes
+    dagreGraph.setGraph({ rankdir: "LR", nodesep: 60, ranksep: 140 }); // Left to right, compact horizontal spacing, tighter vertical spacing
 
     nodes.forEach((node) => {
-      dagreGraph.setNode(node.id, { width: 160, height: 100 }); // Larger nodes for better readability
+      dagreGraph.setNode(node.id, { width: 140, height: 120 }); // Taller, narrower nodes for horizontal flow
     });
 
     edges.forEach((edge) => {
@@ -504,8 +504,8 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
       return {
         ...node,
         position: {
-          x: nodeWithPosition.x - 80, // Center the larger node
-          y: nodeWithPosition.y - 50,
+          x: nodeWithPosition.x - 70, // Center the node horizontally
+          y: nodeWithPosition.y - 60, // Center the taller node vertically
         },
       };
     });
@@ -530,7 +530,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
     <div
       style={{
         width: "100%",
-        height: "500px",
+        height: "400px",
         background: isDarkMode ? "#1f2937" : "#f9fafb",
         borderRadius: "8px",
       }}
