@@ -214,18 +214,18 @@ export default function ProcessMiningSalesAnalyticsPage() {
       content: (
         <div className="relative grid gap-6 rounded-3xl bg-slate-900/80 p-8 text-white shadow-2xl md:grid-cols-[1fr_auto_1fr] min-h-[500px] overflow-hidden">
           {/* Background Image - Full Card */}
-          <div className="absolute inset-0 z-0 -m-8">
+          <div className="absolute inset-0 z-0">
             <Image
               src="/assets/images/dashboard_hero.png"
               alt="Dashboard Hero"
               fill
-              className="object-cover"
+              className="object-cover rounded-3xl"
               priority
             />
             {/* Lighter overlay so image shows through better */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/60 to-slate-900/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/65 via-slate-900/55 to-slate-900/65 rounded-3xl"></div>
             {/* Subtle color gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/15 via-transparent to-blue-600/15"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-blue-600/20 rounded-3xl"></div>
           </div>
 
           {/* Before Section */}
@@ -1120,7 +1120,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className={currentSlide === 0 || currentSlide === 1 || currentSlide === 12 ? "p-0" : "p-6"}>{slides[currentSlide].content}</CardContent>
+            <CardContent className={currentSlide === 0 || currentSlide === 1 || currentSlide === 12 ? "p-0 overflow-hidden" : "p-6"}>{slides[currentSlide].content}</CardContent>
           </Card>
 
           {/* Slide Thumbnails */}
