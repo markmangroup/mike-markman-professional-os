@@ -201,14 +201,123 @@ export default function ProcessMiningSalesAnalyticsPage() {
     },
     {
       id: 3,
+      title: "Process Mining: Revealing Hidden Patterns",
+      type: "visual",
+      content: (
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl">
+          {/* Background Pattern - Subtle */}
+          <div className="pointer-events-none absolute inset-0 opacity-40">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
+          </div>
+
+          <div className="relative mx-auto max-w-6xl space-y-6">
+            <Card className="border-2 border-gray-200 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100/50">
+                <CardTitle className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <Workflow className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <span>Key Process Deviations Discovered</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-2xl font-bold text-red-600">245</div>
+                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-red-900">Skip "Qualifying" stage</p>
+                        <p className="text-xs text-muted-foreground mt-1">Move directly to "Proposal Development"</p>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-red-400 flex-shrink-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-between rounded-xl border-2 border-orange-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-2xl font-bold text-orange-600">79</div>
+                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-orange-900">Direct to "Proposal Delivery"</p>
+                        <p className="text-xs text-muted-foreground mt-1">Without proper qualification</p>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-orange-400 flex-shrink-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-2xl font-bold text-red-600">92</div>
+                        <div className="text-xs text-muted-foreground mt-1">lost</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-red-900">Lost before proposal</p>
+                        <p className="text-xs text-muted-foreground mt-1">Prior to development/delivery</p>
+                      </div>
+                    </div>
+                    <TrendingDown className="h-5 w-5 text-red-400 flex-shrink-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-between rounded-xl border-2 border-yellow-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-2xl font-bold text-yellow-600">59</div>
+                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-yellow-900">Skip "Proposal Delivery"</p>
+                        <p className="text-xs text-muted-foreground mt-1">After reaching "Proposal Development"</p>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-yellow-400 flex-shrink-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-between rounded-xl border-2 border-purple-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-2xl font-bold text-purple-600">264</div>
+                        <div className="text-xs text-muted-foreground mt-1">opps</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-purple-900">Skip final negotiation</p>
+                        <p className="text-xs text-muted-foreground mt-1">Stage 6 bypassed entirely</p>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg">
+              <CardContent className="pt-6">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <Sparkles className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-blue-900 mb-1">Key Insight</p>
+                    <p className="text-sm text-blue-800">Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      ),
+    },
+    {
+      id: 4,
       title: "Business Scale",
       type: "data",
       content: (
         <div className="space-y-8 py-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">Project Scope & Scale</h2>
-            <p className="text-muted-foreground">Key metrics demonstrating the impact and reach of the initiative</p>
-          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Card className="border-2 border-blue-200">
               <CardContent className="pt-8 pb-6 text-center">
@@ -248,110 +357,6 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div className="text-5xl font-bold text-orange-600">~20</div>
                 <div className="text-sm font-semibold text-gray-900">Sales Reps</div>
                 <div className="text-xs text-muted-foreground">Individualized Reporting</div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 4,
-      title: "Process Mining: Revealing Hidden Patterns",
-      type: "visual",
-      content: (
-        <div className="space-y-8 py-4">
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
-              <BarChart3 className="h-8 w-8 text-blue-600" />
-            </div>
-          </div>
-          
-          <div className="space-y-6">
-            <Card className="border-2 border-gray-200">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100/50">
-                <CardTitle className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-100">
-                    <Workflow className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <span>Key Process Deviations Discovered</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 gap-3">
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600">245</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <p className="text-sm font-medium">Skip "Qualifying" stage</p>
-                        <p className="text-xs text-muted-foreground mt-1">Move directly to "Proposal Development"</p>
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    </div>
-                    
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-orange-50">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-orange-600">79</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <p className="text-sm font-medium">Direct to "Proposal Delivery"</p>
-                        <p className="text-xs text-muted-foreground mt-1">Without proper qualification</p>
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-orange-400 mt-1 flex-shrink-0" />
-                    </div>
-                    
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600">92</div>
-                        <div className="text-xs text-muted-foreground mt-1">lost</div>
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <p className="text-sm font-medium">Lost before proposal</p>
-                        <p className="text-xs text-muted-foreground mt-1">Prior to development/delivery</p>
-                      </div>
-                      <TrendingDown className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    </div>
-                    
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-yellow-50">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-yellow-600">59</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <p className="text-sm font-medium">Skip "Proposal Delivery"</p>
-                        <p className="text-xs text-muted-foreground mt-1">After reaching "Proposal Development"</p>
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-yellow-400 mt-1 flex-shrink-0" />
-                    </div>
-                    
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-purple-50">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-purple-600">264</div>
-                        <div className="text-xs text-muted-foreground mt-1">opps</div>
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <p className="text-sm font-medium">Skip final negotiation</p>
-                        <p className="text-xs text-muted-foreground mt-1">Stage 6 bypassed entirely</p>
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-purple-400 mt-1 flex-shrink-0" />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-blue-200">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-3">
-                  <Sparkles className="h-6 w-6 text-blue-600" />
-                  <div>
-                    <p className="font-semibold text-blue-900">Key Insight</p>
-                    <p className="text-sm text-blue-800">Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -1002,6 +1007,11 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   {currentSlide === 1 && (
                     <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                       Understanding the current state: identifying gaps between manual, fragmented processes and the need for data-driven, always-on visibility
+                    </p>
+                  )}
+                  {currentSlide === 2 && (
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Using process mining to uncover hidden inefficiencies and process deviations that impact sales performance
                     </p>
                   )}
                   {currentSlide === 8 && (
