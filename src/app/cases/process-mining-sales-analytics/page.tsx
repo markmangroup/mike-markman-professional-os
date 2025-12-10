@@ -222,9 +222,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
-                {/* 1x2 Grid: Process Flow Diagram | KPI Callouts */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {/* Left: Process Flow Diagram */}
+                {/* Vertical Stack: Process Flow Diagram (full width) | KPI Callouts (horizontal row) */}
+                <div className="grid grid-cols-1 gap-6">
+                  {/* Top: Process Flow Diagram - Full Width */}
                   <div className="space-y-2">
                     <h4 className={`text-sm font-semibold mb-3 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                       Sales Process Flow
@@ -232,128 +232,108 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <ProcessFlowDiagram isDarkMode={isDarkMode} />
                   </div>
 
-                  {/* Right: KPI Callouts */}
+                  {/* Bottom: KPI Callouts - Horizontal Row */}
                   <div className="space-y-3">
                     <h4 className={`text-sm font-semibold mb-3 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                       Key Deviations
                     </h4>
-                    <div className="grid grid-cols-1 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                       {/* KPI 1: Skip Qualifying */}
                       <Card className={`border-2 ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-300 bg-red-50"}`}>
-                        <CardContent className="pt-4 pb-3 px-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-red-200" : "text-red-900"}`}>
-                                Skip "Qualifying" stage
-                              </p>
-                              <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                Move directly to "Proposal Development"
-                              </p>
+                        <CardContent className="pt-4 pb-3 px-3">
+                          <div className="text-center">
+                            <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-red-400" : "text-red-600"}`}>
+                              245
                             </div>
-                            <div className="text-right ml-4">
-                              <div className={`text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>
-                                245
-                              </div>
-                              <div className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                opps
-                              </div>
+                            <div className={`text-[10px] mb-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              opps
                             </div>
+                            <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-red-200" : "text-red-900"}`}>
+                              Skip "Qualifying" stage
+                            </p>
+                            <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              Move directly to "Proposal Development"
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
 
                       {/* KPI 2: Direct to Proposal Delivery */}
                       <Card className={`border-2 ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-300 bg-orange-50"}`}>
-                        <CardContent className="pt-4 pb-3 px-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-orange-200" : "text-orange-900"}`}>
-                                Direct to "Proposal Delivery"
-                              </p>
-                              <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                Without proper qualification
-                              </p>
+                        <CardContent className="pt-4 pb-3 px-3">
+                          <div className="text-center">
+                            <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>
+                              79
                             </div>
-                            <div className="text-right ml-4">
-                              <div className={`text-3xl font-bold ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>
-                                79
-                              </div>
-                              <div className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                opps
-                              </div>
+                            <div className={`text-[10px] mb-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              opps
                             </div>
+                            <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-orange-200" : "text-orange-900"}`}>
+                              Direct to "Proposal Delivery"
+                            </p>
+                            <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              Without proper qualification
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
 
                       {/* KPI 3: Lost before proposal */}
                       <Card className={`border-2 ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-300 bg-red-50"}`}>
-                        <CardContent className="pt-4 pb-3 px-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-red-200" : "text-red-900"}`}>
-                                Lost before proposal
-                              </p>
-                              <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                Prior to development/delivery
-                              </p>
+                        <CardContent className="pt-4 pb-3 px-3">
+                          <div className="text-center">
+                            <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-red-400" : "text-red-600"}`}>
+                              92
                             </div>
-                            <div className="text-right ml-4">
-                              <div className={`text-3xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>
-                                92
-                              </div>
-                              <div className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                lost
-                              </div>
+                            <div className={`text-[10px] mb-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              lost
                             </div>
+                            <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-red-200" : "text-red-900"}`}>
+                              Lost before proposal
+                            </p>
+                            <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              Prior to development/delivery
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
 
                       {/* KPI 4: Skip Proposal Delivery */}
                       <Card className={`border-2 ${isDarkMode ? "border-yellow-700/70 bg-yellow-950/30" : "border-yellow-300 bg-yellow-50"}`}>
-                        <CardContent className="pt-4 pb-3 px-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-yellow-200" : "text-yellow-900"}`}>
-                                Skip "Proposal Delivery"
-                              </p>
-                              <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                After reaching "Proposal Development"
-                              </p>
+                        <CardContent className="pt-4 pb-3 px-3">
+                          <div className="text-center">
+                            <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-yellow-400" : "text-yellow-600"}`}>
+                              59
                             </div>
-                            <div className="text-right ml-4">
-                              <div className={`text-3xl font-bold ${isDarkMode ? "text-yellow-400" : "text-yellow-600"}`}>
-                                59
-                              </div>
-                              <div className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                opps
-                              </div>
+                            <div className={`text-[10px] mb-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              opps
                             </div>
+                            <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-yellow-200" : "text-yellow-900"}`}>
+                              Skip "Proposal Delivery"
+                            </p>
+                            <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              After reaching "Proposal Development"
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
 
                       {/* KPI 5: Skip final negotiation */}
                       <Card className={`border-2 ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-300 bg-purple-50"}`}>
-                        <CardContent className="pt-4 pb-3 px-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>
-                                Skip final negotiation
-                              </p>
-                              <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                Stage 6 bypassed entirely
-                              </p>
+                        <CardContent className="pt-4 pb-3 px-3">
+                          <div className="text-center">
+                            <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>
+                              264
                             </div>
-                            <div className="text-right ml-4">
-                              <div className={`text-3xl font-bold ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>
-                                264
-                              </div>
-                              <div className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                                opps
-                              </div>
+                            <div className={`text-[10px] mb-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              opps
                             </div>
+                            <p className={`text-xs font-semibold mb-1 ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>
+                              Skip final negotiation
+                            </p>
+                            <p className={`text-[10px] ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                              Stage 6 bypassed entirely
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
