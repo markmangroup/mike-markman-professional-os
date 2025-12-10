@@ -104,32 +104,28 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-8 text-slate-900 shadow-2xl dark:border-slate-800/70 dark:from-slate-900/60 dark:via-slate-900/50 dark:to-indigo-950/60 dark:text-slate-50">
-          {/* Background Pattern */}
-          <div className="pointer-events-none absolute inset-0 opacity-60">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.16),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.14),transparent_32%),radial-gradient(circle_at_30%_80%,rgba(236,72,153,0.12),transparent_38%)]" />
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl dark:border-slate-800/70 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 dark:text-slate-50">
+          {/* Background Pattern - Subtle */}
+          <div className="pointer-events-none absolute inset-0 opacity-40">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
           <div className="relative mx-auto max-w-6xl space-y-6">
-            {/* Header */}
-            <div className="text-center space-y-2">
-              <h2 className="text-3xl font-semibold tracking-tight">The Challenge</h2>
-              <p className="text-base text-slate-600 dark:text-slate-300">From scattered reporting to an always-on, high-confidence sales engine.</p>
-            </div>
-
-            {/* Split Layout: Before | Connector | Impact */}
-            <div className="grid items-start gap-6 md:grid-cols-[1.05fr_auto_1.05fr]">
-              {/* Before Card */}
-              <Card className="relative overflow-hidden border border-amber-200/70 bg-white/80 backdrop-blur dark:border-amber-500/20 dark:bg-amber-950/40">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-100/60 via-transparent to-transparent dark:from-amber-500/10" />
+            {/* Split Layout: Before | Arrow | Impact */}
+            <div className="grid items-start gap-8 md:grid-cols-[1fr_auto_1fr]">
+              {/* Before Card - Better Contrast */}
+              <Card className="relative overflow-hidden border-2 border-red-300/80 bg-white shadow-lg dark:border-red-700/60 dark:bg-red-950/90">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent dark:from-red-900/20" />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-amber-100 px-3 py-2 text-amber-800 shadow-sm dark:bg-amber-500/15 dark:text-amber-50">
+                    <div className="rounded-xl bg-red-100 px-3 py-2 text-red-700 shadow-sm dark:bg-red-900/60 dark:text-red-200">
                       <AlertTriangle className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-lg font-semibold">Before: Manual & Fragmented</CardTitle>
+                    <div>
+                      <CardTitle className="text-lg font-semibold text-slate-900 dark:text-slate-50">Before: Manual & Fragmented</CardTitle>
+                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Low frequency reporting and disconnected handoffs slow decisions.</p>
+                    </div>
                   </div>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Low frequency reporting and disconnected handoffs slow decisions.</p>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
@@ -141,13 +137,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-2xl border border-amber-200/70 bg-amber-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-amber-500/20 dark:bg-amber-500/10"
+                      className="flex items-center justify-between rounded-xl border border-red-200/80 bg-red-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-red-800/50 dark:bg-red-900/40"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-amber-900 dark:text-amber-50">
-                        <span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden />
+                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900 dark:text-red-100">
+                        <span className="h-2 w-2 rounded-full bg-red-500" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border border-amber-200/80 bg-white/80 px-3 py-1 text-xs font-semibold text-amber-800 shadow-sm dark:border-amber-500/40 dark:bg-slate-900/60 dark:text-amber-50">
+                      <span className="rounded-full border border-red-300/80 bg-white px-3 py-1 text-xs font-semibold text-red-700 shadow-sm dark:border-red-700/60 dark:bg-red-950/80 dark:text-red-200">
                         {item.chip}
                       </span>
                     </div>
@@ -155,29 +151,24 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </CardContent>
               </Card>
 
-              {/* Center Connector */}
-              <div className="flex flex-col items-center gap-4 text-slate-600 dark:text-slate-200">
-                <div className="rounded-full border border-slate-200/70 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] shadow-sm dark:border-slate-700 dark:bg-slate-900/80">
-                  Shift Focus
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-20 w-1 rounded-full bg-gradient-to-b from-slate-200 via-indigo-200 to-blue-300 dark:from-slate-600 dark:via-indigo-500 dark:to-blue-400" />
-                  <ArrowRight className="h-5 w-5 text-indigo-500 dark:text-indigo-300" />
-                </div>
-                <p className="text-xs text-slate-500 dark:text-slate-300 text-center">Elevate from pain points to measurable impact.</p>
+              {/* Center Arrow - Larger and More Prominent */}
+              <div className="flex items-center justify-center py-8">
+                <ArrowRight className="h-12 w-12 text-slate-400 dark:text-slate-500" strokeWidth={2.5} />
               </div>
 
-              {/* Impact Needed Card */}
-              <Card className="relative overflow-hidden border border-blue-200/80 bg-white/90 backdrop-blur dark:border-blue-500/25 dark:bg-blue-950/40">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-100/70 via-transparent to-transparent dark:from-blue-500/10" />
+              {/* Impact Needed Card - Better Contrast */}
+              <Card className="relative overflow-hidden border-2 border-blue-300/80 bg-white shadow-lg dark:border-blue-700/60 dark:bg-blue-950/90">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent dark:from-blue-900/20" />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-800 shadow-sm dark:bg-blue-500/15 dark:text-blue-50">
+                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-700 shadow-sm dark:bg-blue-900/60 dark:text-blue-200">
                       <Target className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-lg font-semibold">Impact Needed</CardTitle>
+                    <div>
+                      <CardTitle className="text-lg font-semibold text-slate-900 dark:text-slate-50">Impact Needed</CardTitle>
+                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Continuous visibility, faster motions, and confident decision-making.</p>
+                    </div>
                   </div>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Continuous visibility, faster motions, and confident decision-making.</p>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
@@ -189,13 +180,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-2xl border border-blue-200/80 bg-blue-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-500/30 dark:bg-blue-500/10"
+                      className="flex items-center justify-between rounded-xl border border-blue-200/80 bg-blue-50/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-800/50 dark:bg-blue-900/40"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-50">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-100">
                         <span className="h-2 w-2 rounded-full bg-blue-500" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border border-blue-200/80 bg-white/90 px-3 py-1 text-xs font-semibold text-blue-800 shadow-sm dark:border-blue-500/40 dark:bg-slate-900/60 dark:text-blue-50">
+                      <span className="rounded-full border border-blue-300/80 bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-sm dark:border-blue-700/60 dark:bg-blue-950/80 dark:text-blue-200">
                         {item.chip}
                       </span>
                     </div>
@@ -1113,8 +1104,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   )}
                   {currentSlide === 1 && (
                     <>
-                      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1 mb-0.5">Understanding the Current State</h3>
-                      <p className="text-sm text-muted-foreground">Identifying gaps and opportunities for transformation</p>
+                      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1 mb-0.5">The Challenge</h3>
+                      <p className="text-sm text-muted-foreground">From scattered reporting to an always-on, high-confidence sales engine</p>
                     </>
                   )}
                 </div>
