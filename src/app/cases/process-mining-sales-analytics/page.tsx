@@ -151,8 +151,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </CardContent>
               </Card>
 
-              {/* Center Arrow - Centered Vertically */}
-              <div className="flex items-center justify-center">
+              {/* Center Arrow - Centered Vertically with Self Alignment */}
+              <div className="flex items-center justify-center self-center">
                 <ArrowRight className="h-12 w-12 text-slate-500 dark:text-slate-400" strokeWidth={2.5} />
               </div>
 
