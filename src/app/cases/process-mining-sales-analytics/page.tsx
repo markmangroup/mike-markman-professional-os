@@ -104,7 +104,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl dark:border-slate-800/70 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 dark:text-slate-50">
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 text-slate-900 shadow-2xl">
           {/* Background Pattern - Subtle */}
           <div className="pointer-events-none absolute inset-0 opacity-40">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
@@ -114,16 +114,16 @@ export default function ProcessMiningSalesAnalyticsPage() {
             {/* Split Layout: Before | Arrow | Impact */}
             <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr]">
               {/* Before Card - Better Contrast */}
-              <Card className="relative overflow-hidden border-2 border-red-300/80 bg-white shadow-lg dark:border-red-700/60 dark:bg-red-950/90">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent dark:from-red-900/20" />
+              <Card className="relative overflow-hidden border-2 border-red-300/80 bg-white shadow-lg">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent" />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-red-100 px-3 py-2 text-red-700 shadow-sm dark:bg-red-900/60 dark:text-red-200">
+                    <div className="rounded-xl bg-red-100 px-3 py-2 text-red-700 shadow-sm">
                       <AlertTriangle className="h-5 w-5" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg font-semibold text-slate-900 dark:text-slate-50">Before: Manual & Fragmented</CardTitle>
-                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Low frequency reporting and disconnected handoffs slow decisions.</p>
+                      <CardTitle className="text-lg font-semibold text-slate-900">Before: Manual & Fragmented</CardTitle>
+                      <p className="mt-1 text-sm text-slate-600">Low frequency reporting and disconnected handoffs slow decisions.</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -137,13 +137,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-red-700/70 dark:bg-red-900/60"
+                      className="flex items-center justify-between rounded-xl border-2 border-red-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900 dark:text-red-50">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-red-900">
                         <span className="h-2 w-2 rounded-full bg-red-600" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border-2 border-red-400/90 bg-red-100 px-3 py-1 text-xs font-bold text-red-800 shadow-sm dark:border-red-600/80 dark:bg-red-800/80 dark:text-red-100">
+                      <span className="rounded-full border-2 border-red-400/90 bg-red-100 px-3 py-1 text-xs font-bold text-red-800 shadow-sm">
                         {item.chip}
                       </span>
                     </div>
@@ -153,20 +153,20 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
               {/* Center Arrow - Centered Vertically with Self Alignment */}
               <div className="flex items-center justify-center self-center">
-                <ArrowRight className="h-12 w-12 text-slate-500 dark:text-slate-400" strokeWidth={2.5} />
+                <ArrowRight className="h-12 w-12 text-slate-500" strokeWidth={2.5} />
               </div>
 
               {/* Impact Needed Card - Better Contrast */}
-              <Card className="relative overflow-hidden border-2 border-blue-300/80 bg-white shadow-lg dark:border-blue-700/60 dark:bg-blue-950/90">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent dark:from-blue-900/20" />
+              <Card className="relative overflow-hidden border-2 border-blue-300/80 bg-white shadow-lg">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent" />
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-700 shadow-sm dark:bg-blue-900/60 dark:text-blue-200">
+                    <div className="rounded-xl bg-blue-100 px-3 py-2 text-blue-700 shadow-sm">
                       <Target className="h-5 w-5" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg font-semibold text-slate-900 dark:text-slate-50">Impact Needed</CardTitle>
-                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Continuous visibility, faster motions, and confident decision-making.</p>
+                      <CardTitle className="text-lg font-semibold text-slate-900">Impact Needed</CardTitle>
+                      <p className="mt-1 text-sm text-slate-600">Continuous visibility, faster motions, and confident decision-making.</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -180,13 +180,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between rounded-xl border-2 border-blue-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-blue-700/70 dark:bg-blue-900/60"
+                      className="flex items-center justify-between rounded-xl border-2 border-blue-300/90 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                     >
-                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-blue-50">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-900">
                         <span className="h-2 w-2 rounded-full bg-blue-600" aria-hidden />
                         {item.label}
                       </div>
-                      <span className="rounded-full border-2 border-blue-400/90 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800 shadow-sm dark:border-blue-600/80 dark:bg-blue-800/80 dark:text-blue-100">
+                      <span className="rounded-full border-2 border-blue-400/90 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800 shadow-sm">
                         {item.chip}
                       </span>
                     </div>
@@ -196,106 +196,6 @@ export default function ProcessMiningSalesAnalyticsPage() {
             </div>
           </div>
         </section>
-      ),
-    },
-    {
-      id: 13,
-      title: "The Challenge (Alternative)",
-      type: "content",
-      content: (
-        <div className="relative grid gap-6 rounded-3xl bg-slate-900/80 p-8 text-white shadow-2xl md:grid-cols-[1fr_auto_1fr] min-h-[500px] overflow-hidden">
-          {/* Background Image - Full Card */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/assets/images/dashboard_hero.png"
-              alt="Dashboard Hero"
-              fill
-              className="object-cover rounded-3xl"
-              priority
-            />
-            {/* Lighter overlay so image shows through better */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/65 via-slate-900/55 to-slate-900/65 rounded-3xl"></div>
-            {/* Subtle color gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-blue-600/20 rounded-3xl"></div>
-          </div>
-
-          {/* Before Section */}
-          <div className="relative z-10 space-y-4 rounded-2xl bg-slate-800/80 p-6 ring-1 ring-white/5 backdrop-blur">
-            <div className="flex items-center gap-2 text-amber-300">
-              <AlertTriangle className="h-5 w-5" />
-              <p className="text-sm font-semibold uppercase tracking-wide">Before</p>
-            </div>
-            <ul className="space-y-3">
-              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
-                <span className="text-base font-medium">Ad-hoc reporting</span>
-                <Badge className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-100 border-0">
-                  2×/year
-                </Badge>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
-                <span className="text-base font-medium">No real-time visibility</span>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
-                <span className="text-base font-medium">Manual tracking</span>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
-                <span className="text-base font-medium">No predictive insights</span>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-slate-950/60 px-4 py-3 ring-1 ring-white/5">
-                <span className="text-base font-medium">Hidden inefficiencies</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Center: Arrow + Gradient Bar with Enhanced Design */}
-          <div className="relative z-10 flex flex-col items-center justify-center gap-3 px-2">
-            <div className="flex items-center gap-2 rounded-full bg-white/5 px-3 py-2 ring-1 ring-white/10">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-100">Shift focus</p>
-              <ArrowRight className="h-4 w-4 text-blue-200" />
-            </div>
-            <div className="h-24 w-1 rounded-full bg-gradient-to-b from-slate-500/40 via-slate-300/50 to-blue-400/60" aria-hidden />
-            <p className="text-xs text-slate-200/80 text-center">From pain points<br />to target state</p>
-          </div>
-
-          {/* Impact Needed Section */}
-          <div className="relative z-10 overflow-hidden rounded-2xl bg-blue-900/75 p-6 ring-1 ring-white/5 backdrop-blur">
-            <div className="flex items-center gap-2 text-blue-200">
-              <Target className="h-5 w-5" />
-              <p className="text-sm font-semibold uppercase tracking-wide">Impact Needed</p>
-            </div>
-            {/* Blurred background blobs */}
-            <div className="pointer-events-none absolute inset-0 opacity-40">
-              <div className="absolute right-[-10%] top-[-20%] h-40 w-40 rounded-full bg-blue-500 blur-3xl" />
-              <div className="absolute bottom-[-20%] left-[-10%] h-32 w-32 rounded-full bg-rose-400 blur-3xl" />
-            </div>
-            <ul className="relative space-y-3">
-              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
-                <span className="text-base font-medium">Improve win rates</span>
-                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
-                  +3pp
-                </Badge>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
-                <span className="text-base font-medium">Optimize strategy</span>
-                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
-                  -20% time
-                </Badge>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
-                <span className="text-base font-medium">Data-driven decisions</span>
-                <Badge className="rounded-full bg-blue-100/90 px-3 py-1 text-xs font-semibold text-blue-900 border-0">
-                  Real-time
-                </Badge>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
-                <span className="text-base font-medium">Revenue opportunities</span>
-              </li>
-              <li className="flex items-center justify-between rounded-xl bg-blue-950/60 px-4 py-3 ring-1 ring-white/10">
-                <span className="text-base font-medium">Incentive support</span>
-              </li>
-            </ul>
-          </div>
-        </div>
       ),
     },
     {
@@ -309,43 +209,43 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <p className="text-muted-foreground">Key metrics demonstrating the impact and reach of the initiative</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-blue-200">
               <CardContent className="pt-8 pb-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/50 mb-4">
-                  <DollarSign className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100">
+                  <DollarSign className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-5xl font-bold text-blue-600 dark:text-blue-400 mb-2">$93M</div>
-                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">Total Contract Value</div>
+                <div className="text-5xl font-bold text-blue-600">$93M</div>
+                <div className="text-sm font-semibold text-gray-900">Total Contract Value</div>
                 <div className="text-xs text-muted-foreground">Year 2022</div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-green-200 dark:border-green-900/50 bg-gradient-to-br from-green-50 to-green-100/50 dark:from-green-950/30 dark:to-green-900/20 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-green-200">
               <CardContent className="pt-8 pb-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/50 mb-4">
-                  <FileText className="h-8 w-8 text-green-600 dark:text-green-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100">
+                  <FileText className="h-8 w-8 text-green-600" />
                 </div>
-                <div className="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">672</div>
-                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">Opportunities</div>
+                <div className="text-5xl font-bold text-green-600">672</div>
+                <div className="text-sm font-semibold text-gray-900">Opportunities</div>
                 <div className="text-xs text-muted-foreground">Year 2022</div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-purple-200 dark:border-purple-900/50 bg-gradient-to-br from-purple-50 to-purple-100/50 dark:from-purple-950/30 dark:to-purple-900/20 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-purple-200">
               <CardContent className="pt-8 pb-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/50 mb-4">
-                  <Percent className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100">
+                  <Percent className="h-8 w-8 text-purple-600" />
                 </div>
-                <div className="text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">56%</div>
-                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">Win Rate</div>
+                <div className="text-5xl font-bold text-purple-600">56%</div>
+                <div className="text-sm font-semibold text-gray-900">Win Rate</div>
                 <div className="text-xs text-muted-foreground">Year 2022</div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-orange-200 dark:border-orange-900/50 bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-orange-950/30 dark:to-orange-900/20 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-orange-200">
               <CardContent className="pt-8 pb-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900/50 mb-4">
-                  <Users className="h-8 w-8 text-orange-600 dark:text-orange-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100">
+                  <Users className="h-8 w-8 text-orange-600" />
                 </div>
-                <div className="text-5xl font-bold text-orange-600 dark:text-orange-400 mb-2">~20</div>
-                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">Sales Reps</div>
+                <div className="text-5xl font-bold text-orange-600">~20</div>
+                <div className="text-sm font-semibold text-gray-900">Sales Reps</div>
                 <div className="text-xs text-muted-foreground">Individualized Reporting</div>
               </CardContent>
             </Card>
@@ -360,19 +260,17 @@ export default function ProcessMiningSalesAnalyticsPage() {
       content: (
         <div className="space-y-8 py-4">
           <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/50 mb-4">
-              <BarChart3 className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <BarChart3 className="h-8 w-8 text-blue-600" />
             </div>
-            <h2 className="text-2xl font-semibold mb-2">Sales Process Flow Analysis</h2>
-            <p className="text-muted-foreground">Process mining uncovered critical deviations from standard methodology</p>
           </div>
           
           <div className="space-y-6">
-            <Card className="border-2 border-gray-200 dark:border-gray-800 shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-800/50">
+            <Card className="border-2 border-gray-200">
+              <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100/50">
                 <CardTitle className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
-                    <Workflow className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <div className="p-2 bg-blue-100">
+                    <Workflow className="h-5 w-5 text-blue-600" />
                   </div>
                   <span>Key Process Deviations Discovered</span>
                 </CardTitle>
@@ -380,9 +278,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 gap-3">
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50 dark:bg-red-950/20 border-l-4 border-red-500">
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600 dark:text-red-400">245</div>
+                        <div className="text-2xl font-bold text-red-600">245</div>
                         <div className="text-xs text-muted-foreground mt-1">opps</div>
                       </div>
                       <div className="flex-1 pt-1">
@@ -392,9 +290,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <ArrowRight className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
                     </div>
                     
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-orange-50 dark:bg-orange-950/20 border-l-4 border-orange-500">
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-orange-50">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">79</div>
+                        <div className="text-2xl font-bold text-orange-600">79</div>
                         <div className="text-xs text-muted-foreground mt-1">opps</div>
                       </div>
                       <div className="flex-1 pt-1">
@@ -404,9 +302,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <ArrowRight className="h-5 w-5 text-orange-400 mt-1 flex-shrink-0" />
                     </div>
                     
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50 dark:bg-red-950/20 border-l-4 border-red-500">
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-red-600 dark:text-red-400">92</div>
+                        <div className="text-2xl font-bold text-red-600">92</div>
                         <div className="text-xs text-muted-foreground mt-1">lost</div>
                       </div>
                       <div className="flex-1 pt-1">
@@ -416,9 +314,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <TrendingDown className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
                     </div>
                     
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-yellow-50 dark:bg-yellow-950/20 border-l-4 border-yellow-500">
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-yellow-50">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">59</div>
+                        <div className="text-2xl font-bold text-yellow-600">59</div>
                         <div className="text-xs text-muted-foreground mt-1">opps</div>
                       </div>
                       <div className="flex-1 pt-1">
@@ -428,9 +326,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <ArrowRight className="h-5 w-5 text-yellow-400 mt-1 flex-shrink-0" />
                     </div>
                     
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-purple-50 dark:bg-purple-950/20 border-l-4 border-purple-500">
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-purple-50">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">264</div>
+                        <div className="text-2xl font-bold text-purple-600">264</div>
                         <div className="text-xs text-muted-foreground mt-1">opps</div>
                       </div>
                       <div className="flex-1 pt-1">
@@ -444,13 +342,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30">
+            <Card className="border-2 border-blue-200">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-3">
-                  <Sparkles className="h-6 w-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                  <Sparkles className="h-6 w-6 text-blue-600" />
                   <div>
-                    <p className="font-semibold text-blue-900 dark:text-blue-100 mb-1">Key Insight</p>
-                    <p className="text-sm text-blue-800 dark:text-blue-200">Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
+                    <p className="font-semibold text-blue-900">Key Insight</p>
+                    <p className="text-sm text-blue-800">Process mining revealed significant deviations from standard sales methodology, indicating opportunities for process standardization and training.</p>
                   </div>
                 </div>
               </CardContent>
@@ -466,33 +364,31 @@ export default function ProcessMiningSalesAnalyticsPage() {
       content: (
         <div className="space-y-8 py-4">
           <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/50 mb-4">
-              <TrendingUp className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
+              <TrendingUp className="h-8 w-8 text-purple-600" />
             </div>
-            <h2 className="text-2xl font-semibold mb-2">What Impacts the Likelihood of Winning?</h2>
-            <p className="text-muted-foreground">Advanced analytics reveal critical success factors</p>
           </div>
           
           <div className="space-y-6">
-            <Card className="border-2 border-red-200 dark:border-red-900/50 bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 dark:from-red-950/30 dark:via-orange-950/30 dark:to-yellow-950/30 shadow-lg">
+            <Card className="border-2 border-red-200">
               <CardContent className="pt-8 pb-8">
                 <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-100 dark:bg-red-900/50 mb-4">
-                    <Clock className="h-10 w-10 text-red-600 dark:text-red-400" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-100">
+                    <Clock className="h-10 w-10 text-red-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Critical Discovery: Time Decay Factor</h3>
-                  <div className="text-5xl font-bold text-red-600 dark:text-red-400 mb-3">1% drop</div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Critical Discovery: Time Decay Factor</h3>
+                  <div className="text-5xl font-bold text-red-600">1% drop</div>
                   <div className="text-lg text-muted-foreground mb-2">every 2 days</div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">In the first 30 days, the probability of winning an opportunity drops approximately <strong>1% every 2 days</strong></p>
+                  <p className="text-sm text-gray-700">In the first 30 days, the probability of winning an opportunity drops approximately <strong>1% every 2 days</strong></p>
                 </div>
               </CardContent>
             </Card>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="border-2 border-blue-200 dark:border-blue-900/50 shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20">
+              <Card className="border-2 border-blue-200">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50">
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <Database className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <Database className="h-5 w-5 text-blue-600" />
                     Key Variables
                   </CardTitle>
                 </CardHeader>
@@ -530,30 +426,30 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </CardContent>
               </Card>
               
-              <Card className="border-2 border-green-200 dark:border-green-900/50 shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-green-50 to-green-100/50 dark:from-green-950/30 dark:to-green-900/20">
+              <Card className="border-2 border-green-200">
+                <CardHeader className="bg-gradient-to-r from-green-50 to-green-100/50">
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <Target className="h-5 w-5 text-green-600 dark:text-green-400" />
+                    <Target className="h-5 w-5 text-green-600" />
                     Model Performance
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-4">
-                    <div className="p-4 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900/50">
+                    <div className="p-4 rounded-lg bg-green-50">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium">Segment 1</span>
                         <Badge className="bg-green-600 text-white">91.49%</Badge>
                       </div>
                       <p className="text-xs text-muted-foreground">High-Probability Segment</p>
                     </div>
-                    <div className="p-4 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900/50">
+                    <div className="p-4 rounded-lg bg-green-50">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium">Segment 2</span>
                         <Badge className="bg-green-600 text-white">88.79%</Badge>
                       </div>
                       <p className="text-xs text-muted-foreground">High-Probability Segment</p>
                     </div>
-                    <div className="p-4 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900/50">
+                    <div className="p-4 rounded-lg bg-green-50">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium">Segment 3</span>
                         <Badge className="bg-green-600 text-white">88.89%</Badge>
@@ -574,18 +470,14 @@ export default function ProcessMiningSalesAnalyticsPage() {
       type: "data",
       content: (
         <div className="space-y-8 py-4">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Identified High-Probability Segments</h2>
-            <p className="text-muted-foreground">Predictive model identified three distinct opportunity segments with 88-91% win rates</p>
-          </div>
           
           <div className="space-y-6">
-            <Card className="border-2 border-green-200 dark:border-green-900/50 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-green-200">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
-                      <Zap className="h-8 w-8 text-green-600 dark:text-green-400" />
+                    <div className="w-16 h-16 rounded-full bg-green-100">
+                      <Zap className="h-8 w-8 text-green-600" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -594,24 +486,24 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <Badge className="bg-green-600 text-white text-base px-3 py-1">91.49% Win Rate</Badge>
                     </div>
                     <div className="mb-4">
-                      <span className="text-2xl font-bold text-green-600 dark:text-green-400">517</span>
+                      <span className="text-2xl font-bold text-green-600">517</span>
                       <span className="text-sm text-muted-foreground ml-2">opportunities</span>
                     </div>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-green-600 dark:text-green-400" />
+                        <Clock className="h-4 w-4 text-green-600" />
                         <span>≤30 days old</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4 text-green-600 dark:text-green-400" />
+                        <DollarSign className="h-4 w-4 text-green-600" />
                         <span>$1,500 - $70,150</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4 text-green-600 dark:text-green-400" />
+                        <FileText className="h-4 w-4 text-green-600" />
                         <span>3-84 products</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+                        <CheckCircle2 className="h-4 w-4 text-green-600" />
                         <span>Previous wins</span>
                       </div>
                     </div>
@@ -620,12 +512,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-blue-200">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                      <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                    <div className="w-16 h-16 rounded-full bg-blue-100">
+                      <TrendingUp className="h-8 w-8 text-blue-600" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -634,24 +526,24 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <Badge className="bg-blue-600 text-white text-base px-3 py-1">88.79% Win Rate</Badge>
                     </div>
                     <div className="mb-4">
-                      <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">116</span>
+                      <span className="text-2xl font-bold text-blue-600">116</span>
                       <span className="text-sm text-muted-foreground ml-2">opportunities</span>
                     </div>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        <Clock className="h-4 w-4 text-blue-600" />
                         <span>83-343 days old</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        <DollarSign className="h-4 w-4 text-blue-600" />
                         <span>TCV ≥ $51,000</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        <FileText className="h-4 w-4 text-blue-600" />
                         <span>≥2 products</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600" />
                         <span>≥1 previous win</span>
                       </div>
                     </div>
@@ -660,12 +552,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-purple-200 dark:border-purple-900/50 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-2 border-purple-200">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
-                      <Sparkles className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                    <div className="w-16 h-16 rounded-full bg-purple-100">
+                      <Sparkles className="h-8 w-8 text-purple-600" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -674,20 +566,20 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <Badge className="bg-purple-600 text-white text-base px-3 py-1">88.89% Win Rate</Badge>
                     </div>
                     <div className="mb-4">
-                      <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">72</span>
+                      <span className="text-2xl font-bold text-purple-600">72</span>
                       <span className="text-sm text-muted-foreground ml-2">opportunities</span>
                     </div>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        <Clock className="h-4 w-4 text-purple-600" />
                         <span>9-30 days old</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        <DollarSign className="h-4 w-4 text-purple-600" />
                         <span>TCV ≥ $91,000</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        <FileText className="h-4 w-4 text-purple-600" />
                         <span>≥2 products</span>
                       </div>
                     </div>
@@ -711,7 +603,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 p-6 rounded-lg">
+                <div className="bg-gradient-to-r from-green-50 to-blue-50">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-xl font-bold">Amgen - Amgevita Early Look Study</h4>
                     <Badge className="bg-green-600 text-white">Highly Likely to Win</Badge>
@@ -818,14 +710,14 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
           {/* Complementary Information - Compact */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
-            <Card className="border-2 border-blue-300 dark:border-blue-700 bg-blue-100 dark:bg-blue-900/40 shadow-md dark:shadow-blue-900/20">
+            <Card className="border-2 border-blue-300">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center gap-2 text-gray-900 dark:text-gray-100">
-                  <Zap className="h-3 w-3 text-blue-600 dark:text-blue-400" />
+                <CardTitle className="text-sm flex items-center gap-2 text-gray-900">
+                  <Zap className="h-3 w-3 text-blue-600" />
                   Data Integration
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-xs space-y-1 text-gray-700 dark:text-gray-300">
+              <CardContent className="text-xs space-y-1 text-gray-700">
                 <div>• API connections to CRM</div>
                 <div>• Automated data extraction</div>
                 <div>• Central SQL database hub</div>
@@ -833,14 +725,14 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-orange-300 dark:border-orange-700 bg-orange-100 dark:bg-orange-900/40 shadow-md dark:shadow-orange-900/20">
+            <Card className="border-2 border-orange-300">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center gap-2 text-gray-900 dark:text-gray-100">
-                  <Workflow className="h-3 w-3 text-orange-600 dark:text-orange-400" />
+                <CardTitle className="text-sm flex items-center gap-2 text-gray-900">
+                  <Workflow className="h-3 w-3 text-orange-600" />
                   Process Mining
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-xs space-y-1 text-gray-700 dark:text-gray-300">
+              <CardContent className="text-xs space-y-1 text-gray-700">
                 <div>• Celonis process discovery</div>
                 <div>• Process deviation analysis</div>
                 <div>• Predictive analytics models</div>
@@ -848,14 +740,14 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-yellow-300 dark:border-yellow-700 bg-yellow-100 dark:bg-yellow-900/40 shadow-md dark:shadow-yellow-900/20">
+            <Card className="border-2 border-yellow-300">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center gap-2 text-gray-900 dark:text-gray-100">
-                  <BarChart3 className="h-3 w-3 text-yellow-600 dark:text-yellow-400" />
+                <CardTitle className="text-sm flex items-center gap-2 text-gray-900">
+                  <BarChart3 className="h-3 w-3 text-yellow-600" />
                   Delivery & Access
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-xs space-y-1 text-gray-700 dark:text-gray-300">
+              <CardContent className="text-xs space-y-1 text-gray-700">
                 <div>• Weekly leadership dashboards</div>
                 <div>• Bi-weekly individual reports</div>
                 <div>• 40+ dashboards per month</div>
@@ -873,25 +765,25 @@ export default function ProcessMiningSalesAnalyticsPage() {
       content: (
         <div className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="border-green-200 bg-green-50 dark:bg-green-950/20">
+            <Card className="border-green-200 bg-green-50">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700 dark:text-green-400">
+                <CardTitle className="flex items-center gap-2 text-green-700">
                   <CheckCircle2 className="h-5 w-5" />
                   Operational Transformation
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="text-2xl font-bold text-green-700 dark:text-green-400">26X Improvement</div>
+                <div className="text-2xl font-bold text-green-700">26X Improvement</div>
                 <p className="text-sm">Reporting frequency: 2X/year → Weekly</p>
-                <div className="text-2xl font-bold text-green-700 dark:text-green-400">40+ Dashboards</div>
+                <div className="text-2xl font-bold text-green-700">40+ Dashboards</div>
                 <p className="text-sm">Individualized reports per month</p>
-                <div className="text-2xl font-bold text-green-700 dark:text-green-400">Real-Time</div>
+                <div className="text-2xl font-bold text-green-700">Real-Time</div>
                 <p className="text-sm">Visibility into sales performance</p>
               </CardContent>
             </Card>
-            <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/20">
+            <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-blue-700 dark:text-blue-400">
+                <CardTitle className="flex items-center gap-2 text-blue-700">
                   <Target className="h-5 w-5" />
                   Strategic Value
                 </CardTitle>
@@ -994,7 +886,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </CardContent>
             </Card>
           </div>
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
+          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
             <CardContent className="pt-6">
               <p className="text-center text-lg font-semibold">
                 Process mining and predictive analytics transformed sales operations from reactive reporting to proactive, data-driven decision making
@@ -1019,7 +911,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
   };
 
   return (
-    <div className="bg-white dark:bg-neutral-950 min-h-screen">
+    <div className="bg-white min-h-screen">
       <div className="mx-auto flex w-full max-w-[1800px] gap-6 px-4 py-6">
         {/* Left sidebar - minimal spacer */}
         <div className="hidden lg:block w-32" />
@@ -1030,10 +922,10 @@ export default function ProcessMiningSalesAnalyticsPage() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900">
                 Process Mining & Sales Analytics
               </h1>
-              <p className="mt-2 text-base leading-relaxed text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-base leading-relaxed text-gray-600">
                 Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
               </p>
             </div>
@@ -1082,36 +974,24 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
           {/* Current Slide - Much wider and left-aligned */}
           <Card className="min-h-[500px] shadow-xl border-2 w-full max-w-[1400px]">
-            <CardHeader className={`border-b py-4 ${currentSlide === 1 ? "bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-800/50"}`}>
+            <CardHeader className="border-b py-4 bg-gradient-to-r from-gray-50 to-gray-100/50">
               <div className="flex items-start gap-4">
                 {currentSlide === 8 && (
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex-shrink-0">
-                    <Workflow className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 flex-shrink-0">
+                    <Workflow className="h-5 w-5 text-blue-600" />
                   </div>
                 )}
                 {currentSlide === 1 && (
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/50 flex-shrink-0">
-                    <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-100 flex-shrink-0">
+                    <AlertTriangle className="h-5 w-5 text-red-600" />
                   </div>
                 )}
                 <div className="flex-1">
-                  <CardTitle className="text-2xl mb-1">{slides[currentSlide].title}</CardTitle>
-                  {currentSlide === 8 && (
-                    <>
-                      <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1 mb-0.5">Technical Implementation</h3>
-                      <p className="text-sm text-muted-foreground">End-to-end data pipeline from source systems to analytics dashboards</p>
-                    </>
-                  )}
-                  {currentSlide === 1 && (
-                    <>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1 mb-0.5">Current State Analysis</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Identifying gaps and opportunities for transformation</p>
-                    </>
-                  )}
+                  <CardTitle className="text-2xl">{slides[currentSlide].title}</CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className={currentSlide === 0 || currentSlide === 1 || currentSlide === 12 ? "p-0 overflow-hidden" : "p-6"}>{slides[currentSlide].content}</CardContent>
+            <CardContent className={currentSlide === 0 || currentSlide === 1 ? "p-0 overflow-hidden" : "p-6"}>{slides[currentSlide].content}</CardContent>
           </Card>
 
           {/* Slide Thumbnails */}
@@ -1136,16 +1016,16 @@ export default function ProcessMiningSalesAnalyticsPage() {
         {/* Right metadata panel */}
         <aside className="hidden xl:block w-80 flex-shrink-0">
           <div className="sticky top-10">
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-neutral-800 dark:bg-neutral-900/60 space-y-5">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
               {meta.what && (
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
                       What this is
                     </p>
                   </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mt-2">
+                  <p className="text-sm text-gray-700">
                     {meta.what}
                   </p>
                 </div>
@@ -1154,11 +1034,11 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
                       Why it matters
                     </p>
                   </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mt-2">
+                  <p className="text-sm text-gray-700">
                     {meta.why}
                   </p>
                 </div>
@@ -1167,7 +1047,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
                       Related Skills
                     </p>
                   </div>
@@ -1175,13 +1055,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     {meta.relatedSkills.slice(0, 6).map((skill) => (
                       <span
                         key={skill}
-                        className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-800 dark:bg-neutral-800 dark:text-gray-100"
+                        className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-800"
                       >
                         {skill}
                       </span>
                     ))}
                     {meta.relatedSkills.length > 6 && (
-                      <span className="inline-flex items-center text-xs text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer">
+                      <span className="inline-flex items-center text-xs text-blue-600 hover:text-blue-700">
                         + {meta.relatedSkills.length - 6} more skills
                       </span>
                     )}
@@ -1192,7 +1072,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
                       Related Systems
                     </p>
                   </div>
@@ -1201,7 +1081,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       <li key={system.href}>
                         <Link
                           href={system.href}
-                          className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
+                          className="text-sm text-blue-600 hover:text-blue-700"
                         >
                           {system.label}
                         </Link>
