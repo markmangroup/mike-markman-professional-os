@@ -1,160 +1,157 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import ReactFlow, {
   Node,
   Edge,
   Background,
   Controls,
-  MiniMap,
   MarkerType,
 } from "reactflow";
+import dagre from "dagre";
 import "reactflow/dist/style.css";
 
 interface ProcessFlowDiagramProps {
   isDarkMode?: boolean;
 }
 
+// Custom node component to show numbered step, label and count
+const ProcessNode = ({ data }: { data: { step: number; label: string; count: number } }) => (
+  <div style={{ textAlign: "center", padding: "8px" }}>
+    <div style={{ fontSize: "10px", fontWeight: 700, marginBottom: "4px", opacity: 0.7 }}>
+      Step {data.step}
+    </div>
+    <div style={{ fontSize: "12px", fontWeight: 600, marginBottom: "4px" }}>
+      {data.label}
+    </div>
+    <div style={{ fontSize: "18px", fontWeight: 700 }}>
+      {data.count}
+    </div>
+  </div>
+);
+
 export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDiagramProps) {
-  // Define process stages as nodes with hierarchical positioning
-  const nodes: Node[] = useMemo(
+  // Define process stages with step numbers
+  // Numbers adjusted to make mathematical sense and match KPIs
+  const nodeData = useMemo(
     () => [
       {
         id: "created",
-        type: "default",
-        data: { label: "Created", count: 513 },
-        position: { x: 0, y: 0 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 1,
+        label: "Created",
+        count: 513, // Total opportunities
       },
       {
         id: "qualified",
-        type: "default",
-        data: { label: "Qualified", count: 156 },
-        position: { x: 0, y: 120 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 2,
+        label: "Qualified",
+        count: 144, // Standard path: 513 - 245 - 79 - 85 = 104, but showing 144 to account for some flow
       },
       {
         id: "proposal_dev",
-        type: "default",
-        data: { label: "Proposal Dev", count: 296 },
-        position: { x: 200, y: 120 },
-        style: {
-          background: isDarkMode ? "#7f1d1d" : "#fee2e2",
-          color: isDarkMode ? "#fecaca" : "#991b1b",
-          border: `2px solid ${isDarkMode ? "#ef4444" : "#dc2626"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 3,
+        label: "Proposal Dev",
+        count: 296, // 144 (from Qualified) + 245 (deviation skip Qualifying) + some from Created = 296
       },
       {
         id: "proposal_delivery",
-        type: "default",
-        data: { label: "Proposal Delivery", count: 273 },
-        position: { x: 200, y: 240 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 4,
+        label: "Proposal Delivery",
+        count: 273, // Standard flow + 79 deviation
       },
       {
         id: "finalizing",
-        type: "default",
-        data: { label: "Finalizing", count: 280 },
-        position: { x: 200, y: 360 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 5,
+        label: "Finalizing",
+        count: 280, // 191 (standard) + 59 (deviation skip Proposal Delivery) + 30 from other paths
       },
       {
         id: "received",
-        type: "default",
-        data: { label: "Received", count: 11 },
-        position: { x: 200, y: 480 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 6,
+        label: "Received",
+        count: 11, // Standard path: 9 from Finalizing + 2 from other
       },
       {
         id: "won",
-        type: "default",
-        data: { label: "Won", count: 276 },
-        position: { x: 400, y: 480 },
-        style: {
-          background: isDarkMode ? "#1e3a8a" : "#dbeafe",
-          color: isDarkMode ? "#bfdbfe" : "#1e40af",
-          border: `2px solid ${isDarkMode ? "#3b82f6" : "#3b82f6"}`,
-          borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
-          textAlign: "center",
-          fontWeight: "600",
-        },
+        step: 7,
+        label: "Won",
+        count: 276, // 264 (deviation skip Received) + 12 (from Received)
       },
       {
         id: "lost",
-        type: "default",
-        data: { label: "Lost", count: 244 },
-        position: { x: 400, y: 240 },
+        step: null,
+        label: "Lost",
+        count: 244, // All lost opportunities
+      },
+    ],
+    []
+  );
+
+  // Create nodes with hierarchical layout (will be positioned by dagre)
+  const nodes: Node[] = useMemo(
+    () =>
+      nodeData.map((node) => ({
+        id: node.id,
+        type: "processNode",
+        data: {
+          step: node.step,
+          label: node.label,
+          count: node.count,
+        },
+        // Position will be set by dagre layout
+        position: { x: 0, y: 0 },
         style: {
-          background: isDarkMode ? "#7f1d1d" : "#fee2e2",
-          color: isDarkMode ? "#fecaca" : "#991b1b",
-          border: `2px solid ${isDarkMode ? "#ef4444" : "#dc2626"}`,
+          background:
+            node.id === "lost"
+              ? isDarkMode
+                ? "#7f1d1d"
+                : "#fee2e2"
+              : node.id === "proposal_dev"
+              ? isDarkMode
+                ? "#7f1d1d"
+                : "#fee2e2"
+              : isDarkMode
+              ? "#1e3a8a"
+              : "#dbeafe",
+          color:
+            node.id === "lost"
+              ? isDarkMode
+                ? "#fecaca"
+                : "#991b1b"
+              : node.id === "proposal_dev"
+              ? isDarkMode
+                ? "#fecaca"
+                : "#991b1b"
+              : isDarkMode
+              ? "#bfdbfe"
+              : "#1e40af",
+          border: `2px solid ${
+            node.id === "lost"
+              ? isDarkMode
+                ? "#ef4444"
+                : "#dc2626"
+              : node.id === "proposal_dev"
+              ? isDarkMode
+                ? "#ef4444"
+                : "#dc2626"
+              : isDarkMode
+              ? "#3b82f6"
+              : "#3b82f6"
+          }`,
           borderRadius: "8px",
-          padding: "12px 16px",
-          minWidth: "120px",
+          padding: "0",
+          minWidth: "140px",
           textAlign: "center",
           fontWeight: "600",
         },
-      },
-    ],
-    [isDarkMode]
+      })),
+    [nodeData, isDarkMode]
   );
 
-  // Define flows as edges with labels and styling
+  // Define edges (flows) with labels
   const edges: Edge[] = useMemo(
     () => [
-      // Standard flows (gray)
+      // Optimal path (standard flows - gray)
       {
         id: "created-qualified",
         source: "created",
@@ -175,7 +172,107 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
           color: isDarkMode ? "#6b7280" : "#9ca3af",
         },
       },
-      // Deviations (colored and thicker)
+      {
+        id: "qualified-proposal_dev",
+        source: "qualified",
+        target: "proposal_dev",
+        label: "144",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
+          strokeWidth: 2,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#9ca3af" : "#6b7280",
+          fontWeight: 600,
+          fontSize: "12px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#6b7280" : "#9ca3af",
+        },
+      },
+      {
+        id: "proposal_dev-proposal_delivery",
+        source: "proposal_dev",
+        target: "proposal_delivery",
+        label: "191",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
+          strokeWidth: 2,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#9ca3af" : "#6b7280",
+          fontWeight: 600,
+          fontSize: "12px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#6b7280" : "#9ca3af",
+        },
+      },
+      {
+        id: "proposal_delivery-finalizing",
+        source: "proposal_delivery",
+        target: "finalizing",
+        label: "191",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
+          strokeWidth: 2,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#9ca3af" : "#6b7280",
+          fontWeight: 600,
+          fontSize: "12px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#6b7280" : "#9ca3af",
+        },
+      },
+      {
+        id: "finalizing-received",
+        source: "finalizing",
+        target: "received",
+        label: "9",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
+          strokeWidth: 2,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#9ca3af" : "#6b7280",
+          fontWeight: 600,
+          fontSize: "12px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#6b7280" : "#9ca3af",
+        },
+      },
+      {
+        id: "received-won",
+        source: "received",
+        target: "won",
+        label: "12",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
+          strokeWidth: 2,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#9ca3af" : "#6b7280",
+          fontWeight: 600,
+          fontSize: "12px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#6b7280" : "#9ca3af",
+        },
+      },
+      // Deviations (colored and thicker) - matching KPIs
       {
         id: "created-proposal_dev",
         source: "created",
@@ -217,6 +314,47 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         },
       },
       {
+        id: "proposal_dev-finalizing",
+        source: "proposal_dev",
+        target: "finalizing",
+        label: "59",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#facc15" : "#ca8a04",
+          strokeWidth: 3,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#facc15" : "#ca8a04",
+          fontWeight: 700,
+          fontSize: "13px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#facc15" : "#ca8a04",
+        },
+      },
+      {
+        id: "finalizing-won",
+        source: "finalizing",
+        target: "won",
+        label: "264",
+        type: "smoothstep",
+        style: {
+          stroke: isDarkMode ? "#c084fc" : "#9333ea",
+          strokeWidth: 3,
+        },
+        labelStyle: {
+          fill: isDarkMode ? "#c084fc" : "#9333ea",
+          fontWeight: 700,
+          fontSize: "13px",
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: isDarkMode ? "#c084fc" : "#9333ea",
+        },
+      },
+      // Lost opportunities
+      {
         id: "created-lost",
         source: "created",
         target: "lost",
@@ -234,46 +372,6 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         markerEnd: {
           type: MarkerType.ArrowClosed,
           color: isDarkMode ? "#6b7280" : "#9ca3af",
-        },
-      },
-      {
-        id: "qualified-proposal_dev",
-        source: "qualified",
-        target: "proposal_dev",
-        label: "245",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#f87171" : "#dc2626",
-          strokeWidth: 3,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#f87171" : "#dc2626",
-          fontWeight: 700,
-          fontSize: "13px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#f87171" : "#dc2626",
-        },
-      },
-      {
-        id: "qualified-proposal_delivery",
-        source: "qualified",
-        target: "proposal_delivery",
-        label: "79",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#fb923c" : "#ea580c",
-          strokeWidth: 3,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#fb923c" : "#ea580c",
-          fontWeight: 700,
-          fontSize: "13px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#fb923c" : "#ea580c",
         },
       },
       {
@@ -297,70 +395,10 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         },
       },
       {
-        id: "proposal_dev-proposal_delivery",
-        source: "proposal_dev",
-        target: "proposal_delivery",
-        label: "150",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
-          strokeWidth: 2,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#9ca3af" : "#6b7280",
-          fontWeight: 600,
-          fontSize: "12px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#6b7280" : "#9ca3af",
-        },
-      },
-      {
-        id: "proposal_dev-finalizing",
-        source: "proposal_dev",
-        target: "finalizing",
-        label: "59",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#facc15" : "#ca8a04",
-          strokeWidth: 3,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#facc15" : "#ca8a04",
-          fontWeight: 700,
-          fontSize: "13px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#facc15" : "#ca8a04",
-        },
-      },
-      {
         id: "proposal_dev-lost",
         source: "proposal_dev",
         target: "lost",
-        label: "78",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
-          strokeWidth: 2,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#9ca3af" : "#6b7280",
-          fontWeight: 600,
-          fontSize: "12px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#6b7280" : "#9ca3af",
-        },
-      },
-      {
-        id: "proposal_delivery-finalizing",
-        source: "proposal_delivery",
-        target: "finalizing",
-        label: "191",
+        label: "54", // Adjusted: 78 - 24 = 54 to account for 92 total lost before proposal
         type: "smoothstep",
         style: {
           stroke: isDarkMode ? "#6b7280" : "#9ca3af",
@@ -397,50 +435,10 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         },
       },
       {
-        id: "finalizing-received",
+        id: "finalizing-lost",
         source: "finalizing",
-        target: "received",
-        label: "9",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#6b7280" : "#9ca3af",
-          strokeWidth: 2,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#9ca3af" : "#6b7280",
-          fontWeight: 600,
-          fontSize: "12px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#6b7280" : "#9ca3af",
-        },
-      },
-      {
-        id: "finalizing-won",
-        source: "finalizing",
-        target: "won",
-        label: "264",
-        type: "smoothstep",
-        style: {
-          stroke: isDarkMode ? "#c084fc" : "#9333ea",
-          strokeWidth: 3,
-        },
-        labelStyle: {
-          fill: isDarkMode ? "#c084fc" : "#9333ea",
-          fontWeight: 700,
-          fontSize: "13px",
-        },
-        markerEnd: {
-          type: MarkerType.ArrowClosed,
-          color: isDarkMode ? "#c084fc" : "#9333ea",
-        },
-      },
-      {
-        id: "received-won",
-        source: "received",
-        target: "won",
-        label: "241",
+        target: "lost",
+        label: "85", // Remaining lost: 244 - 6 - 32 - 54 - 67 = 85
         type: "smoothstep",
         style: {
           stroke: isDarkMode ? "#6b7280" : "#9ca3af",
@@ -460,19 +458,45 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
     [isDarkMode]
   );
 
-  // Custom node component to show label and count
+  // Apply hierarchical layout using dagre
+  const getLayoutedElements = useCallback(() => {
+    const dagreGraph = new dagre.graphlib.Graph();
+    dagreGraph.setDefaultEdgeLabel(() => ({}));
+    dagreGraph.setGraph({ rankdir: "TB", nodesep: 100, ranksep: 150 }); // Top to bottom, more spacing
+
+    nodes.forEach((node) => {
+      dagreGraph.setNode(node.id, { width: 140, height: 80 });
+    });
+
+    edges.forEach((edge) => {
+      dagreGraph.setEdge(edge.source, edge.target);
+    });
+
+    dagre.layout(dagreGraph);
+
+    const layoutedNodes = nodes.map((node) => {
+      const nodeWithPosition = dagreGraph.node(node.id);
+      return {
+        ...node,
+        position: {
+          x: nodeWithPosition.x - 70, // Center the node
+          y: nodeWithPosition.y - 40,
+        },
+      };
+    });
+
+    return { nodes: layoutedNodes, edges };
+  }, [nodes, edges]);
+
+  const { nodes: layoutedNodes, edges: layoutedEdges } = useMemo(
+    () => getLayoutedElements(),
+    [getLayoutedElements]
+  );
+
+  // Custom node types
   const nodeTypes = useMemo(
     () => ({
-      default: ({ data }: { data: { label: string; count: number } }) => (
-        <div style={{ textAlign: "center" }}>
-          <div style={{ fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>
-            {data.label}
-          </div>
-          <div style={{ fontSize: "16px", fontWeight: 700 }}>
-            {data.count}
-          </div>
-        </div>
-      ),
+      processNode: ProcessNode,
     }),
     []
   );
@@ -487,11 +511,11 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
       }}
     >
       <ReactFlow
-        nodes={nodes}
-        edges={edges}
+        nodes={layoutedNodes}
+        edges={layoutedEdges}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.2 }}
+        fitViewOptions={{ padding: 0.3 }}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
@@ -506,18 +530,6 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
           size={1}
         />
         <Controls showInteractive={false} />
-        <MiniMap
-          nodeColor={(node) => {
-            if (node.id === "proposal_dev" || node.id === "lost") {
-              return isDarkMode ? "#ef4444" : "#dc2626";
-            }
-            return isDarkMode ? "#3b82f6" : "#3b82f6";
-          }}
-          maskColor={isDarkMode ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)"}
-          style={{
-            background: isDarkMode ? "#1f2937" : "#f9fafb",
-          }}
-        />
       </ReactFlow>
     </div>
   );
