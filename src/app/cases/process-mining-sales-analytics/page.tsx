@@ -221,20 +221,20 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   <span>Key Process Deviations Discovered</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-4 pb-4">
                 {/* Vertical Stack: Process Flow Diagram (full width) | KPI Callouts (horizontal row) */}
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 gap-4">
                   {/* Top: Process Flow Diagram - Full Width */}
-                  <div className="space-y-2">
-                    <h4 className={`text-sm font-semibold mb-3 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                  <div>
+                    <h4 className={`text-sm font-semibold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                       Sales Process Flow
                     </h4>
                     <ProcessFlowDiagram isDarkMode={isDarkMode} />
                   </div>
 
                   {/* Bottom: KPI Callouts - Horizontal Row */}
-                  <div className="space-y-3">
-                    <h4 className={`text-sm font-semibold mb-3 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                  <div>
+                    <h4 className={`text-sm font-semibold mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                       Key Deviations
                     </h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

@@ -540,7 +540,7 @@ export default function ProcessFlowDiagram({ isDarkMode = false }: ProcessFlowDi
         edges={layoutedEdges}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
+        fitViewOptions={{ padding: 0.1 }}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
