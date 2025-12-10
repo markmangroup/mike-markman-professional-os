@@ -112,8 +112,8 @@ export default function CareerPage() {
       meta={careerMeta}
       tags={careerMeta.tags}
     >
-      <section className="space-y-6 py-10">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Overview</h2>
+      <section className="space-y-8 mt-12">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">Overview</h2>
         <div className="max-w-prose space-y-4">
           <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
             I build clarity, structure, and momentum inside complex organizations.
@@ -130,8 +130,8 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <section className="space-y-6 py-10">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">How I Work Across Roles</h2>
+      <section className="space-y-8 mt-12">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">How I Work Across Roles</h2>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 max-w-prose">
           Across 20 years, my operating model has been consistent:
         </p>
@@ -152,8 +152,8 @@ export default function CareerPage() {
         </p>
       </section>
 
-      <section className="space-y-6 py-10">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Professional Timeline</h2>
+      <section className="space-y-8 mt-12">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">Professional Timeline</h2>
         <div className="space-y-4">
           {timelineEntries.map((entry) => (
             <div key={entry.title} className="border-l-2 border-gray-200 pl-4 dark:border-neutral-700 space-y-1">
@@ -170,8 +170,8 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <section className="space-y-6 py-10">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Career Through-Line</h2>
+      <section className="space-y-8 mt-12">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">Career Through-Line</h2>
         <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 max-w-prose">
           Across every role, my work centers on three things:
         </p>

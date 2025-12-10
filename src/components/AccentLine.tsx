@@ -1,7 +1,7 @@
 export default function AccentLine({
-  orientation = "vertical",
-  length = "40px",
-  thickness = "2px",
+  orientation = "horizontal",
+  length = "120px",
+  thickness = "4px",
   className = "",
 }: {
   orientation?: "vertical" | "horizontal";
@@ -19,10 +19,9 @@ export default function AccentLine({
       style={style}
       className={`
         bg-gradient-to-b from-[#4F91FF] to-[#8B5CF6]
-        shadow-[0_0_6px_rgba(79,145,255,0.4)]
+        shadow-[0_0_10px_rgba(79,145,255,0.5)]
         ${className}
       `}
     />
   );
 }
-

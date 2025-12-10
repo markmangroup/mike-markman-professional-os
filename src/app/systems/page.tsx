@@ -215,20 +215,20 @@ export default function SystemsPage() {
       meta={systemsMeta}
       tags={systemsMeta.tags}
     >
-      <div className="space-y-6">
+      <div className="space-y-8">
         {systemClusters.map((cluster) => (
           <div
             key={cluster.id}
             id={cluster.id}
-            className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs dark:border-neutral-800 dark:bg-neutral-900 space-y-3 scroll-mt-32"
+            className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs dark:border-neutral-800 dark:bg-neutral-900 space-y-3 scroll-mt-32 mt-12"
           >
-            <header className="space-y-3">
+            <header className="space-y-3 mb-6">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
                 {cluster.tagline}
               </p>
-              <div className="flex items-center gap-3">
-                <AccentLine orientation="vertical" length="32px" />
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <div className="flex items-center gap-4">
+                <AccentLine orientation="vertical" length="48px" thickness="4px" />
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {cluster.title}
                 </h2>
               </div>

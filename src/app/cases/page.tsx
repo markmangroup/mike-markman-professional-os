@@ -22,6 +22,52 @@ export default function CasesPage() {
         </p>
       </div>
 
+      {/* Process Mining & Sales Analytics */}
+      <Card className="card">
+        <CardHeader>
+          <CardTitle>Process Mining & Sales Analytics</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-muted-foreground">
+            Applied process mining and predictive analytics to transform sales operations. Identified 700+ process deviations, built sales likelihood prediction models achieving 88-91% accuracy, and established automated reporting infrastructure supporting sales incentive calculations and go-to-market optimization.
+          </p>
+
+          <div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => toggleCase("process-mining")}
+              className="flex items-center gap-2 px-0 hover:bg-transparent"
+            >
+              <span className="text-sm font-semibold text-muted-foreground">
+                View Storyboard
+              </span>
+              {expandedCase === "process-mining" ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </Button>
+
+            {expandedCase === "process-mining" && (
+              <div className="flex flex-col gap-2 mt-3">
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/cases/process-mining-sales-analytics">Process Mining & Sales Analytics Storyboard</Link>
+                </Button>
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Button asChild variant="default" size="sm">
+              <Link href="/cases/process-mining-sales-analytics">View Storyboard</Link>
+            </Button>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">Process Mining</Badge>
+              <Badge variant="outline">Predictive Analytics</Badge>
+              <Badge variant="outline" className="hidden sm:inline-flex">Sales Operations</Badge>
+              <Badge variant="secondary" className="text-xs">+2 more</Badge>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* IQVIA — Enterprise Automation & Analytics */}
       <Card className="card">
         <CardHeader>

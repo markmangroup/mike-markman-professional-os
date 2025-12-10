@@ -78,18 +78,18 @@ export default function PageLayout({
       <div className="mx-auto flex w-full max-w-6xl gap-8 px-6 py-10">
         <SidebarNav sections={sections} />
         <main className="min-w-0 flex-1 max-w-4xl space-y-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <AccentLine orientation="vertical" length="36px" />
+          <div className="flex items-center gap-4 mb-6">
+            <AccentLine orientation="vertical" length="48px" thickness="4px" />
+            <div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {title}
               </h1>
+              {subtitle && (
+                <p className="mt-2 max-w-prose text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                  {subtitle}
+                </p>
+              )}
             </div>
-            {subtitle && (
-              <p className="mt-2 max-w-prose text-base leading-relaxed text-gray-600 dark:text-gray-300">
-                {subtitle}
-              </p>
-            )}
           </div>
           {children}
         </main>
@@ -167,14 +167,16 @@ function MetadataPanel({ meta }: { meta: PageMeta }) {
     return <div className="hidden xl:block w-80" />;
   }
 
+  const maxToShow = 6;
+
   return (
     <aside className="hidden xl:block w-80">
       <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-neutral-800 dark:bg-neutral-900/60 space-y-5">
         {meta.what && (
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <AccentLine orientation="vertical" length="20px" thickness="2px" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-1">
+              <AccentLine orientation="vertical" length="20px" thickness="3px" />
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 What this is
               </p>
             </div>
@@ -185,9 +187,9 @@ function MetadataPanel({ meta }: { meta: PageMeta }) {
         )}
         {meta.why && (
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <AccentLine orientation="vertical" length="20px" thickness="2px" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-1">
+              <AccentLine orientation="vertical" length="20px" thickness="3px" />
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 Why it matters
               </p>
             </div>
@@ -198,14 +200,14 @@ function MetadataPanel({ meta }: { meta: PageMeta }) {
         )}
         {meta.relatedSkills.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <AccentLine orientation="vertical" length="20px" thickness="2px" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-1">
+              <AccentLine orientation="vertical" length="20px" thickness="3px" />
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 Related Skills
               </p>
             </div>
             <div className="flex flex-wrap gap-2 mt-3">
-              {meta.relatedSkills.map((skill) => (
+              {meta.relatedSkills.slice(0, maxToShow).map((skill) => (
                 <span
                   key={skill}
                   className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-800 dark:bg-neutral-800 dark:text-gray-100"
@@ -213,14 +215,19 @@ function MetadataPanel({ meta }: { meta: PageMeta }) {
                   {skill}
                 </span>
               ))}
+              {meta.relatedSkills.length > maxToShow && (
+                <span className="inline-flex items-center text-xs text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer">
+                  + {meta.relatedSkills.length - maxToShow} more skills
+                </span>
+              )}
             </div>
           </div>
         )}
         {meta.relatedSystems.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <AccentLine orientation="vertical" length="20px" thickness="2px" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-1">
+              <AccentLine orientation="vertical" length="20px" thickness="3px" />
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 Related Systems
               </p>
             </div>
@@ -240,9 +247,9 @@ function MetadataPanel({ meta }: { meta: PageMeta }) {
         )}
         {meta.relatedEvidence.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <AccentLine orientation="vertical" length="20px" thickness="2px" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-1">
+              <AccentLine orientation="vertical" length="20px" thickness="3px" />
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 Related Evidence
               </p>
             </div>

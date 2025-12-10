@@ -9,8 +9,8 @@ export default function Home() {
     <div className="max-w-5xl mx-auto px-6 py-16 space-y-20">
       {/* Hero Section */}
       <section className="text-center space-y-6">
-        <div className="flex justify-center mb-4">
-          <AccentLine orientation="horizontal" length="60px" thickness="3px" />
+        <div className="flex justify-center mb-6 mt-2">
+          <AccentLine orientation="horizontal" length="120px" thickness="4px" />
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           Mike Markman
@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Audience Entry Paths */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="cursor-pointer rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+        <Card className="cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all dark:border-neutral-800 dark:bg-neutral-900">
           <Link href="/career" className="block h-full">
             <CardHeader className="p-0">
               <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">
@@ -43,7 +43,7 @@ export default function Home() {
           </Link>
         </Card>
 
-        <Card className="cursor-pointer rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+        <Card className="cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all dark:border-neutral-800 dark:bg-neutral-900">
           <Link href="/systems" className="block h-full">
             <CardHeader className="p-0">
               <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">
@@ -58,7 +58,7 @@ export default function Home() {
           </Link>
         </Card>
 
-        <Card className="cursor-pointer rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+        <Card className="cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all dark:border-neutral-800 dark:bg-neutral-900">
           <Link href="/cases" className="block h-full">
             <CardHeader className="p-0">
               <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">
@@ -75,9 +75,9 @@ export default function Home() {
       </section>
 
       {/* Encyclopedia Section Grid */}
-      <section className="space-y-8">
-        <div className="flex items-center gap-3 mb-2">
-          <AccentLine orientation="vertical" length="30px" />
+      <section className="space-y-8 mt-12">
+        <div className="flex items-center gap-4 mb-6">
+          <AccentLine orientation="vertical" length="48px" thickness="4px" />
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Explore the Encyclopedia</h2>
         </div>
 
@@ -96,9 +96,9 @@ export default function Home() {
       </section>
 
       {/* Featured Systems */}
-      <section className="space-y-8">
-        <div className="flex items-center gap-3 mb-2">
-          <AccentLine orientation="vertical" length="30px" />
+      <section className="space-y-8 mt-12">
+        <div className="flex items-center gap-4 mb-6">
+          <AccentLine orientation="vertical" length="48px" thickness="4px" />
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Featured Systems</h2>
         </div>
 
@@ -127,7 +127,7 @@ function HomeTile({
   description: string;
 }) {
   return (
-    <Card className="cursor-pointer rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+    <Card className="cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all dark:border-neutral-800 dark:bg-neutral-900">
       <Link href={href} className="block h-full">
         <CardHeader className="p-0">
           <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">
