@@ -645,10 +645,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
       content: (
         <div className="space-y-4">
           <Card>
-            <CardHeader>
-              <CardTitle>Real Opportunity Example</CardTitle>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-6">
               <div className="space-y-4">
                 <div className="bg-gradient-to-r from-green-50 to-blue-50">
                   <div className="flex items-center justify-between mb-4">
@@ -969,26 +966,40 @@ export default function ProcessMiningSalesAnalyticsPage() {
           } ${isDarkMode ? "bg-neutral-900 border-r border-neutral-800" : "bg-white border-r border-gray-200"} shadow-lg`}
         >
           <div className="flex flex-col h-full">
-            {/* Sidebar Header */}
-            <div className={`flex items-center justify-between p-4 border-b ${isDarkMode ? "border-neutral-800" : "border-gray-200"}`}>
-              {isSidebarOpen && (
-                <h2 className={`text-sm font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-                  Slides
-                </h2>
-              )}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="ml-auto"
-                aria-label={isSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
-              >
-                {isSidebarOpen ? (
-                  <ChevronLeft className="h-4 w-4" />
-                ) : (
-                  <Menu className="h-4 w-4" />
+            {/* Sidebar Header with Main Title */}
+            <div className={`p-4 border-b ${isDarkMode ? "border-neutral-800" : "border-gray-200"}`}>
+              <div className="flex items-center justify-between mb-3">
+                {isSidebarOpen && (
+                  <h2 className={`text-xs font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
+                    Presentation
+                  </h2>
                 )}
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                  className={isSidebarOpen ? "ml-auto" : ""}
+                  aria-label={isSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
+                >
+                  {isSidebarOpen ? (
+                    <ChevronLeft className="h-4 w-4" />
+                  ) : (
+                    <Menu className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+              {isSidebarOpen && (
+                <div className="space-y-1">
+                  <h1 className={`text-lg font-bold leading-tight ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                    <span className={isDarkMode ? "text-blue-400" : "text-blue-600"}>Process Mining</span>
+                    <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}> & </span>
+                    <span className={isDarkMode ? "text-purple-400" : "text-purple-600"}>Sales Analytics</span>
+                  </h1>
+                  <p className={`text-xs leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+                    Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Navigation Controls */}
@@ -1100,50 +1111,40 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
         {/* Main Content Area */}
         <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "ml-72" : "ml-16"}`}>
-          <div className="flex gap-6 px-6 py-6">
-            <div className="flex-1 space-y-4 min-w-0">
-            {/* Page Header */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-              <div>
-                <h1 className={`text-4xl font-bold tracking-tight ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                  Process Mining & Sales Analytics
-                </h1>
-                <p className={`mt-2 text-base leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                  Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
-                </p>
-              </div>
-            </div>
-
-            {/* Current Slide - Full width */}
-            <Card className={`min-h-[600px] shadow-xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : ""}`}>
-            <CardHeader className={`border-b py-4 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
-              <div className="flex items-start gap-4">
-                {currentSlide === 8 && (
-                  <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                    <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
-                  </div>
-                )}
-                <div className="flex-1">
-                  <CardTitle className={`text-2xl mb-2 ${isDarkMode ? "text-white" : ""}`}>{slides[currentSlide].title}</CardTitle>
-                  {currentSlide === 1 && (
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      Understanding the current state: identifying gaps between manual, fragmented processes and the need for data-driven, always-on visibility
-                    </p>
-                  )}
-                  {currentSlide === 2 && (
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      Using process mining to uncover hidden inefficiencies and process deviations that impact sales performance
-                    </p>
-                  )}
+          <div className="flex gap-6 px-6 py-4">
+            <div className="flex-1 min-w-0">
+            {/* Current Slide - Full width, maximized focus */}
+            <Card className={`min-h-[calc(100vh-120px)] shadow-2xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : "border-gray-200"}`}>
+            {/* Hide CardHeader for slide 0 (title slide) since content has its own title */}
+            {currentSlide !== 0 && (
+              <CardHeader className={`border-b py-5 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
+                <div className="flex items-start gap-4">
                   {currentSlide === 8 && (
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      End-to-end data pipeline from source systems to analytics dashboards
-                    </p>
+                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                      <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                    </div>
                   )}
+                  <div className="flex-1">
+                    <CardTitle className={`text-2xl font-bold mb-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>{slides[currentSlide].title}</CardTitle>
+                    {currentSlide === 1 && (
+                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                        Understanding the current state: identifying gaps between manual, fragmented processes and the need for data-driven, always-on visibility
+                      </p>
+                    )}
+                    {currentSlide === 2 && (
+                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                        Using process mining to uncover hidden inefficiencies and process deviations that impact sales performance
+                      </p>
+                    )}
+                    {currentSlide === 8 && (
+                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                        End-to-end data pipeline from source systems to analytics dashboards
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </CardHeader>
+              </CardHeader>
+            )}
             <CardContent className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "p-0 overflow-hidden" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
               <div className={isDarkMode ? "dark-mode-content" : ""}>
                 {slides[currentSlide].content}
