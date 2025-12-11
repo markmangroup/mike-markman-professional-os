@@ -523,71 +523,71 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
             {/* Hero overview card */}
             <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-slate-700/60 bg-slate-900/80" : "border-slate-300 bg-white"}`}>
-              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:justify-between mb-3">
                 <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
                   Business overview
                 </h3>
-                <p className={`text-xs ${isDarkMode ? "text-slate-500" : "text-slate-500"}`}>
+                <p className={`text-[10px] ${isDarkMode ? "text-slate-500/70" : "text-slate-500/80"}`}>
                   Snapshot of sales pipeline at the time of analysis.
                 </p>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {/* Total Contract Value */}
-                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-sky-500/15 text-sky-50 border-sky-500/30" : "bg-sky-50 text-sky-900 border-sky-200"}`}>
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-sky-100"}`}>
-                    <DollarSign className={`h-4 w-4 ${isDarkMode ? "text-sky-300" : "text-sky-600"}`} />
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-4 h-[72px] ${isDarkMode ? "bg-sky-500/10 text-sky-50 border-sky-500/20" : "bg-sky-50/60 text-sky-900 border-sky-200/60"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full flex-shrink-0 ${isDarkMode ? "bg-black/40" : "bg-sky-100/80"}`}>
+                    <DollarSign className={`h-4 w-4 ${isDarkMode ? "text-sky-300/80" : "text-sky-600/80"}`} />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col min-w-0">
                     <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
                       $93M
                     </span>
-                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600/90"}`}>
                       Total contract value
                     </span>
                   </div>
                 </div>
 
                 {/* Opportunities */}
-                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-slate-800/80 text-slate-50 border-slate-600/60" : "bg-slate-50 text-slate-900 border-slate-200"}`}>
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-slate-100"}`}>
-                    <FileText className={`h-4 w-4 ${isDarkMode ? "text-slate-300" : "text-slate-600"}`} />
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-4 h-[72px] ${isDarkMode ? "bg-slate-800/60 text-slate-50 border-slate-600/40" : "bg-slate-50/60 text-slate-900 border-slate-200/60"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full flex-shrink-0 ${isDarkMode ? "bg-black/40" : "bg-slate-100/80"}`}>
+                    <FileText className={`h-4 w-4 ${isDarkMode ? "text-slate-300/80" : "text-slate-600/80"}`} />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col min-w-0">
                     <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-slate-50" : "text-slate-900"}`}>
                       672
                     </span>
-                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600/90"}`}>
                       Opportunities
                     </span>
                   </div>
                 </div>
 
                 {/* Win Rate */}
-                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-emerald-500/12 text-emerald-50 border-emerald-500/30" : "bg-emerald-50 text-emerald-900 border-emerald-200"}`}>
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-emerald-100"}`}>
-                    <Percent className={`h-4 w-4 ${isDarkMode ? "text-emerald-300" : "text-emerald-600"}`} />
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-4 h-[72px] ${isDarkMode ? "bg-emerald-500/8 text-emerald-50 border-emerald-500/20" : "bg-emerald-50/60 text-emerald-900 border-emerald-200/60"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full flex-shrink-0 ${isDarkMode ? "bg-black/40" : "bg-emerald-100/80"}`}>
+                    <Percent className={`h-4 w-4 ${isDarkMode ? "text-emerald-300/80" : "text-emerald-600/80"}`} />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col min-w-0">
                     <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-emerald-50" : "text-emerald-900"}`}>
                       56%
                     </span>
-                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600/90"}`}>
                       Win rate
                     </span>
                   </div>
                 </div>
 
                 {/* Sales Reps */}
-                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-amber-500/12 text-amber-50 border-amber-500/30" : "bg-amber-50 text-amber-900 border-amber-200"}`}>
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-amber-100"}`}>
-                    <Users className={`h-4 w-4 ${isDarkMode ? "text-amber-300" : "text-amber-600"}`} />
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-4 h-[72px] ${isDarkMode ? "bg-amber-500/8 text-amber-50 border-amber-500/20" : "bg-amber-50/60 text-amber-900 border-amber-200/60"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full flex-shrink-0 ${isDarkMode ? "bg-black/40" : "bg-amber-100/80"}`}>
+                    <Users className={`h-4 w-4 ${isDarkMode ? "text-amber-300/80" : "text-amber-600/80"}`} />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col min-w-0">
                     <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-amber-50" : "text-amber-900"}`}>
                       20
                     </span>
-                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600/90"}`}>
                       Sales reps
                     </span>
                   </div>
@@ -599,21 +599,21 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <div className="grid items-stretch gap-6 md:grid-cols-3">
               {/* Deviations at Scale - spans 2 columns on md+ */}
               <div className={`md:col-span-2 rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
-                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                <div className="flex flex-col gap-1.5 md:flex-row md:items-start md:justify-between pb-3">
                   <div>
                     <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-red-100" : "text-red-900"}`}>
                       Deviations at scale
                     </h3>
-                    <p className={`mt-1 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                    <p className={`mt-0.5 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
                       Where process friction appears as volume increases.
                     </p>
                   </div>
-                  <p className={`text-[11px] md:max-w-xs ${isDarkMode ? "text-red-100/70" : "text-red-600"}`}>
+                  <p className={`text-[10px] md:max-w-xs ${isDarkMode ? "text-red-100/60" : "text-red-600/80"}`}>
                     Some opportunities have multiple deviations, which is why the percentage of opportunities can exceed 100 percent.
                   </p>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                   <div>
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Total deviations found
@@ -633,7 +633,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <p className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Deviation load
                     </p>
-                    <div className={`mt-3 h-2 w-full rounded-full ${isDarkMode ? "bg-red-900/80" : "bg-red-200"}`}>
+                    <div className="mt-2 flex items-center justify-between mb-1">
+                      <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>Low</span>
+                      <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>82%</span>
+                      <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>High</span>
+                    </div>
+                    <div className={`h-2 w-full rounded-full ${isDarkMode ? "bg-red-900/80" : "bg-red-200"}`}>
                       <div className={`h-2 w-[82%] rounded-full ${isDarkMode ? "bg-red-400" : "bg-red-600"}`} />
                     </div>
                     <p className={`mt-2 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
@@ -664,24 +669,26 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-sky-200/85" : "text-sky-700"}`}>
                       Win rate uplift
                     </p>
-                    <p className={`mt-1 text-3xl font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                    <p className={`mt-0.5 text-2xl font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
                       +3–5% win rate
                     </p>
-                    <p className={`mt-2 text-sm ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
+                    <p className={`mt-3 text-sm ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
                       Focused remediation of high impact deviations translates into more consistent conversions on qualified opportunities.
                     </p>
                   </div>
 
-                  <div className={`rounded-xl p-3 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
-                    <p className={`text-[11px] uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-200" : "text-sky-700"}`}>
-                      Estimated revenue impact
-                    </p>
-                    <p className={`mt-1 text-lg font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
-                      +$2.8M - $4.7M
-                    </p>
-                    <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-600"}`}>
-                      Based on current contract values, opportunity mix, and average deal size.
-                    </p>
+                  <div className={`border-t pt-4 ${isDarkMode ? "border-sky-800/60" : "border-sky-200"}`}>
+                    <div className={`rounded-xl p-3 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
+                      <p className={`text-[11px] uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-200" : "text-sky-700"}`}>
+                        Estimated revenue impact
+                      </p>
+                      <p className={`mt-1 text-lg font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                        +$2.8M - $4.7M
+                      </p>
+                      <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-600"}`}>
+                        Based on current contract values, opportunity mix, and average deal size.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -689,30 +696,35 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
             {/* Narrative footer card */}
             <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-purple-500/30 bg-purple-950/70" : "border-purple-300 bg-purple-50"}`}>
-              <h3 className={`text-sm font-semibold ${isDarkMode ? "text-purple-50" : "text-purple-900"}`}>
-                The next step: predictive analytics
-              </h3>
-              <p className={`mt-2 text-sm max-w-3xl ${isDarkMode ? "text-purple-100/85" : "text-purple-800"}`}>
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <h3 className={`text-sm font-semibold ${isDarkMode ? "text-purple-50" : "text-purple-900"}`}>
+                  The next step: predictive analytics
+                </h3>
+                <span className={`rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-purple-900/60 text-purple-200" : "bg-purple-100 text-purple-700"}`}>
+                  What this enables
+                </span>
+              </div>
+              <p className={`text-sm max-w-3xl leading-relaxed ${isDarkMode ? "text-purple-100/85" : "text-purple-800"}`}>
                 With 739 deviations across 672 opportunities, the sales organization needs a way to see which deals are drifting off the optimal path before they are lost. Predictive analytics turns noisy deviation data into a ranked list of opportunities that require attention.
               </p>
 
               <ul className={`mt-4 grid gap-3 text-sm md:grid-cols-3 ${isDarkMode ? "text-purple-100/90" : "text-purple-800"}`}>
                 <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
                   <span>
-                    Prioritize sales efforts by predicting which opportunities are most at risk and most worth saving.
+                    <strong className="font-semibold">Prioritize sales efforts</strong> by predicting which opportunities are most at risk and most worth saving.
                   </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
                   <span>
-                    Surface deviation patterns that consistently precede lost deals, so playbooks can be updated with evidence.
+                    <strong className="font-semibold">Surface deviation patterns</strong> that consistently precede lost deals, so playbooks can be updated with evidence.
                   </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
                   <span>
-                    Deliver simple, ranked worklists to reps rather than raw reports, reducing noise and decision fatigue.
+                    <strong className="font-semibold">Deliver ranked worklists</strong> to reps rather than raw reports, reducing noise and decision fatigue.
                   </span>
                 </li>
               </ul>
