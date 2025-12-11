@@ -522,12 +522,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
             </header>
 
             {/* Hero overview card */}
-            <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-slate-700/60 bg-slate-900/80" : "border-slate-300 bg-white"}`}>
+            <div className={`rounded-2xl border p-6 ${isDarkMode ? "border-slate-700/60 bg-slate-900/80" : "border-slate-300 bg-white"}`}>
               <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:justify-between mb-3">
                 <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
                   Business overview
                 </h3>
-                <p className={`text-[10px] ${isDarkMode ? "text-slate-500/70" : "text-slate-500/80"}`}>
+                <p className={`text-[9px] ${isDarkMode ? "text-slate-500/60" : "text-slate-500/70"}`}>
                   Snapshot of the sales pipeline at the time of analysis.
                 </p>
               </div>
@@ -598,8 +598,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
             {/* Problem + Impact row - Blue card is hero, red card is narrow sidebar */}
             <div className="grid items-stretch gap-6 md:grid-cols-3">
               {/* Deviations at Scale - Narrow sidebar, single column */}
-              <div className={`rounded-2xl border py-4 px-5 shadow-sm ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
-                <div className="space-y-4">
+              <div className={`rounded-2xl border py-4 px-5 ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
+                <div className="space-y-3.5">
                   <div>
                     <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-red-100" : "text-red-900"}`}>
                       Deviations at scale
@@ -613,17 +613,17 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Total deviations found
                     </p>
-                    <p className={`mt-1.5 text-3xl font-semibold ${isDarkMode ? "text-red-50" : "text-red-900"}`}>739</p>
-                    <p className={`mt-2 text-sm leading-tight ${isDarkMode ? "text-red-100/85" : "text-red-800"}`}>
+                    <p className={`mt-1 text-3xl font-semibold ${isDarkMode ? "text-red-50" : "text-red-900"}`}>739</p>
+                    <p className={`mt-1.5 text-sm leading-relaxed ${isDarkMode ? "text-red-100/85" : "text-red-800"}`}>
                       Found in 672 opportunities, representing 110 percent of the pipeline.
                     </p>
                   </div>
 
-                  <div>
+                  <div className="space-y-1.5">
                     <p className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Deviation load
                     </p>
-                    <div className="mt-1.5 flex items-center justify-between mb-1">
+                    <div className="flex items-center justify-between mb-0.5">
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>Low</span>
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>82%</span>
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>High</span>
@@ -631,13 +631,13 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <div className={`h-2 w-full rounded-full ${isDarkMode ? "bg-red-900/80" : "bg-red-200"}`}>
                       <div className={`h-2 w-[82%] rounded-full ${isDarkMode ? "bg-red-400" : "bg-red-600"}`} />
                     </div>
-                    <p className={`mt-2 text-xs leading-tight ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                    <p className={`mt-1.5 text-xs leading-relaxed ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
                       High deviation density creates noise for sales teams and hides true win probability.
                     </p>
                   </div>
 
                   <div className={`pt-3 border-t ${isDarkMode ? "border-red-800/50" : "border-red-200/60"}`}>
-                    <p className={`text-[9px] leading-tight ${isDarkMode ? "text-red-100/60" : "text-red-600/80"}`}>
+                    <p className={`text-[8px] leading-relaxed ${isDarkMode ? "text-red-100/50" : "text-red-600/70"}`}>
                       Some opportunities have multiple deviations, so the percentage can exceed 100 percent.
                     </p>
                   </div>
@@ -645,8 +645,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </div>
 
               {/* Potential Impact - Hero card, spans 2 columns */}
-              <div className={`md:col-span-2 rounded-2xl border p-7 shadow-sm ${isDarkMode ? "border-sky-500/40 bg-sky-950/70" : "border-sky-300 bg-sky-50"}`}>
-                <div className="flex items-start justify-between gap-2 mb-5">
+              <div className={`md:col-span-2 rounded-2xl border p-7 ${isDarkMode ? "border-sky-500/40 bg-sky-950/70" : "border-sky-300 bg-sky-50"}`}>
+                <div className="flex items-start justify-between gap-2 mb-6">
                   <div>
                     <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-100" : "text-sky-900"}`}>
                       Potential impact
@@ -655,25 +655,25 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       Scenario: remove 25 percent of process deviations using process mining insights.
                     </p>
                   </div>
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-sky-900/60 text-sky-200" : "bg-sky-100 text-sky-700"}`}>
+                  <span className={`rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-sky-900/60 text-sky-200 border border-sky-800/40" : "bg-sky-100 text-sky-700 border border-sky-200/60"}`}>
                     Modeled
                   </span>
                 </div>
 
-                <div className="space-y-5">
+                <div className="space-y-6">
                   <div>
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-sky-200/85" : "text-sky-700"}`}>
                       Win rate improvement
                     </p>
-                    <p className={`mt-2 text-3xl font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                    <p className={`mt-3 mb-4 text-4xl font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
                       56% → 59–61% win rate
                     </p>
-                    <p className={`mt-3 text-sm leading-relaxed ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
+                    <p className={`text-sm leading-relaxed ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
                       Fixing high-impact deviations increases conversion consistency on qualified opportunities.
                     </p>
                   </div>
 
-                  <div className={`border-t pt-5 ${isDarkMode ? "border-sky-800/60" : "border-sky-200"}`}>
+                  <div className={`border-t pt-6 ${isDarkMode ? "border-sky-800/60" : "border-sky-200"}`}>
                     <div className={`rounded-xl p-4 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
                       <p className={`text-[11px] uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-200" : "text-sky-700"}`}>
                         Estimated annual revenue impact
@@ -691,12 +691,12 @@ export default function ProcessMiningSalesAnalyticsPage() {
             </div>
 
             {/* Narrative footer card */}
-            <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-purple-500/30 bg-purple-950/70" : "border-purple-300 bg-purple-50"}`}>
-              <div className="flex items-start justify-between gap-2 mb-3">
+            <div className={`rounded-2xl border p-6 ${isDarkMode ? "border-purple-500/30 bg-purple-950/70" : "border-purple-300 bg-purple-50"}`}>
+              <div className="flex items-start justify-between gap-2 mb-4">
                 <h3 className={`text-sm font-semibold ${isDarkMode ? "text-purple-50" : "text-purple-900"}`}>
                   The next step: predictive analytics
                 </h3>
-                <span className={`rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-purple-900/60 text-purple-200" : "bg-purple-100 text-purple-700"}`}>
+                <span className={`rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-purple-900/60 text-purple-200 border border-purple-800/40" : "bg-purple-100 text-purple-700 border border-purple-200/60"}`}>
                   What this enables
                 </span>
               </div>
@@ -704,22 +704,22 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 With 739 deviations across 672 opportunities, the sales team needs to see which deals are drifting off the optimal path before they are lost. Predictive analytics turns noisy deviation data into a ranked list of opportunities that need immediate attention.
               </p>
 
-              <ul className={`mt-4 grid gap-3 text-sm md:grid-cols-3 ${isDarkMode ? "text-purple-100/90" : "text-purple-800"}`}>
-                <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
-                  <span>
+              <ul className={`mt-5 grid gap-4 text-sm md:grid-cols-3 ${isDarkMode ? "text-purple-100/90" : "text-purple-800"}`}>
+                <li className="flex gap-2.5">
+                  <span className={`mt-[5px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className="leading-relaxed">
                     <strong className="font-semibold">Prioritize sales efforts</strong> on the opportunities most at risk and most worth saving.
                   </span>
                 </li>
-                <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
-                  <span>
+                <li className="flex gap-2.5">
+                  <span className={`mt-[5px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className="leading-relaxed">
                     <strong className="font-semibold">Expose deviation patterns</strong> that reliably precede lost deals, so playbooks are based on real data.
                   </span>
                 </li>
-                <li className="flex gap-2">
-                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
-                  <span>
+                <li className="flex gap-2.5">
+                  <span className={`mt-[5px] h-1.5 w-1.5 rounded-full flex-shrink-0 ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span className="leading-relaxed">
                     <strong className="font-semibold">Deliver ranked worklists</strong> instead of raw reports, reducing noise and decision fatigue for reps.
                   </span>
                 </li>
