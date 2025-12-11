@@ -365,48 +365,64 @@ export default function ProcessMiningSalesAnalyticsPage() {
           </div>
 
           <div className="relative mx-auto max-w-6xl">
-            {/* 2-Column Grid Layout: Left (40%) = KPI Cards Vertical | Right (60%) = Two Rows */}
-            <div className="grid grid-cols-[2fr_3fr] gap-6">
+            {/* 2-Column Grid Layout: Equal width columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Left Column: Business Scale Metrics - Vertical Stack */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
-                  <CardContent className="pt-6 pb-5 text-center">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                      <DollarSign className={`h-7 w-7 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                  <CardContent className="pt-4 pb-4 px-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                        <DollarSign className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>$93M</div>
+                        <div className={`text-xs font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Total Contract Value</div>
+                        <div className={`text-[10px] mt-0.5 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                      </div>
                     </div>
-                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>$93M</div>
-                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Total Contract Value</div>
-                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
                   </CardContent>
                 </Card>
                 <Card className={`border-2 shadow-lg ${isDarkMode ? "border-green-700/70 bg-green-950/30" : "border-green-200 bg-white"}`}>
-                  <CardContent className="pt-6 pb-5 text-center">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-green-900/50" : "bg-green-100"}`}>
-                      <FileText className={`h-7 w-7 ${isDarkMode ? "text-green-400" : "text-green-600"}`} />
+                  <CardContent className="pt-4 pb-4 px-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg ${isDarkMode ? "bg-green-900/50" : "bg-green-100"}`}>
+                        <FileText className={`h-5 w-5 ${isDarkMode ? "text-green-400" : "text-green-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-green-400" : "text-green-600"}`}>672</div>
+                        <div className={`text-xs font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Opportunities</div>
+                        <div className={`text-[10px] mt-0.5 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                      </div>
                     </div>
-                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-green-400" : "text-green-600"}`}>672</div>
-                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Opportunities</div>
-                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
                   </CardContent>
                 </Card>
                 <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-white"}`}>
-                  <CardContent className="pt-6 pb-5 text-center">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
-                      <Percent className={`h-7 w-7 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                  <CardContent className="pt-4 pb-4 px-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
+                        <Percent className={`h-5 w-5 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>56%</div>
+                        <div className={`text-xs font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Win Rate</div>
+                        <div className={`text-[10px] mt-0.5 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                      </div>
                     </div>
-                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>56%</div>
-                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Win Rate</div>
-                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
                   </CardContent>
                 </Card>
                 <Card className={`border-2 shadow-lg ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-200 bg-white"}`}>
-                  <CardContent className="pt-6 pb-5 text-center">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-orange-900/50" : "bg-orange-100"}`}>
-                      <Users className={`h-7 w-7 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`} />
+                  <CardContent className="pt-4 pb-4 px-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg ${isDarkMode ? "bg-orange-900/50" : "bg-orange-100"}`}>
+                        <Users className={`h-5 w-5 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>~20</div>
+                        <div className={`text-xs font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Sales Reps</div>
+                        <div className={`text-[10px] mt-0.5 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Individualized Reporting</div>
+                      </div>
                     </div>
-                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>~20</div>
-                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Sales Reps</div>
-                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Individualized Reporting</div>
                   </CardContent>
                 </Card>
               </div>
