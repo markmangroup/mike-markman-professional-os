@@ -364,6 +364,374 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
+          <div className="relative mx-auto max-w-6xl">
+            {/* 2-Column Grid Layout: Narrower KPI column (35%), Wider content column (65%) */}
+            <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-6">
+              {/* Left Column: Business Scale Metrics - Compact Vertical Stack */}
+              <div className="space-y-3">
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
+                  <CardContent className="pt-3 pb-3 px-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                        <DollarSign className={`h-4 w-4 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-xl font-bold ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>$93M</div>
+                        <div className={`text-xs font-semibold leading-tight ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Total Contract Value</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-green-700/70 bg-green-950/30" : "border-green-200 bg-white"}`}>
+                  <CardContent className="pt-3 pb-3 px-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg ${isDarkMode ? "bg-green-900/50" : "bg-green-100"}`}>
+                        <FileText className={`h-4 w-4 ${isDarkMode ? "text-green-400" : "text-green-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-xl font-bold ${isDarkMode ? "text-green-400" : "text-green-600"}`}>672</div>
+                        <div className={`text-xs font-semibold leading-tight ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Opportunities</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-white"}`}>
+                  <CardContent className="pt-3 pb-3 px-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
+                        <Percent className={`h-4 w-4 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-xl font-bold ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>56%</div>
+                        <div className={`text-xs font-semibold leading-tight ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Win Rate</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-200 bg-white"}`}>
+                  <CardContent className="pt-3 pb-3 px-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg ${isDarkMode ? "bg-orange-900/50" : "bg-orange-100"}`}>
+                        <Users className={`h-4 w-4 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-xl font-bold ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>~20</div>
+                        <div className={`text-xs font-semibold leading-tight ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Sales Reps</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Right Column: Two Rows Stacked - Larger Content */}
+              <div className="space-y-4">
+                {/* Top Row: Process Deviations & Potential Impact - Side by Side */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className={`border-2 shadow-lg ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-200 bg-white"}`}>
+                    <CardContent className="pt-6 pb-6 px-5">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={`p-2.5 rounded-lg ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
+                          <AlertTriangle className={`h-6 w-6 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
+                        </div>
+                        <h3 className={`text-lg font-bold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>Deviations at Scale</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className={`flex items-center justify-between p-3 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
+                          <span className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>Total Found</span>
+                          <span className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>739</span>
+                        </div>
+                        <div className={`flex items-center justify-between p-3 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
+                          <span className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>% of Opportunities</span>
+                          <span className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>110%</span>
+                        </div>
+                        <p className={`text-xs mt-3 leading-relaxed ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                          *Some opportunities have multiple deviations, explaining why the percentage exceeds 100%
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
+                    <CardContent className="pt-6 pb-6 px-5">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={`p-2.5 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                          <Target className={`h-6 w-6 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                        </div>
+                        <h3 className={`text-lg font-bold ${isDarkMode ? "text-blue-200" : "text-blue-900"}`}>Potential Impact</h3>
+                      </div>
+                      <div className={`p-4 rounded-lg border-2 ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-blue-50"}`}>
+                        <p className={`text-sm mb-3 leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                          If we could reduce process deviations by <strong className={isDarkMode ? "text-blue-300" : "text-blue-700"}>25%</strong>:
+                        </p>
+                        <div className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>
+                          +3-5% Win Rate
+                        </div>
+                        <p className={`text-sm mt-3 leading-relaxed ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                          Estimated revenue impact: <strong className={isDarkMode ? "text-blue-300" : "text-blue-700"}>$2.8M - $4.7M</strong>
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Bottom Row: Bridge to Predictive Analytics - Full Width */}
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50"}`}>
+                  <CardContent className="pt-6 pb-6 px-5">
+                    <div className="flex items-start gap-4">
+                      <div className={`p-3 rounded-lg flex-shrink-0 ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
+                        <TrendingUp className={`h-7 w-7 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>
+                          The Next Step: Predictive Analytics
+                        </h3>
+                        <p className={`text-sm leading-relaxed ${isDarkMode ? "text-purple-100" : "text-purple-800"}`}>
+                          With <strong className={isDarkMode ? "text-purple-200" : "text-purple-900"}>739 deviations</strong> across <strong className={isDarkMode ? "text-purple-200" : "text-purple-900"}>672 opportunities</strong>, we need to identify which opportunities are most at risk. 
+                          Predictive analytics helps prioritize sales efforts by forecasting win probability and identifying high-value opportunities 
+                          that require immediate attention before they deviate from the optimal path.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+      ),
+    },
+    {
+      id: 4.5,
+      title: "Business Scale & Impact (Alternative Layout)",
+      type: "data",
+      content: (
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
+          {/* Background Pattern - Subtle */}
+          <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "opacity-10" : "opacity-20"}`}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
+          </div>
+
+          <div className="relative mx-auto max-w-5xl space-y-6">
+            {/* Section header */}
+            <header className="space-y-1">
+              <h2 className={`text-xl font-semibold ${isDarkMode ? "text-slate-50" : "text-slate-900"}`}>
+                Business Scale & Impact
+              </h2>
+              <p className={`text-sm max-w-2xl ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}>
+                Understanding the business context, quantifying the impact of process deviations at scale, and setting the stage for predictive intervention.
+              </p>
+            </header>
+
+            {/* Hero overview card */}
+            <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-slate-700/60 bg-slate-900/80" : "border-slate-300 bg-white"}`}>
+              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
+                  Business overview
+                </h3>
+                <p className={`text-xs ${isDarkMode ? "text-slate-500" : "text-slate-500"}`}>
+                  Snapshot of sales pipeline at the time of analysis.
+                </p>
+              </div>
+
+              <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {/* Total Contract Value */}
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-sky-500/15 text-sky-50 border-sky-500/30" : "bg-sky-50 text-sky-900 border-sky-200"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-sky-100"}`}>
+                    <DollarSign className={`h-4 w-4 ${isDarkMode ? "text-sky-300" : "text-sky-600"}`} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                      $93M
+                    </span>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                      Total contract value
+                    </span>
+                  </div>
+                </div>
+
+                {/* Opportunities */}
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-slate-800/80 text-slate-50 border-slate-600/60" : "bg-slate-50 text-slate-900 border-slate-200"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-slate-100"}`}>
+                    <FileText className={`h-4 w-4 ${isDarkMode ? "text-slate-300" : "text-slate-600"}`} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-slate-50" : "text-slate-900"}`}>
+                      672
+                    </span>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                      Opportunities
+                    </span>
+                  </div>
+                </div>
+
+                {/* Win Rate */}
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-emerald-500/12 text-emerald-50 border-emerald-500/30" : "bg-emerald-50 text-emerald-900 border-emerald-200"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-emerald-100"}`}>
+                    <Percent className={`h-4 w-4 ${isDarkMode ? "text-emerald-300" : "text-emerald-600"}`} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-emerald-50" : "text-emerald-900"}`}>
+                      56%
+                    </span>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                      Win rate
+                    </span>
+                  </div>
+                </div>
+
+                {/* Sales Reps */}
+                <div className={`flex items-center gap-3 rounded-xl border px-3 py-3.5 ${isDarkMode ? "bg-amber-500/12 text-amber-50 border-amber-500/30" : "bg-amber-50 text-amber-900 border-amber-200"}`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${isDarkMode ? "bg-black/40" : "bg-amber-100"}`}>
+                    <Users className={`h-4 w-4 ${isDarkMode ? "text-amber-300" : "text-amber-600"}`} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className={`text-base font-semibold leading-tight ${isDarkMode ? "text-amber-50" : "text-amber-900"}`}>
+                      20
+                    </span>
+                    <span className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-slate-300/80" : "text-slate-600"}`}>
+                      Sales reps
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Problem + Impact row */}
+            <div className="grid items-stretch gap-6 md:grid-cols-3">
+              {/* Deviations at Scale - spans 2 columns on md+ */}
+              <div className={`md:col-span-2 rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
+                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-red-100" : "text-red-900"}`}>
+                      Deviations at scale
+                    </h3>
+                    <p className={`mt-1 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                      Where process friction appears as volume increases.
+                    </p>
+                  </div>
+                  <p className={`text-[11px] md:max-w-xs ${isDarkMode ? "text-red-100/70" : "text-red-600"}`}>
+                    Some opportunities have multiple deviations, which is why the percentage of opportunities can exceed 100 percent.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
+                      Total deviations found
+                    </p>
+                    <p className={`mt-2 text-4xl font-semibold ${isDarkMode ? "text-red-50" : "text-red-900"}`}>739</p>
+                    <p className={`mt-2 text-sm ${isDarkMode ? "text-red-100/85" : "text-red-800"}`}>
+                      Across{" "}
+                      <span className={`font-medium ${isDarkMode ? "text-red-50" : "text-red-900"}`}>672 opportunities</span>{" "}
+                      representing{" "}
+                      <span className={`font-medium ${isDarkMode ? "text-red-50" : "text-red-900"}`}>110 percent</span> of
+                      opportunities reviewed.
+                    </p>
+                  </div>
+
+                  {/* Simple "load" indicator */}
+                  <div className="w-full max-w-xs">
+                    <p className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
+                      Deviation load
+                    </p>
+                    <div className={`mt-3 h-2 w-full rounded-full ${isDarkMode ? "bg-red-900/80" : "bg-red-200"}`}>
+                      <div className={`h-2 w-[82%] rounded-full ${isDarkMode ? "bg-red-400" : "bg-red-600"}`} />
+                    </div>
+                    <p className={`mt-2 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                      High deviation density, which creates noise for sales teams and obscures true win probability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Potential Impact */}
+              <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-sky-500/40 bg-sky-950/70" : "border-sky-300 bg-sky-50"}`}>
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-100" : "text-sky-900"}`}>
+                      Potential impact
+                    </h3>
+                    <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-700"}`}>
+                      Scenario: reduce process deviations by 25 percent.
+                    </p>
+                  </div>
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-sky-900/60 text-sky-200" : "bg-sky-100 text-sky-700"}`}>
+                    Modeled
+                  </span>
+                </div>
+
+                <div className="mt-5 space-y-4">
+                  <div>
+                    <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-sky-200/85" : "text-sky-700"}`}>
+                      Win rate uplift
+                    </p>
+                    <p className={`mt-1 text-3xl font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                      +3–5% win rate
+                    </p>
+                    <p className={`mt-2 text-sm ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
+                      Focused remediation of high impact deviations translates into more consistent conversions on qualified opportunities.
+                    </p>
+                  </div>
+
+                  <div className={`rounded-xl p-3 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
+                    <p className={`text-[11px] uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-200" : "text-sky-700"}`}>
+                      Estimated revenue impact
+                    </p>
+                    <p className={`mt-1 text-lg font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                      +$2.8M - $4.7M
+                    </p>
+                    <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-600"}`}>
+                      Based on current contract values, opportunity mix, and average deal size.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Narrative footer card */}
+            <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-purple-500/30 bg-purple-950/70" : "border-purple-300 bg-purple-50"}`}>
+              <h3 className={`text-sm font-semibold ${isDarkMode ? "text-purple-50" : "text-purple-900"}`}>
+                The next step: predictive analytics
+              </h3>
+              <p className={`mt-2 text-sm max-w-3xl ${isDarkMode ? "text-purple-100/85" : "text-purple-800"}`}>
+                With 739 deviations across 672 opportunities, the sales organization needs a way to see which deals are drifting off the optimal path before they are lost. Predictive analytics turns noisy deviation data into a ranked list of opportunities that require attention.
+              </p>
+
+              <ul className={`mt-4 grid gap-3 text-sm md:grid-cols-3 ${isDarkMode ? "text-purple-100/90" : "text-purple-800"}`}>
+                <li className="flex gap-2">
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span>
+                    Prioritize sales efforts by predicting which opportunities are most at risk and most worth saving.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span>
+                    Surface deviation patterns that consistently precede lost deals, so playbooks can be updated with evidence.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className={`mt-[6px] h-1.5 w-1.5 rounded-full ${isDarkMode ? "bg-purple-300" : "bg-purple-600"}`} />
+                  <span>
+                    Deliver simple, ranked worklists to reps rather than raw reports, reducing noise and decision fatigue.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      ),
+    },
+    {
+      id: 4.5,
+      title: "Business Scale & Impact (Alternative Layout)",
+      type: "data",
+      content: (
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
+          {/* Background Pattern - Subtle */}
+          <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "opacity-10" : "opacity-20"}`}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
+          </div>
+
           <div className="relative mx-auto max-w-5xl space-y-6">
             {/* Section header */}
             <header className="space-y-1">
