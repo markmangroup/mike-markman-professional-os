@@ -155,3 +155,4 @@ className={`base-classes ${
 - [ ] Section wrappers use consistent styling
 - [ ] Dark mode colors are lighter variants (e.g., `-400` instead of `-600`)
 
+

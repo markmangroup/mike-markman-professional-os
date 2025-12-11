@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, BarChart3, TrendingUp, Target, Zap, AlertTriangle, CheckCircle2, DollarSign, Users, Percent, FileText, ArrowRight, Clock, TrendingDown, Database, Workflow, Sparkles, Sun, Moon } from "lucide-react";
+import { ChevronLeft, ChevronRight, BarChart3, TrendingUp, Target, Zap, AlertTriangle, CheckCircle2, DollarSign, Users, Percent, FileText, ArrowRight, Clock, TrendingDown, Database, Workflow, Sparkles, Sun, Moon, Menu, X, ChevronUp, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { PageMeta } from "@/core/metadata/types";
 import DataArchitectureDiagram from "@/components/DataArchitectureDiagram";
@@ -42,6 +42,7 @@ interface Slide {
 export default function ProcessMiningSalesAnalyticsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const getSlides = (isDarkMode: boolean): Slide[] => [
     {
@@ -960,83 +961,162 @@ export default function ProcessMiningSalesAnalyticsPage() {
 
   return (
     <div className={`min-h-screen transition-colors ${isDarkMode ? "bg-neutral-950" : "bg-white"}`}>
-      <div className="mx-auto flex w-full max-w-[1800px] gap-6 px-4 py-6">
-        {/* Left sidebar - minimal spacer */}
-        <div className="hidden lg:block w-32" />
-        
-        {/* Main content area - much wider and left-aligned */}
-        <main className="min-w-0 flex-1 max-w-none space-y-4">
-          {/* Page Header */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-            <div>
-              <h1 className={`text-4xl font-bold tracking-tight ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                Process Mining & Sales Analytics
-              </h1>
-              <p className={`mt-2 text-base leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
-              </p>
-            </div>
-          </div>
-
-          {/* Slide Navigation */}
-          <div className={`flex items-center justify-between p-4 rounded-lg sticky top-0 z-10 transition-colors ${isDarkMode ? "bg-neutral-900" : "bg-muted"}`}>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-            >
-              <ChevronLeft className="h-4 w-4 mr-2" />
-              Previous
-            </Button>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span className={`text-sm ${isDarkMode ? "text-gray-300" : "text-muted-foreground"}`}>
-                  Slide {currentSlide + 1} of {slides.length}
-                </span>
-                <div className="flex gap-1">
-                  {slides.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`h-2 w-2 rounded-full transition-colors ${
-                        index === currentSlide
-                          ? "bg-primary"
-                          : isDarkMode ? "bg-gray-600" : "bg-muted-foreground/30"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+      <div className="flex w-full">
+        {/* Left Sidebar - Slide Navigation */}
+        <aside
+          className={`fixed left-0 top-0 h-screen z-30 transition-all duration-300 ease-in-out ${
+            isSidebarOpen ? "w-72" : "w-16"
+          } ${isDarkMode ? "bg-neutral-900 border-r border-neutral-800" : "bg-white border-r border-gray-200"} shadow-lg`}
+        >
+          <div className="flex flex-col h-full">
+            {/* Sidebar Header */}
+            <div className={`flex items-center justify-between p-4 border-b ${isDarkMode ? "border-neutral-800" : "border-gray-200"}`}>
+              {isSidebarOpen && (
+                <h2 className={`text-sm font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                  Slides
+                </h2>
+              )}
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="ml-2"
-                aria-label="Toggle dark mode"
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="ml-auto"
+                aria-label={isSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
               >
-                {isDarkMode ? (
-                  <Sun className="h-4 w-4" />
+                {isSidebarOpen ? (
+                  <ChevronLeft className="h-4 w-4" />
                 ) : (
-                  <Moon className="h-4 w-4" />
+                  <Menu className="h-4 w-4" />
                 )}
               </Button>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextSlide}
-              disabled={currentSlide === slides.length - 1}
-            >
-              Next
-              <ChevronRight className="h-4 w-4 ml-2" />
-            </Button>
-          </div>
 
-          {/* Current Slide - Much wider and left-aligned */}
-          <Card className={`min-h-[500px] shadow-xl border-2 w-full max-w-[1400px] ${isDarkMode ? "bg-neutral-900 border-neutral-700" : ""}`}>
+            {/* Navigation Controls */}
+            {isSidebarOpen && (
+              <div className={`p-4 space-y-3 border-b ${isDarkMode ? "border-neutral-800" : "border-gray-200"}`}>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={prevSlide}
+                    disabled={currentSlide === 0}
+                    className="flex-1"
+                  >
+                    <ChevronUp className="h-4 w-4 mr-1" />
+                    Prev
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={nextSlide}
+                    disabled={currentSlide === slides.length - 1}
+                    className="flex-1"
+                  >
+                    Next
+                    <ChevronDown className="h-4 w-4 ml-1" />
+                  </Button>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`text-xs ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                    {currentSlide + 1} / {slides.length}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    aria-label="Toggle dark mode"
+                  >
+                    {isDarkMode ? (
+                      <Sun className="h-4 w-4" />
+                    ) : (
+                      <Moon className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {/* Slide List */}
+            <div className="flex-1 overflow-y-auto">
+              <nav className="p-2 space-y-1">
+                {slides.map((slide, index) => {
+                  const isActive = index === currentSlide;
+                  return (
+                    <button
+                      key={slide.id}
+                      onClick={() => goToSlide(index)}
+                      className={`w-full text-left rounded-lg px-3 py-2.5 transition-all duration-200 group ${
+                        isActive
+                          ? isDarkMode
+                            ? "bg-blue-600 text-white shadow-md"
+                            : "bg-blue-100 text-blue-900 shadow-sm"
+                          : isDarkMode
+                          ? "text-gray-300 hover:bg-neutral-800 hover:text-white"
+                          : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      }`}
+                    >
+                      <div className="flex items-start gap-2">
+                        <span
+                          className={`text-xs font-bold flex-shrink-0 mt-0.5 ${
+                            isActive
+                              ? isDarkMode
+                                ? "text-blue-100"
+                                : "text-blue-600"
+                              : isDarkMode
+                              ? "text-gray-500"
+                              : "text-gray-400"
+                          }`}
+                        >
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        {isSidebarOpen && (
+                          <div className="flex-1 min-w-0">
+                            <div className={`text-sm font-medium truncate ${isActive ? "" : "group-hover:font-semibold"}`}>
+                              {slide.title}
+                            </div>
+                            <div
+                              className={`text-xs mt-0.5 capitalize ${
+                                isActive
+                                  ? isDarkMode
+                                    ? "text-blue-200"
+                                    : "text-blue-700"
+                                  : isDarkMode
+                                  ? "text-gray-500"
+                                  : "text-gray-500"
+                              }`}
+                            >
+                              {slide.type}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        {/* Main Content Area */}
+        <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "ml-72" : "ml-16"}`}>
+          <div className="flex gap-6 px-6 py-6">
+            <div className="flex-1 space-y-4 min-w-0">
+            {/* Page Header */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+              <div>
+                <h1 className={`text-4xl font-bold tracking-tight ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                  Process Mining & Sales Analytics
+                </h1>
+                <p className={`mt-2 text-base leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                  Using process mining and predictive analytics to optimize sales performance and identify high-probability opportunities
+                </p>
+              </div>
+            </div>
+
+            {/* Current Slide - Full width */}
+            <Card className={`min-h-[600px] shadow-xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : ""}`}>
             <CardHeader className={`border-b py-4 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
               <div className="flex items-start gap-4">
                 {currentSlide === 8 && (
@@ -1070,28 +1150,10 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </div>
             </CardContent>
           </Card>
+            </div>
 
-          {/* Slide Thumbnails */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 max-w-[1400px]">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.id}
-                onClick={() => goToSlide(index)}
-                className={`p-2 rounded-lg border-2 transition-all text-left ${
-                  index === currentSlide
-                    ? isDarkMode ? "border-primary bg-primary/10" : "border-primary bg-primary/5"
-                    : isDarkMode ? "border-neutral-700 bg-neutral-800 hover:border-primary/50" : "border-muted hover:border-primary/50"
-                }`}
-              >
-                <div className={`text-xs font-semibold mb-1 truncate ${isDarkMode ? "text-gray-200" : ""}`}>{slide.title}</div>
-                <div className={`text-xs capitalize ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>{slide.type}</div>
-              </button>
-            ))}
-          </div>
-        </main>
-
-        {/* Right metadata panel */}
-        <aside className="hidden xl:block w-80 flex-shrink-0">
+            {/* Right metadata panel */}
+            <aside className="hidden xl:block w-80 flex-shrink-0">
           <div className="sticky top-10">
             <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
               {meta.what && (
@@ -1169,7 +1231,9 @@ export default function ProcessMiningSalesAnalyticsPage() {
               )}
             </div>
           </div>
-        </aside>
+            </aside>
+          </div>
+        </main>
       </div>
     </div>
   );
