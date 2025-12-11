@@ -666,7 +666,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
                       Win rate improvement
                     </p>
                     <p className={`mt-3 mb-4 text-4xl font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
-                      56% → 59–61% win rate
+                      +3–5% win rate
                     </p>
                     <p className={`text-sm leading-relaxed ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
                       Fixing high-impact deviations increases conversion consistency on qualified opportunities.
