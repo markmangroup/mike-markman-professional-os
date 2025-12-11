@@ -364,121 +364,125 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-6xl space-y-6">
-            {/* Top: Business Scale Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
-                <CardContent className="pt-6 pb-5 text-center">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                    <DollarSign className={`h-7 w-7 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
-                  </div>
-                  <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>$93M</div>
-                  <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Total Contract Value</div>
-                  <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
-                </CardContent>
-              </Card>
-              <Card className={`border-2 shadow-lg ${isDarkMode ? "border-green-700/70 bg-green-950/30" : "border-green-200 bg-white"}`}>
-                <CardContent className="pt-6 pb-5 text-center">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-green-900/50" : "bg-green-100"}`}>
-                    <FileText className={`h-7 w-7 ${isDarkMode ? "text-green-400" : "text-green-600"}`} />
-                  </div>
-                  <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-green-400" : "text-green-600"}`}>672</div>
-                  <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Opportunities</div>
-                  <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
-                </CardContent>
-              </Card>
-              <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-white"}`}>
-                <CardContent className="pt-6 pb-5 text-center">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
-                    <Percent className={`h-7 w-7 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
-                  </div>
-                  <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>56%</div>
-                  <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Win Rate</div>
-                  <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
-                </CardContent>
-              </Card>
-              <Card className={`border-2 shadow-lg ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-200 bg-white"}`}>
-                <CardContent className="pt-6 pb-5 text-center">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-orange-900/50" : "bg-orange-100"}`}>
-                    <Users className={`h-7 w-7 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`} />
-                  </div>
-                  <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>~20</div>
-                  <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Sales Reps</div>
-                  <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Individualized Reporting</div>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="relative mx-auto max-w-6xl">
+            {/* 2-Column Grid Layout: Left (40%) = KPI Cards Vertical | Right (60%) = Two Rows */}
+            <div className="grid grid-cols-[2fr_3fr] gap-6">
+              {/* Left Column: Business Scale Metrics - Vertical Stack */}
+              <div className="space-y-4">
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
+                  <CardContent className="pt-6 pb-5 text-center">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                      <DollarSign className={`h-7 w-7 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                    </div>
+                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>$93M</div>
+                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Total Contract Value</div>
+                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-green-700/70 bg-green-950/30" : "border-green-200 bg-white"}`}>
+                  <CardContent className="pt-6 pb-5 text-center">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-green-900/50" : "bg-green-100"}`}>
+                      <FileText className={`h-7 w-7 ${isDarkMode ? "text-green-400" : "text-green-600"}`} />
+                    </div>
+                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-green-400" : "text-green-600"}`}>672</div>
+                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Opportunities</div>
+                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-white"}`}>
+                  <CardContent className="pt-6 pb-5 text-center">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
+                      <Percent className={`h-7 w-7 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                    </div>
+                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>56%</div>
+                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Win Rate</div>
+                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Year 2022</div>
+                  </CardContent>
+                </Card>
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-orange-700/70 bg-orange-950/30" : "border-orange-200 bg-white"}`}>
+                  <CardContent className="pt-6 pb-5 text-center">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-3 ${isDarkMode ? "bg-orange-900/50" : "bg-orange-100"}`}>
+                      <Users className={`h-7 w-7 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`} />
+                    </div>
+                    <div className={`text-4xl font-bold mb-1 ${isDarkMode ? "text-orange-400" : "text-orange-600"}`}>~20</div>
+                    <div className={`text-sm font-semibold ${isDarkMode ? "text-gray-200" : "text-gray-900"}`}>Sales Reps</div>
+                    <div className={`text-xs mt-1 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>Individualized Reporting</div>
+                  </CardContent>
+                </Card>
+              </div>
 
-            {/* Middle: Connecting Deviations to Impact */}
-            <Card className={`border-2 shadow-lg ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-200 bg-white"}`}>
-              <CardContent className="pt-6 pb-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`p-2 rounded-lg ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
-                        <AlertTriangle className={`h-6 w-6 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
+              {/* Right Column: Two Rows Stacked */}
+              <div className="space-y-4">
+                {/* Top Row: Process Deviations & Potential Impact - Side by Side */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className={`border-2 shadow-lg ${isDarkMode ? "border-red-700/70 bg-red-950/30" : "border-red-200 bg-white"}`}>
+                    <CardContent className="pt-5 pb-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className={`p-2 rounded-lg ${isDarkMode ? "bg-red-900/50" : "bg-red-100"}`}>
+                          <AlertTriangle className={`h-5 w-5 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
+                        </div>
+                        <h3 className={`text-lg font-bold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>Deviations at Scale</h3>
                       </div>
-                      <h3 className={`text-xl font-bold ${isDarkMode ? "text-red-200" : "text-red-900"}`}>Process Deviations at Scale</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className={`flex items-center justify-between p-3 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
-                        <span className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>Total Deviations Found</span>
-                        <span className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>739</span>
-                      </div>
-                      <div className={`flex items-center justify-between p-3 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
-                        <span className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>% of Total Opportunities</span>
-                        <span className={`text-2xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>110%</span>
-                      </div>
-                      <p className={`text-xs mt-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                        *Some opportunities have multiple deviations, explaining why the percentage exceeds 100%
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`p-2 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                        <Target className={`h-6 w-6 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
-                      </div>
-                      <h3 className={`text-xl font-bold ${isDarkMode ? "text-blue-200" : "text-blue-900"}`}>Potential Impact</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className={`p-4 rounded-lg border-2 ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-blue-50"}`}>
-                        <p className={`text-sm mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-                          If we could reduce process deviations by <strong className={isDarkMode ? "text-blue-300" : "text-blue-700"}>25%</strong>:
+                      <div className="space-y-2">
+                        <div className={`flex items-center justify-between p-2 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
+                          <span className={`text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>Total Found</span>
+                          <span className={`text-xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>739</span>
+                        </div>
+                        <div className={`flex items-center justify-between p-2 rounded-lg ${isDarkMode ? "bg-red-950/50" : "bg-red-50"}`}>
+                          <span className={`text-xs font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>% of Opps</span>
+                          <span className={`text-xl font-bold ${isDarkMode ? "text-red-400" : "text-red-600"}`}>110%</span>
+                        </div>
+                        <p className={`text-[10px] mt-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                          *Some opportunities have multiple deviations
                         </p>
-                        <div className={`text-3xl font-bold ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <Card className={`border-2 shadow-lg ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-white"}`}>
+                    <CardContent className="pt-5 pb-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className={`p-2 rounded-lg ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                          <Target className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                        </div>
+                        <h3 className={`text-lg font-bold ${isDarkMode ? "text-blue-200" : "text-blue-900"}`}>Potential Impact</h3>
+                      </div>
+                      <div className={`p-3 rounded-lg border-2 ${isDarkMode ? "border-blue-700/70 bg-blue-950/30" : "border-blue-200 bg-blue-50"}`}>
+                        <p className={`text-xs mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                          Reduce deviations by <strong className={isDarkMode ? "text-blue-300" : "text-blue-700"}>25%</strong>:
+                        </p>
+                        <div className={`text-2xl font-bold ${isDarkMode ? "text-blue-400" : "text-blue-600"}`}>
                           +3-5% Win Rate
                         </div>
-                        <p className={`text-xs mt-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
-                          Estimated revenue impact: <strong>$2.8M - $4.7M</strong>
+                        <p className={`text-[10px] mt-2 ${isDarkMode ? "text-gray-400" : "text-muted-foreground"}`}>
+                          Revenue impact: <strong>$2.8M - $4.7M</strong>
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Bottom Row: Bridge to Predictive Analytics - Full Width */}
+                <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50"}`}>
+                  <CardContent className="pt-5 pb-5">
+                    <div className="flex items-start gap-3">
+                      <div className={`p-2 rounded-lg ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
+                        <TrendingUp className={`h-6 w-6 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`text-base font-bold mb-2 ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>
+                          The Next Step: Predictive Analytics
+                        </h3>
+                        <p className={`text-xs leading-relaxed ${isDarkMode ? "text-purple-100" : "text-purple-800"}`}>
+                          With <strong>739 deviations</strong> across <strong>672 opportunities</strong>, we need to identify which opportunities are most at risk. 
+                          Predictive analytics helps prioritize sales efforts by forecasting win probability and identifying high-value opportunities 
+                          that require immediate attention before they deviate from the optimal path.
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Bottom: Bridge to Predictive Analytics */}
-            <Card className={`border-2 shadow-lg ${isDarkMode ? "border-purple-700/70 bg-purple-950/30" : "border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50"}`}>
-              <CardContent className="pt-6 pb-6">
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${isDarkMode ? "bg-purple-900/50" : "bg-purple-100"}`}>
-                    <TrendingUp className={`h-7 w-7 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? "text-purple-200" : "text-purple-900"}`}>
-                      The Next Step: Predictive Analytics
-                    </h3>
-                    <p className={`text-sm leading-relaxed ${isDarkMode ? "text-purple-100" : "text-purple-800"}`}>
-                      With <strong>739 deviations</strong> across <strong>672 opportunities</strong>, we need to identify which opportunities are most at risk. 
-                      Predictive analytics helps prioritize sales efforts by forecasting win probability and identifying high-value opportunities 
-                      that require immediate attention before they deviate from the optimal path.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </section>
       ),
