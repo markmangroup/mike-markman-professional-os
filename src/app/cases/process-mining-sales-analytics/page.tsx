@@ -1444,8 +1444,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
             <div className="flex-1 min-w-0">
             {/* Current Slide - Full width, maximized focus */}
             <Card className={`min-h-[calc(100vh-120px)] shadow-2xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : "border-gray-200"}`}>
-            {/* Hide CardHeader for slide 0 (title slide) since content has its own title */}
-            {currentSlide !== 0 && (
+            {/* Hide CardHeader for slide 0 (title slide) and slide 4.5 since content has its own title */}
+            {currentSlide !== 0 && slides[currentSlide].id !== 4.5 && (
               <CardHeader className={`border-b py-5 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
                 <div className="flex items-start gap-4">
                   {currentSlide === 8 && (
