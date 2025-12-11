@@ -595,44 +595,35 @@ export default function ProcessMiningSalesAnalyticsPage() {
               </div>
             </div>
 
-            {/* Problem + Impact row */}
+            {/* Problem + Impact row - Blue card is hero, red card is narrow sidebar */}
             <div className="grid items-stretch gap-6 md:grid-cols-3">
-              {/* Deviations at Scale - spans 2 columns on md+ */}
-              <div className={`md:col-span-2 rounded-2xl border py-5 px-6 shadow-sm ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
-                <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between pb-2">
+              {/* Deviations at Scale - Narrow sidebar, single column */}
+              <div className={`rounded-2xl border py-4 px-5 shadow-sm ${isDarkMode ? "border-red-500/30 bg-red-950/60" : "border-red-300 bg-red-50"}`}>
+                <div className="space-y-4">
                   <div>
                     <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-red-100" : "text-red-900"}`}>
                       Deviations at scale
                     </h3>
-                    <p className={`mt-0.5 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                    <p className={`mt-1 text-xs leading-tight ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
                       Where process friction grows with volume.
                     </p>
                   </div>
-                  <p className={`text-[9px] md:max-w-xs ${isDarkMode ? "text-red-100/60" : "text-red-600/80"}`}>
-                    Some opportunities have multiple deviations, so the percentage can exceed 100 percent.
-                  </p>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                  {/* Left column: Number and explanation */}
                   <div>
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Total deviations found
                     </p>
-                    <p className={`mt-2 text-4xl font-semibold ${isDarkMode ? "text-red-50" : "text-red-900"}`}>739</p>
-                    <p className={`mt-2 text-sm ${isDarkMode ? "text-red-100/85" : "text-red-800"}`}>
-                      Found in{" "}
-                      <span className={`font-medium ${isDarkMode ? "text-red-50" : "text-red-900"}`}>672 opportunities</span>, representing{" "}
-                      <span className={`font-medium ${isDarkMode ? "text-red-50" : "text-red-900"}`}>110 percent</span> of the pipeline.
+                    <p className={`mt-1.5 text-3xl font-semibold ${isDarkMode ? "text-red-50" : "text-red-900"}`}>739</p>
+                    <p className={`mt-2 text-sm leading-tight ${isDarkMode ? "text-red-100/85" : "text-red-800"}`}>
+                      Found in 672 opportunities, representing 110 percent of the pipeline.
                     </p>
                   </div>
 
-                  {/* Right column: Deviation load bar */}
                   <div>
                     <p className={`text-[11px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "text-red-200/80" : "text-red-700"}`}>
                       Deviation load
                     </p>
-                    <div className="mt-2 flex items-center justify-between mb-1">
+                    <div className="mt-1.5 flex items-center justify-between mb-1">
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>Low</span>
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>82%</span>
                       <span className={`text-[9px] ${isDarkMode ? "text-red-200/70" : "text-red-600/70"}`}>High</span>
@@ -640,22 +631,28 @@ export default function ProcessMiningSalesAnalyticsPage() {
                     <div className={`h-2 w-full rounded-full ${isDarkMode ? "bg-red-900/80" : "bg-red-200"}`}>
                       <div className={`h-2 w-[82%] rounded-full ${isDarkMode ? "bg-red-400" : "bg-red-600"}`} />
                     </div>
-                    <p className={`mt-2 text-xs ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
+                    <p className={`mt-2 text-xs leading-tight ${isDarkMode ? "text-red-100/80" : "text-red-700"}`}>
                       High deviation density creates noise for sales teams and hides true win probability.
+                    </p>
+                  </div>
+
+                  <div className={`pt-3 border-t ${isDarkMode ? "border-red-800/50" : "border-red-200/60"}`}>
+                    <p className={`text-[9px] leading-tight ${isDarkMode ? "text-red-100/60" : "text-red-600/80"}`}>
+                      Some opportunities have multiple deviations, so the percentage can exceed 100 percent.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Potential Impact */}
-              <div className={`rounded-2xl border p-6 shadow-sm ${isDarkMode ? "border-sky-500/40 bg-sky-950/70" : "border-sky-300 bg-sky-50"}`}>
-                <div className="flex items-start justify-between gap-2">
+              {/* Potential Impact - Hero card, spans 2 columns */}
+              <div className={`md:col-span-2 rounded-2xl border p-7 shadow-sm ${isDarkMode ? "border-sky-500/40 bg-sky-950/70" : "border-sky-300 bg-sky-50"}`}>
+                <div className="flex items-start justify-between gap-2 mb-5">
                   <div>
                     <h3 className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-100" : "text-sky-900"}`}>
                       Potential impact
                     </h3>
-                    <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-700"}`}>
-                      Scenario: 25 percent fewer process deviations.
+                    <p className={`mt-1 text-xs leading-tight ${isDarkMode ? "text-sky-100/80" : "text-sky-700"}`}>
+                      Scenario: remove 25 percent of process deviations using process mining insights.
                     </p>
                   </div>
                   <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] ${isDarkMode ? "bg-sky-900/60 text-sky-200" : "bg-sky-100 text-sky-700"}`}>
@@ -663,29 +660,29 @@ export default function ProcessMiningSalesAnalyticsPage() {
                   </span>
                 </div>
 
-                <div className="mt-5 space-y-4">
+                <div className="space-y-5">
                   <div>
                     <p className={`text-[11px] uppercase tracking-[0.18em] ${isDarkMode ? "text-sky-200/85" : "text-sky-700"}`}>
-                      Win rate uplift
+                      Win rate improvement
                     </p>
-                    <p className={`mt-0.5 text-2xl font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
-                      +3–5% win rate
+                    <p className={`mt-2 text-3xl font-semibold leading-tight ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                      56% → 59–61% win rate
                     </p>
-                    <p className={`mt-3 text-sm ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
-                      Fixing high-impact deviations leads to more consistent wins on qualified opportunities.
+                    <p className={`mt-3 text-sm leading-relaxed ${isDarkMode ? "text-sky-100/85" : "text-sky-700"}`}>
+                      Fixing high-impact deviations increases conversion consistency on qualified opportunities.
                     </p>
                   </div>
 
-                  <div className={`border-t pt-4 ${isDarkMode ? "border-sky-800/60" : "border-sky-200"}`}>
-                    <div className={`rounded-xl p-3 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
+                  <div className={`border-t pt-5 ${isDarkMode ? "border-sky-800/60" : "border-sky-200"}`}>
+                    <div className={`rounded-xl p-4 ${isDarkMode ? "bg-sky-900/60" : "bg-sky-100"}`}>
                       <p className={`text-[11px] uppercase tracking-[0.16em] ${isDarkMode ? "text-sky-200" : "text-sky-700"}`}>
-                        Estimated revenue impact
+                        Estimated annual revenue impact
                       </p>
-                      <p className={`mt-1 text-lg font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
-                        +$2.8M - $4.7M
+                      <p className={`mt-2 text-2xl font-semibold ${isDarkMode ? "text-sky-50" : "text-sky-900"}`}>
+                        +$2.8M – $4.7M
                       </p>
-                      <p className={`mt-1 text-xs ${isDarkMode ? "text-sky-100/80" : "text-sky-600"}`}>
-                        Based on current contract values, opportunity mix, and average deal size.
+                      <p className={`mt-2 text-xs leading-relaxed ${isDarkMode ? "text-sky-100/80" : "text-sky-600"}`}>
+                        Based on current contract values, pipeline mix, and average deal size.
                       </p>
                     </div>
                   </div>
