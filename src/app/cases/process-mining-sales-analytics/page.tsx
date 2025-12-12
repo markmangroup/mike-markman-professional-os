@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -39,10 +40,32 @@ interface Slide {
   content: React.ReactNode;
 }
 
-export default function ProcessMiningSalesAnalyticsPage() {
+function ProcessMiningSalesAnalyticsContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  // Initialize slide from URL parameter
+  useEffect(() => {
+    const slideParam = searchParams.get("slide");
+    if (slideParam) {
+      const slideIndex = parseInt(slideParam, 10) - 1; // Convert 1-based to 0-based
+      if (!isNaN(slideIndex) && slideIndex >= 0) {
+        setCurrentSlide(slideIndex);
+      }
+    }
+  }, [searchParams]);
+
+  // Update URL when slide changes
+  const updateSlide = (index: number) => {
+    setCurrentSlide(index);
+    const newUrl = index === 0 
+      ? "/cases/process-mining-sales-analytics"
+      : `/cases/process-mining-sales-analytics?slide=${index + 1}`;
+    router.push(newUrl, { scroll: false });
+  };
 
   const getSlides = (isDarkMode: boolean): Slide[] => [
     {
@@ -50,7 +73,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "Process Mining & Sales Analytics",
       type: "title",
       content: (
-        <div className="relative flex flex-col items-center justify-center min-h-[500px] overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center h-full w-full overflow-hidden">
           {/* Hero Background Image - Full Card */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -107,7 +130,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "The Challenge",
       type: "content",
       content: (
-        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl h-full w-full ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
           {/* Background Pattern - Subtle */}
           <div className={`pointer-events-none absolute inset-0 ${isDarkMode ? "opacity-10" : "opacity-20"}`}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
@@ -206,7 +229,7 @@ export default function ProcessMiningSalesAnalyticsPage() {
       title: "Process Mining: Revealing Hidden Patterns",
       type: "visual",
       content: (
-        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
+        <section className={`relative overflow-hidden rounded-3xl border p-8 shadow-2xl h-full w-full ${isDarkMode ? "border-neutral-700 bg-neutral-900" : "border-slate-200/60 bg-gradient-to-br from-slate-50 via-white to-slate-100"}`}>
           {/* Background Pattern - Subtle */}
           <div className="pointer-events-none absolute inset-0 opacity-20">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.06),transparent_32%)]" />
@@ -1270,15 +1293,17 @@ export default function ProcessMiningSalesAnalyticsPage() {
   const slides = getSlides(isDarkMode);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
+    const next = currentSlide < slides.length - 1 ? currentSlide + 1 : currentSlide;
+    updateSlide(next);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
+    const prev = currentSlide > 0 ? currentSlide - 1 : currentSlide;
+    updateSlide(prev);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+    updateSlide(index);
   };
 
   return (
@@ -1439,35 +1464,35 @@ export default function ProcessMiningSalesAnalyticsPage() {
           <div className="flex gap-6 px-6 py-4">
             <div className="flex-1 min-w-0">
             {/* Current Slide - Full width, maximized focus */}
-            <Card className={`min-h-[calc(100vh-120px)] shadow-2xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : "border-gray-200"}`}>
+            <Card className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "h-[calc(100vh-120px)] p-1 gap-0" : "min-h-[calc(100vh-120px)]"} shadow-2xl border-2 w-full ${isDarkMode ? "bg-neutral-900 border-neutral-700" : "border-gray-200"}`}>
             {/* Hide CardHeader for slide 0 (title slide) and slide 4.5 since content has its own title */}
             {currentSlide !== 0 && slides[currentSlide].id !== 4.5 && (
-              <CardHeader className={`border-b py-5 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
-                <div className="flex items-start gap-4">
+              <CardHeader className={`border-b px-4 pt-0 pb-0 ${isDarkMode ? "bg-gradient-to-r from-neutral-800 to-neutral-900 border-neutral-700" : "bg-gradient-to-r from-gray-50 to-gray-100/50"}`}>
+                <div className="flex items-start gap-3">
                   {currentSlide === 8 && (
-                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
-                      <Workflow className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+                    <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 ${isDarkMode ? "bg-blue-900/50" : "bg-blue-100"}`}>
+                      <Workflow className={`h-4 w-4 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                     </div>
                   )}
                   <div className="flex-1">
-                    <CardTitle className={`text-2xl font-bold mb-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>{slides[currentSlide].title}</CardTitle>
+                    <CardTitle className={`text-lg font-bold mb-1 ${isDarkMode ? "text-white" : "text-gray-900"}`}>{slides[currentSlide].title}</CardTitle>
                     {currentSlide === 1 && (
-                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      <p className={`text-xs leading-snug ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                         Understanding the current state: identifying gaps between manual, fragmented processes and the need for data-driven, always-on visibility
                       </p>
                     )}
                     {currentSlide === 2 && (
-                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      <p className={`text-xs leading-snug ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                         Using process mining to uncover hidden inefficiencies and process deviations that impact sales performance
                       </p>
                     )}
                     {currentSlide === 3 && (
-                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      <p className={`text-xs leading-snug ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                         Understanding the business context: quantifying the impact of process deviations at scale and setting the stage for predictive intervention
                       </p>
                     )}
                     {currentSlide === 8 && (
-                      <p className={`text-sm leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      <p className={`text-xs leading-snug ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
                         End-to-end data pipeline from source systems to analytics dashboards
                       </p>
                     )}
@@ -1475,8 +1500,8 @@ export default function ProcessMiningSalesAnalyticsPage() {
                 </div>
               </CardHeader>
             )}
-            <CardContent className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "p-0 overflow-hidden" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
-              <div className={isDarkMode ? "dark-mode-content" : ""}>
+            <CardContent className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "p-0 overflow-hidden flex-1 flex flex-col" : "p-6"} ${isDarkMode ? "bg-neutral-900" : ""}`}>
+              <div className={`${currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? "h-full w-full flex-1" : ""} ${isDarkMode ? "dark-mode-content" : ""}`}>
                 {slides[currentSlide].content}
               </div>
             </CardContent>
@@ -1567,6 +1592,21 @@ export default function ProcessMiningSalesAnalyticsPage() {
         </main>
       </div>
     </div>
+  );
+}
+
+export default function ProcessMiningSalesAnalyticsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-2">Loading...</h1>
+          <p className="text-gray-600">Loading slides...</p>
+        </div>
+      </div>
+    }>
+      <ProcessMiningSalesAnalyticsContent />
+    </Suspense>
   );
 }
 
